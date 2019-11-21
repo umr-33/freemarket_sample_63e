@@ -9,12 +9,6 @@
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|post_code|string|null: false|
-|prefecture_id|references|null: false, foreign_key: true|
-|city|string|null: false|
-|house_number|string|null: false|
-|building_name|string|null: true|
-|phone_number|string|null: false|
 
 
 ### Association
@@ -23,6 +17,23 @@
 - has_many :items
 - has_many :comments
 - has_many :trade_histories
+
+
+
+## addressテーブル
+|column|Type|Option|
+|------|----|------|
+|post_code|string|null: false|
+|prefecture_id|references|null: false, foreign_key: true|
+|city|string|null: false|
+|house_number|string|null: false|
+|building_name|string|null: true|
+|phone_number|string|null: false|
+
+### Association
+- belongs_to :user
+
+
 
 
 ## itemテーブル
@@ -66,14 +77,6 @@
 - belongs_to :user
 
 
-## prefectureテーブル
-|column|Type|Option|
-|------|----|------|
-|name|string|null: false|(47都道府県＋未定)
-
-### Association
-- has_many :users
-- has_many :items
 
 
 ## brandテーブル
@@ -92,11 +95,14 @@
 |column|Type|Option|
 |------|----|------|
 |name|string|null: false|
+|ancestry|string|null: false|
+
 
 ### Association
 - has_many :items
 - has_many :brand_categories
 - has_many :brands, through: :brand_categories
+- has_ancestry
 
 
 ## brand_categoryテーブル
@@ -109,16 +115,6 @@
 - belongs_to :brand
 - belongs_to :category
 
-
-## category_relationテーブル
-|column|Type|Option|
-|------|----|------|
-|parent_id|integer|null: false, foreign_key: true|(category_id)
-|child_id|integer|null: false, foreign_key: true|(category_id)
-
-### Association
-- belongs_to :parent_id, class_name: 'category'
-- has_many :child_id, class_name: 'category'
 
 
 ## shipping_chargerテーブル
@@ -152,7 +148,7 @@
 ## trade_statusテーブル
 |column|Type|Option|
 |------|----|------|
-|status|string|null: false|
+|status|integer|default: 0|
 
 ### Association
 - belongs_to :item
