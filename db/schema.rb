@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191125060726) do
+ActiveRecord::Schema.define(version: 20191125094727) do
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "title",               null: false
+    t.string  "description",         null: false
+    t.integer "user_id",             null: false
+    t.integer "prefecture_id",       null: false
+    t.integer "shipping_charger_id", null: false
+    t.integer "days_to_ship_id",     null: false
+    t.integer "item_status_id",      null: false
+    t.integer "trade_status_id",     null: false
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+  end
 
   create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "provider"
@@ -33,5 +45,6 @@ ActiveRecord::Schema.define(version: 20191125060726) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
 end
