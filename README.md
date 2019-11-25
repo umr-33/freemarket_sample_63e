@@ -44,7 +44,6 @@
 |brand_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|(出品者ID)
-
 |prefecture_id|integer|null: false|
 |shipping_charger_id|integer|null: false|
 |days_to_ship_id|integer|null: false|
