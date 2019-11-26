@@ -46,6 +46,7 @@
 |user_id|references|null: false, foreign_key: true|(出品者ID)
 |prefecture_id|integer|null: false|
 |shipping_charger_id|integer|null: false|
+|shipping_method_id|integer|null: false|
 |days_to_ship_id|integer|null: false|
 |item_status_id|integer|null: false|
 |trade_status_id|integer|null: false|
