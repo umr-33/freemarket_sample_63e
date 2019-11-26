@@ -13,7 +13,7 @@
 
 ### Association
 - has_many :user_evaluations
-- belongs_to :prefecture
+- belongs_to_active_hash :prefecture
 - has_many :items
 - has_many :comments
 - has_many :trade_histories
@@ -24,15 +24,15 @@
 |column|Type|Option|
 |------|----|------|
 |post_code|string|null: false|
-|prefecture_id|references|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string|null: true|
-|phone_number|string|null: false|
+|phone_number|string|null: true|
 
 ### Association
 - belongs_to :user
-
+- belongs_to_active_hash :prefecture
 
 
 
@@ -44,22 +44,24 @@
 |brand_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|(出品者ID)
-|prefecture_id|references|null: false, foreign_key: true|
-|shipping_charger_id|references|null: false, foreign_key: true|
-|days_to_ship_id|references|null: false, foreign_key: true|
-|item_status_id|references|null: false, foreign_key: true|
-|trade_status_id|references|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
+|shipping_charger_id|integer|null: false|
+|shipping_method_id|integer|null: false|
+|days_to_ship_id|integer|null: false|
+|item_status_id|integer|null: false|
+|trade_status_id|integer|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :prefecture
 - has_many :images
 - belongs_to :brand
 - belongs_to :category
-- has_many :trade_statuses
-- has_many :item_statuses
-- has_many :days_to_ships
-- has_many :shipping_chargers
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :trade_status
+- belongs_to_active_hash :item_status
+- belongs_to_active_hash :days_to_ship
+- belongs_to_active_hash :shipping_charger
+- belongs_to_active_hash :shipping_method
 - has_many :comments
 - has_one :trade_history
 
@@ -116,44 +118,6 @@
 - belongs_to :category
 
 
-
-## shipping_chargerテーブル
-|column|Type|Option|
-|------|----|------|
-|kind|string|null: false|
-
-### Association
-- belongs_to :item
-
-
-## days_to_shipテーブル
-|column|Type|Option|
-|------|----|------|
-|term|string|null: false|
-
-### Association
-- belongs_to :item
-
-
-
-## item_statusテーブル
-|column|Type|Option|
-|------|----|------|
-|status|string|null: false|
-
-### Association
-- belongs_to :item
-
-
-## trade_statusテーブル
-|column|Type|Option|
-|------|----|------|
-|status|integer|default: 0|
-
-### Association
-- belongs_to :item
-
-
 ## imageテーブル
 |column|Type|Option|
 |------|----|------|
@@ -171,6 +135,7 @@
 
 ### Association
 - has_many :user_evaluations
+
 
 ## user_evaluationテーブル
 |column|Type|Option|
