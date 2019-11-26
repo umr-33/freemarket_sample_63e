@@ -153,4 +153,55 @@ i[class="fas fa-search"] {
   font-size:13px;
   padding:2px;
 }
+
+.content_wrapper {
+  position: absolute;
+  z-index: 5;
+  top: 90px;
+  left: 30px;
+  display: flex;
+  width: 750px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  ul.top_cat li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 10px 0;
+  }
+
+  ul {
+    background-color: white;
+    min-width: 200px;
+    min-height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  }
+
+  ul.bottom_cat {
+    width: 300px;
+  }
+  ul.middle_cat li, ul.bottom_cat li {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px 0;
+  }
+
+  ul.top_cat li.active_li {
+    background-color: red;
+    a {
+      color: white;
+    }
+  }
+  ul.middle_cat li.active_li, ul.bottom_cat li:hover {
+    background-color: rgb(228, 225, 225);
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+
 }
