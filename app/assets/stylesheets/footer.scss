@@ -76,20 +76,19 @@ aside {
 
 }
 
-footer {
+footer.a_footer {
   width: calc(100% - 40px);
   background-color: #212121;
   position: relative;
   bottom: 0;
   padding: 0 20px 30px;
-  nav {
+  nav.footer_nav {
     margin: 0 auto;
     width: fit-content;
-    div {
+    .about, .help, .privacy, .country {
       display: inline-block;
       vertical-align:  top;
       margin: 18px 25px 0 0;
-
       ul li a{
         color: rgb(209, 202, 202);
       }
@@ -114,7 +113,6 @@ footer {
       display: inline-block;
       text-align: center;
       margin: 0 0 0 -100px;
-
     }
   }
 }
