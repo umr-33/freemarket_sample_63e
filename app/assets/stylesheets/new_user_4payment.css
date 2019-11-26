@@ -1,0 +1,178 @@
+header.user_new {
+  background-color: rgb(245, 245, 245);
+  height: calc(128px - 39px);
+  padding: 39px 0 0;
+}
+  header .title {
+    height: 50px;
+    width: 750px;
+    margin: 0 auto 39px;
+  }
+  .title table {
+    float: right;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 35px 8px;
+    font-size: 12px;
+    color: rgb(180, 179, 179);
+  }
+  table tr:last-child {
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    width: 610px;
+    z-index: 0;
+  }
+  table tr:last-child td{
+    border-top: rgb(180, 179, 179) solid 2px;
+    height: 2px;
+    width: 100%;
+  }
+  .title table td {
+    text-align: center;
+  }
+  table td:nth-child(4) {
+    position: relative;
+    z-index: 1;
+    color: red;
+  }
+
+/* header end   */
+footer {
+  background-color: rgb(245, 245, 245);
+  padding: 20px 0 20px;
+}
+.foot_wrap {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+}
+  footer * {
+    margin: 0 0 20px;
+  }
+  footer ul {
+    display: flex;
+  }
+  footer ul li {
+    margin: 0 0 0 20px;
+  }
+  ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  ul li a:hover {
+    text-decoration: underline;
+    color: gray;
+  }
+  footer img:hover {
+    filter: brightness(105%);
+  }
+
+
+.contents_wrapper {
+  background-color: rgb(245, 245, 245);
+}
+
+section:first-of-type {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+  h3 {
+    font-weight: 550;
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+    border-bottom: 1px solid rgb(236, 236, 236);
+  }
+
+  form {
+    padding: 40px 40px 64px;
+  }
+  .form__inputs {
+    width: 343px;
+    margin: 0 auto;
+  }
+  form p {
+    font-weight: 550;
+    margin: 20px 0 8px;
+  }
+    form p span {
+      margin: 0 0 0 10px;
+      color: white;
+      font-size: 12px;
+      font-weight: normal;
+      padding: 3px 4px;
+      border-radius: 3px;
+    }
+    .white_in_red {
+      background-color: #ea352d;
+      color: white;
+    }
+    form p span.white_in_gray {
+      background-color: lightgray;
+    }
+  input {
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 10px);
+    height: 48px;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 0px);
+    height: 48px;
+    background-color: #fff;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .select_wrap {
+    position: relative;
+  }
+    .select_wrap i {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      color: rgb(180, 175, 175);
+      font-size: 20px;
+      cursor: pointer;
+    }
+.form__inputs button{
+  height: 50px;
+  width: 100%;
+  margin: 40px 0 0;
+}
+
+a.blue_info {
+  float: right;
+  color: skyblue;
+  text-decoration: none;
+}
+
+.harf_width_wrap {
+  display: flex;
+}
+.harf_width {
+  width: 120px;
+}
+  .harf_width select {
+    padding: 0 0 0 20px;
+  }
+.harf_width_wrap p {
+  margin: 15px 0 0 10px;
+}
+.credit_cards {
+  margin: 0 0 50px;
+}
