@@ -61,6 +61,7 @@
 - belongs_to_active_hash :item_status
 - belongs_to_active_hash :days_to_ship
 - belongs_to_active_hash :shipping_charger
+- belongs_to_active_hash :shipping_method
 - has_many :comments
 - has_one :trade_history
 
