@@ -1,12 +1,13 @@
-header.user_new {
+header.user_new4 {
   background-color: rgb(245, 245, 245);
   height: calc(128px - 39px);
   padding: 39px 0 0;
-}
-  header .title {
+
+  .title {
     height: 50px;
     width: 750px;
     margin: 0 auto 39px;
+    position: relative;
   }
   .title table {
     float: right;
@@ -16,27 +17,72 @@ header.user_new {
     font-size: 12px;
     color: rgb(180, 179, 179);
   }
-  table tr:last-child {
+  .border {
     position: absolute;
-    top: 26px;
-    left: 26px;
-    width: 610px;
-    z-index: 0;
-  }
-  table tr:last-child td{
-    border-top: rgb(180, 179, 179) solid 2px;
+    top: 33px;
+    right: 49px;
     height: 2px;
-    width: 100%;
+    width: 404px;
+    z-index: 0;
+    display: flex;
+  }
+  .border div:nth-child(1) {
+      width: 104px;
+      height: 2px;
+      border-top: red solid 2px;
+  }
+  .border div:nth-child(2) {
+      width: 130px;
+      height: 2px;
+      border-top: red solid 2px;
+  }
+  .border div:nth-child(3) {
+      width: 125px;
+      height: 2px;
+      border-top: red solid 2px;
+  }
+  .border div:nth-child(4) {
+      width: 82px;
+      height: 2px;
+      border-top: rgb(180, 179, 179) solid 2px;
   }
   .title table td {
     text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+  }
+  tr:nth-child(1) {
+    td:nth-child(1), td:nth-child(2), td:nth-child(3) {
+      color: rgb(180, 179, 179);
+    }
+  }
+  table td:nth-child(1) {
+    position: relative;
+    z-index: 1;
+    color: red;
+  }
+  table td:nth-child(2) {
+    position: relative;
+    z-index: 1;
+    color: red;
   }
   table td:nth-child(3) {
     position: relative;
     z-index: 1;
     color: red;
+  }  
+  table td:nth-child(4) {
+    position: relative;
+    z-index: 1;
+    color: red;
   }
-
+  table td:nth-child(5) {
+    position: relative;
+    z-index: 1;
+    color: rgb(180, 179, 179);  
+  }
+}
 /* header end   */
 footer {
   background-color: rgb(245, 245, 245);
@@ -70,10 +116,13 @@ footer {
   }
 
 
-.contents_wrapper {
+.contents_wrapper4 {
   background-color: rgb(245, 245, 245);
-}
 
+  button a {
+    color: white;
+    text-decoration: none;
+  }
 section:first-of-type {
   width: 700px;
   margin: 0 auto;
@@ -153,4 +202,27 @@ section:first-of-type {
   height: 50px;
   width: 100%;
   margin: 40px 0 0;
+}
+
+a.blue_info {
+  float: right;
+  color: skyblue;
+  text-decoration: none;
+}
+
+.harf_width_wrap {
+  display: flex;
+}
+.harf_width {
+  width: 120px;
+}
+  .harf_width select {
+    padding: 0 0 0 20px;
+  }
+.harf_width_wrap p {
+  margin: 15px 0 0 10px;
+}
+.credit_cards {
+  margin: 0 0 50px;
+}
 }

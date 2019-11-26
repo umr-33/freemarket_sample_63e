@@ -1,8 +1,8 @@
-header.user_new {
+/*header.user_new3 {
   background-color: rgb(245, 245, 245);
   height: calc(128px - 39px);
   padding: 39px 0 0;
-}
+
   header .title {
     height: 50px;
     width: 750px;
@@ -31,13 +31,100 @@ header.user_new {
   .title table td {
     text-align: center;
   }
-  table td:nth-child(4) {
+  table td:nth-child(3) {
     position: relative;
     z-index: 1;
     color: red;
   }
-
+}*/
 /* header end   */
+header.user_new3 {
+  background-color: rgb(245, 245, 245);
+  height: calc(128px - 39px);
+  padding: 39px 0 0;
+
+  .title {
+    height: 50px;
+    width: 750px;
+    margin: 0 auto 39px;
+    position: relative;
+  }
+  .title table {
+    float: right;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 35px 8px;
+    font-size: 12px;
+    color: rgb(180, 179, 179);
+  }
+  .border {
+    position: absolute;
+    top: 33px;
+    right: 49px;
+    height: 2px;
+    width: 404px;
+    z-index: 0;
+    display: flex;
+  }
+  .border div:nth-child(1) {
+      width: 104px;
+      height: 2px;
+      border-top: red solid 2px;
+  }
+  .border div:nth-child(2) {
+      width: 130px;
+      height: 2px;
+      border-top: red solid 2px;
+  }
+  .border div:nth-child(3) {
+      width: 125px;
+      height: 2px;
+      border-top: rgb(180, 179, 179) solid 2px;
+  }
+  .border div:nth-child(4) {
+      width: 82px;
+      height: 2px;
+      border-top: rgb(180, 179, 179) solid 2px;
+  }
+  .title table td {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+  }
+  tr:nth-child(1) {
+    td:nth-child(1), td:nth-child(2) {
+      color: rgb(180, 179, 179);
+    }
+  }
+  table td:nth-child(1) {
+    position: relative;
+    z-index: 1;
+    color: red;
+  }
+  table td:nth-child(2) {
+    position: relative;
+    z-index: 1;
+    color: red;
+  }
+  table td:nth-child(3) {
+    position: relative;
+    z-index: 1;
+    color: red;
+  }  
+  table td:nth-child(4) {
+    position: relative;
+    z-index: 1;
+    color: rgb(180, 179, 179);
+  }
+  table td:nth-child(5) {
+    position: relative;
+    z-index: 1;
+    color: rgb(180, 179, 179);  
+  }
+}
+
+
 footer {
   background-color: rgb(245, 245, 245);
   padding: 20px 0 20px;
@@ -70,10 +157,13 @@ footer {
   }
 
 
-.contents_wrapper {
+.contents_wrapper3 {
   background-color: rgb(245, 245, 245);
-}
 
+  button a {
+    color: white;
+    text-decoration: none;
+  }
 section:first-of-type {
   width: 700px;
   margin: 0 auto;
@@ -154,25 +244,4 @@ section:first-of-type {
   width: 100%;
   margin: 40px 0 0;
 }
-
-a.blue_info {
-  float: right;
-  color: skyblue;
-  text-decoration: none;
-}
-
-.harf_width_wrap {
-  display: flex;
-}
-.harf_width {
-  width: 120px;
-}
-  .harf_width select {
-    padding: 0 0 0 20px;
-  }
-.harf_width_wrap p {
-  margin: 15px 0 0 10px;
-}
-.credit_cards {
-  margin: 0 0 50px;
 }

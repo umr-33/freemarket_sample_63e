@@ -1,4 +1,4 @@
-header.user_new {
+header.user_new5 {
     background-color: rgb(245, 245, 245);
     height: calc(128px - 39px);
     padding: 39px 0 0;
@@ -16,6 +16,11 @@ header.user_new {
       border-spacing: 35px 8px;
       font-size: 12px;
       color: rgb(180, 179, 179);
+    }
+    tr:nth-child(1) {
+      td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+        color: rgb(180, 179, 179);
+      }
     }
     .border {
       position: absolute;
@@ -62,10 +67,14 @@ header.user_new {
 }
 
 
-main {
+main.user_new5 {
   background-color: rgb(245, 245, 245);
   width: 100%;
   text-align: center;  
+  button a {
+    color: white;
+    text-decoration: none;
+  }
   .center-container {
     width: 700px;
     height: 674px;
@@ -152,3 +161,34 @@ main {
 }
 }  
 }
+
+footer {
+  background-color: rgb(245, 245, 245);
+  padding: 20px 0 20px;
+}
+.foot_wrap {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+}
+  footer * {
+    margin: 0 0 20px;
+  }
+  footer ul {
+    display: flex;
+  }
+  footer ul li {
+    margin: 0 0 0 20px;
+  }
+  ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  ul li a:hover {
+    text-decoration: underline;
+    color: gray;
+  }
+  footer img:hover {
+    filter: brightness(105%);
+  }

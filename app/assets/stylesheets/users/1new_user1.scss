@@ -1,15 +1,77 @@
-header.aaa {
-  height: 128px;
-  background-color: lightgreen;
-}
-.contents_wrapper {
+header.user_new1 {
   background-color: rgb(245, 245, 245);
-  margin: 0 auto;
-  width: 700px;
-  background-color: #fff;
-​
-  .l-single-container {
+  height: calc(128px - 39px);
+  padding: 39px 0 0;
+
+  .title {
+    height: 50px;
+    width: 750px;
+    margin: 0 auto 39px;
+    position: relative;
   }
+  .title table {
+    float: right;
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 35px 8px;
+    font-size: 12px;
+    color: rgb(180, 179, 179);
+  }
+  .border {
+    position: absolute;
+    top: 33px;
+    right: 49px;
+    height: 2px;
+    width: 404px;
+    z-index: 0;
+    display: flex;
+  }
+  .border div {
+      width: 104px;
+      height: 2px;
+      border-top: rgb(180, 179, 179) solid 2px;
+  }
+
+
+  .title table td {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    height: 12px;
+  }
+  table td:nth-child(1) {
+    position: relative;
+    z-index: 1;
+    color: red;
+  }
+
+}
+.contents_wrapper1 {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  text-align: center;
+
+  a {
+    color: rgb(53, 171, 218);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: skyblue;
+  }
+  button a {
+    color: white;
+  }
+  button a:hover {
+    text-decoration: none;
+    color: white;
+  }
+  section {
+    width: 700px;
+    height: 1409px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  
 
   h3 {
     font-weight: 550;
@@ -26,6 +88,7 @@ header.aaa {
   .form__inputs {
     width: 343px;
     margin: 0 auto;
+    text-align: left;
   }
   form p {
     font-weight: 550;
@@ -90,6 +153,10 @@ header.aaa {
       font-size: 20px;
       cursor: pointer;
     }
+    .select-wrap span {
+      margin: 20px 10px;
+      font-weight: 600;
+    }
       .checkbox-default {
         margin: 16px 0 0;
         display: flex;
@@ -117,9 +184,6 @@ header.aaa {
     }
   }
 }
-#date {
-  margin: 0 2px;
-}
   .form-info{
     font-weight: 400;
     margin: 8px 0 0;
@@ -136,10 +200,39 @@ header.aaa {
     margin: 8px 0 0;
     margin-top: 32px;
     text-align: right;
-  a {
-    color: #0099e8;
-    text-decoration: none
+  
+}
+}
+}
+
+}
+footer {
+  background-color: rgb(245, 245, 245);
+  padding: 20px 0 20px;
+}
+.foot_wrap {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+}
+  footer * {
+    margin: 0 0 20px;
   }
-}
-}
-}
+  footer ul {
+    display: flex;
+  }
+  footer ul li {
+    margin: 0 0 0 20px;
+  }
+  ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  ul li a:hover {
+    text-decoration: underline;
+    color: gray;
+  }
+  footer img:hover {
+    filter: brightness(105%);
+  }
