@@ -1,69 +1,22 @@
 header.user_new5 {
-    background-color: rgb(245, 245, 245);
-    height: calc(128px - 39px);
-    padding: 39px 0 0;
-  
-    .title {
-      height: 50px;
-      width: 750px;
-      margin: 0 auto 39px;
-      position: relative;
-    }
-    .title table {
-      float: right;
-      position: relative;
-      border-collapse: separate;
-      border-spacing: 35px 8px;
-      font-size: 12px;
-      color: rgb(180, 179, 179);
-    }
-    tr:nth-child(1) {
-      td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4) {
-        color: rgb(180, 179, 179);
-      }
-    }
-    .border {
-      position: absolute;
-      top: 33px;
-      right: 49px;
-      height: 2px;
-      width: 404px;
-      z-index: 0;
-      display: flex;
-    }
-    .border div:nth-child(1) {
-        width: 104px;
-        height: 2px;
-        border-top: red solid 2px;
-    }
-    .border div:nth-child(2) {
-        width: 130px;
-        height: 2px;
-        border-top: red solid 2px;
-    }
-    .border div:nth-child(3) {
-        width: 125px;
-        height: 2px;
-        border-top: red solid 2px;
-    }
-    .border div:nth-child(4) {
-        width: 82px;
-        height: 2px;
-        border-top: red solid 2px;
-    }
-
-
-    .title table td {
-      text-align: center;
-      font-size: 12px;
-      line-height: 12px;
-      height: 12px;
-    }
-    table td {
-      position: relative;
-      z-index: 1;
+  td:nth-child(5) {
+    position: relative;
+    z-index: 5;
+    color: red;
+  }
+  tr:nth-child(2) {
+    td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4) {
       color: red;
     }
+  }
+  .border div {
+    border-top: rgb(180, 179, 179) solid 2px;
+  }
+  .border {
+    div:nth-child(1), div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+      border-top: red solid 2px;
+    }
+  }
 }
 
 
@@ -158,6 +111,6 @@ main.user_new5 {
         }
       }
     }
-}
+  }
 }  
 }
