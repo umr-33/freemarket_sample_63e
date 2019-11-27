@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :items
   resources :users, only: [:index, :show, :new] do
     collection do
-      get "signup", to: "users#signup"
       get "new1", to: "users#new1"
       get "new2", to: "users#new2"
       get "new3", to: "users#new3"

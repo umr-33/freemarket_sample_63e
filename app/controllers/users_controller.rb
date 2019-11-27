@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  def signup
-    render "/users/signin"
-  end
   def new1
     render "users/new/signin1"
   end
