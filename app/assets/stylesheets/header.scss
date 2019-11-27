@@ -106,6 +106,33 @@ i[class="fas fa-search"] {
   font-size:13px;
   padding:2px;
 }
+  .no-signin {
+    display: flex;
+    a {
+      text-decoration: none;
+    }
+    div.button {
+      height: 12px;
+      padding: 10px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    div.button.new {
+      color: white;
+      background-color: rgb(253, 55, 55);
+      margin: 0 10px 0 0;
+    }
+    div.button.login {
+      color: skyblue;
+      border: skyblue solid 1px;
+      margin: 0 10px 0 0;
+    }
+    div.button.login:hover {
+      background-color: skyblue;
+      color: white;
+      transition-duration: 500ms;
+    }
+  }
 
 .my-lists i {
   color: lightgray;

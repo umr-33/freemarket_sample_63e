@@ -30,8 +30,9 @@
     <input type="text" placeholder="例）柳ビル103">
     <p>電話<span class="white_in_gray">任意</span></p>
     <input type="text" placeholder="例）09012345678">
-
-    <button type="button" class="white_in_red"><%=link_to "次へ進む", new4_users_path%></button>
+    <%=link_to new4_users_path do%>
+    <button type="button" class="white_in_red">次へ進む</button>
+    <%end%>
   </div>
   </form>
 </section>

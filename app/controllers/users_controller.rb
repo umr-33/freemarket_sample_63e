@@ -18,9 +18,6 @@ class UsersController < ApplicationController
   def new5
     render "users/new/signin5"
   end
-  def login
-    render "users/login"
-  end
   
   def new
   end
