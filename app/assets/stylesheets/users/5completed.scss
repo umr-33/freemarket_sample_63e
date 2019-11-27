@@ -1,0 +1,116 @@
+header.user_new5 {
+  td:nth-child(5) {
+    position: relative;
+    z-index: 5;
+    color: red;
+  }
+  tr:nth-child(2) {
+    td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+      color: red;
+    }
+  }
+  .border div {
+    border-top: rgb(180, 179, 179) solid 2px;
+  }
+  .border {
+    div:nth-child(1), div:nth-child(2), div:nth-child(3), div:nth-child(4) {
+      border-top: red solid 2px;
+    }
+  }
+}
+
+
+main.user_new5 {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  text-align: center;  
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+  .center-container {
+    width: 700px;
+    height: 674px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    .head {
+      h2.completion {
+        font-size: 22px;
+        font-weight: bold;
+        padding: 32px;
+        border-bottom: 1px solid #f5f5f5;
+      }  
+    }  
+    .inner {
+      padding: 40px 40px 64px;
+      p {
+        font-size: 14px;
+        margin: 8px 0 0 ;
+      }  
+ 
+      button {
+        background-color: #ea352d;
+        color: #ffffff;
+        width: 343px;
+        height: 50px;
+        margin: 24px 0 0;
+        font-size: 14px;
+      } 
+    } 
+  }
+  .footer-wrapper {
+    width: 620px;
+    position: relative; 
+    margin: 80px 0 0;
+    aside {
+      width: 620px;
+      height: 260px;
+      background-color: burlywood;
+      margin: 0 auto;
+    .app-banner {
+      overflow: hidden;
+      position: relative;
+      width: 620px;
+      height: 260px;
+      margin: 0 auto;
+      &__inner {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        h2 {
+          color: #ffffff;
+        }
+        p {
+          color: #ffffff;
+          font-size: 24px;
+          margin: 10px 0 0;
+        }
+        .app-banner__icon {  
+          justify-content: center;
+          align-items: center;
+          margin: 20px 0 0;
+          a {
+            width: 100px;
+            text-decoration: none;
+          }
+          img {
+            width: 120px;  
+          }
+        } 
+      }
+      .sample {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        img {
+            width: 300px;
+            height: 100%
+        }
+      }
+    }
+  }
+}  
+}
