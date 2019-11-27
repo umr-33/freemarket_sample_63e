@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
   end
 
@@ -23,4 +24,11 @@ class UsersController < ApplicationController
   def login
     render "users/login"
   end
+  
+  def new
+  end
+
+  def create
+  end
+  
 end
