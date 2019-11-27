@@ -1,3 +1,12 @@
+body {
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1;
+}
 .item-box-container {
   padding: 24px 40px 40px;
   background: #fff;
@@ -48,15 +57,15 @@ a {
   width: 100%;
   height: 0;
   padding: 0 0 100%;
-}
-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: auto;
-  height: 100%;
-  margin: auto;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 100%;
+    margin: auto;
+  }
 }
 .owl-nav {
   display: none;
@@ -108,13 +117,20 @@ margin: 24px 0 0;
   display: inline-block;
   font-size: 16px;
 }
+.item-buy-btn {
+  display: block;
+  margin-top: 16px;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+}
 .item-detail-table {
   float: right;
   max-width: 300px;
   height: 420px;
   margin: 0 auto;
-  border-collapse: collapse;
-  border: 1px solid #f5f5f5;
 }
 th {
   width: 39%;
@@ -125,10 +141,19 @@ th {
 td {
   width: 61%;
   background: #fff;
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+}
+a {
+  color: #0099e8;
+  text-decoration: none;
 }
 .item-user-ratings-good {
   margin: 0;
   display: inline-block;
+}
+i {
+  font-family: 'icon-font';
 }
 .icon-good {
   font-size: 16px;
@@ -146,6 +171,55 @@ td {
 }
 .icon-bad {
   color: #6ab5d8;
+}
+
+.shipping-not-allowed-message {
+  margin-top: 16px;
+}
+.has-error-text {
+  color: #ea352d;
+  line-height: 1.5;
+  font-size: 14px;
+}
+[data-toggle='open-app'] {
+  display: none;
+}
+.item-description {
+  padding: 32px 0 0;
+  line-height: 1.5;
+}
+.item-description-inner {
+  white-space: pre-wrap;
+}
+.item-button-container {
+  margin: 16px 0 0;
+  i {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+.item-button-left {
+  float: left;
+}
+.item-button-like {
+  color: #333;
+  border: 1px solid #f5f5f5;
+  background: #f5f5f5;
+}
+.item-button {
+  padding: 8px 16px;
+  border-radius: 40px;
+}
+.item-button-report {
+  margin: 0 0 0 16px;
+  color: #333;
+  background: #f5f5f5;
+}
+.item-button-right {
+  float: right;
 }
 
 
