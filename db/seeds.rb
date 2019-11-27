@@ -19,3 +19,14 @@ CSV.foreach('db/categories.csv') do |row|
     count += 1
   end
 end
+
+count_brand = 1
+CSV.foreach('db/brands.csv') do |row|
+  if count_brand == 1
+    Brand.create!(id: count_brand, name: row[0])
+    count_brand += 1
+  else
+    Brand.create!(id: count_brand, name: row[0], parent_id: row[1])
+    count_brand += 1
+  end
+end

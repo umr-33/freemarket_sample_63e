@@ -1,7 +1,8 @@
 class CreateItems < ActiveRecord::Migration[5.0]
   def change
     create_table :brands do |t|
-      t.string :name, null:false
+      t.string :name
+      t.string :ancestry, index: true
     end
 
     create_table :categories do |t|
