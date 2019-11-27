@@ -1,0 +1,31 @@
+footer.user_new_footer {
+  background-color: rgb(245, 245, 245);
+  padding: 20px 0 20px;
+  .foot_wrap {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 12px;
+
+    * {
+      margin: 0 0 20px;
+    }
+    ul {
+      display: flex;
+    }
+    ul li {
+      margin: 0 0 0 20px;
+    }
+    ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    ul li a:hover {
+      text-decoration: underline;
+      color: gray;
+    }
+    img:hover {
+      filter: brightness(105%);
+    }
+  }
+}

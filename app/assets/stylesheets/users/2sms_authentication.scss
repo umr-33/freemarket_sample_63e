@@ -144,34 +144,3 @@ main.user_new2 {
     } 
   }
 }  
-
-footer {
-  background-color: rgb(245, 245, 245);
-  padding: 20px 0 20px;
-.foot_wrap {
-  width: fit-content;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 12px;
-}
-  footer * {
-    margin: 0 0 20px;
-  }
-  footer ul {
-    display: flex;
-  }
-  footer ul li {
-    margin: 0 0 0 20px;
-  }
-  ul li a {
-    text-decoration: none;
-    color: black;
-  }
-  ul li a:hover {
-    text-decoration: underline;
-    color: gray;
-  }
-  footer img:hover {
-    filter: brightness(105%);
-  }
-}
