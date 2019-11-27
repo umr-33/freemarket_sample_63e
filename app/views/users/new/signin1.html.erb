@@ -237,8 +237,9 @@
           </div>
         <div class=form-group>
           <p class=text>「次へ進む」のボタンを押すことにより、<a href="#" >利用規約</a>に同意したものとみなします</p>
-
-          <button type="button" class="white_in_red"><%=link_to "次へ進む", new2_users_path%></button>
+          <%=link_to new2_users_path do%>
+          <button type="button" class="white_in_red">次へ進む</button>
+          <%end%>
         </div>
       <div class=form-group__text-right>
         <p class=text-right><a href="#">本人情報の登録について></a></p>

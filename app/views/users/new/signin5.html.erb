@@ -10,7 +10,9 @@
       <p>ありがとうございます。</p>
       <p>会員登録が完了しました。</p>
       <div>
-        <button class="btn-start" type="button"><%=link_to "メルカリをはじめる", root_path%></button>  
+        <%=link_to root_path do%>
+        <button class="btn-start" type="button">メルカリをはじめる</button>  
+        <%end%>
       </div>
       <div class="footer-wrapper">
         <aside class="banner">

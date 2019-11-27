@@ -14,9 +14,11 @@
         </div> 
           <p>本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。</p>
         <div>
+          <%=link_to new3_users_path do%>
           <button type="submit" class="btn-default btn-red">
-            <%=link_to "SMSを送信する", new3_users_path%>
-          </button> 
+            SMSを送信する
+          </button>
+          <%end%>
         </div>
         <div>
           <p>※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>  
