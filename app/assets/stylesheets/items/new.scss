@@ -1,0 +1,41 @@
+@import "header";
+
+$new-item_color: #efefef;
+
+@mixin new-item_main_element() {
+  padding: 40px;
+
+  border-bottom: solid 1px $new-item_color;
+}
+
+.new-item {
+  background-color: $new-item_color;
+  
+  &__header {
+    padding: 50px;
+    &__icon {
+      width: 200px;
+      height: 50px;
+      margin: auto;
+      
+      .merukari-icon {
+      }
+    }
+  }
+  &__main {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+
+    &__title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 40px;
+      text-align: center;
+      border-bottom: solid 1px $new-item_color;
+    }
+    &__input {
+    }
+  }
+
+}
