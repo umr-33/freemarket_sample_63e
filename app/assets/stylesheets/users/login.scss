@@ -1,50 +1,19 @@
-header.user_new {
+header.user_new_login {
   background-color: rgb(245, 245, 245);
   height: calc(128px - 39px);
   padding: 39px 0 0;
-}
-  header .title {
+
+  .title {
     height: 50px;
     width: fit-content;
     margin: 0 auto 39px;
   }
-
+}
 /* header end   */
-footer {
-  background-color: rgb(245, 245, 245);
-  padding: 20px 0 20px;
-}
-.foot_wrap {
-  width: fit-content;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 12px;
-}
-  footer * {
-    margin: 0 0 20px;
-  }
-  footer ul {
-    display: flex;
-  }
-  footer ul li {
-    margin: 0 0 0 20px;
-  }
-  ul li a {
-    text-decoration: none;
-    color: black;
-  }
-  ul li a:hover {
-    text-decoration: underline;
-    color: gray;
-  }
-  footer img:hover {
-    filter: brightness(105%);
-  }
-/*footer end*/
 
-.contents_wrapper {
+.contents_wrapper_login {
   background-color: rgb(245, 245, 245);
-}
+
 
 section:first-of-type {
   width: 700px;
@@ -175,4 +144,5 @@ form .blue_text a {
 form .blue_text a:hover {
   text-decoration: underline;
   color: rgb(162, 222, 247);
+}
 }

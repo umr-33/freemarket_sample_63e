@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   def show
   end
 
+  def signup
+    render "/users/signin"
+  end
   def new1
     render "users/new/signin1"
   end
@@ -16,5 +19,8 @@ class UsersController < ApplicationController
   end
   def new5
     render "users/new/signin5"
+  end
+  def login
+    render "users/login"
   end
 end
