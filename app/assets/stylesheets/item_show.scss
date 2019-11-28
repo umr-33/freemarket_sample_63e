@@ -7,25 +7,29 @@ body {
   color: #333;
   line-height: 1;
 }
+.l-single-container {
+  width: calc(100vw - 820px);
+}
 .item-box-container {
   padding: 24px 40px 40px;
   background: #fff;
   margin: 40px auto 0;
-  width: 700px;
+  
 .item-name {
   font-size: 24px;
   text-align: center;
   word-wrap: break-word;
   line-height: 1.4;
+  font-weight: bold;
 } 
 .item-wording {
   margin: 8px 0 0;
   font-size: 14px;
   color: #888;
   line-height: 1.5;
-}
-a {
-  color: currentColor;
+  a {
+    color: #888;
+  }
 }
 
 .item-main-content {
@@ -98,12 +102,8 @@ a {
   height: auto;
   padding: 0;
 }
-.is-higher-height {
-  
-}
-
 .item-price-box {
-margin: 24px 0 0;
+  margin: 24px 0 0;
 }
 .text-center {
   text-align: center;
@@ -136,6 +136,10 @@ margin: 24px 0 0;
   max-width: 300px;
   height: 420px;
   margin: 0 auto;
+  
+}
+tbody {
+  vertical-align: middle;
 }
 th {
   width: 39%;
@@ -157,10 +161,7 @@ a {
   margin: 0;
   display: inline-block;
 }
-i {
-  font-family: 'icon-font';
-}
-.icon-good {
+.fas {
   font-size: 16px;
   vertical-align: middle;
 }
@@ -168,13 +169,13 @@ i {
   margin: 8px 0 0 16px;
   display: inline-block;
 }
-.icon-good {
+.fa-laugh {
   color: #ef5185;
 }
-.icon-normal {
+.fa-meh {
   color: #fba933;
 }
-.icon-bad {
+.fa-frown {
   color: #6ab5d8;
 }
 
@@ -217,6 +218,9 @@ i {
 .item-button {
   padding: 8px 16px;
   border-radius: 40px;
+}
+.fa-heart {
+  color: #ccc;
 }
 .item-button-report {
   margin: 0 0 0 16px;
