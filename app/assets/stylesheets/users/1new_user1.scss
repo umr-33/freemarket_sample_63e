@@ -1,0 +1,167 @@
+header.user_new1 {
+  td:nth-child(1) {
+    position: relative;
+    z-index: 5;
+    color: red;
+  }
+  .border div {
+    border-top: rgb(180, 179, 179) solid 2px;
+  }
+}
+.contents_wrapper1 {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+
+  a {
+    color: rgb(53, 171, 218);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: skyblue;
+  }
+  button a {
+    color: white;
+  }
+  button a:hover {
+    text-decoration: none;
+    color: white;
+  }
+  section {
+    width: 700px;
+    height: 1349px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  
+
+  h3 {
+    font-weight: 550;
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+    border-bottom: 1px solid rgb(236, 236, 236);
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 550;
+  }
+
+  .form__inputs {
+    width: 343px;
+    margin: 0 auto;
+  }
+  form p {
+    font-weight: 550;
+    margin: 20px 0 8px;
+  }
+    form p span {
+      margin: 0 0 0 10px;
+      color: white;
+      font-size: 12px;
+      font-weight: normal;
+      padding: 3px 4px;
+      border-radius: 3px;
+    }
+    .white_in_red {
+      background-color: #ea352d;
+      color: white;
+    }
+    form p span.white_in_gray {
+      background-color: lightgray;
+    }
+    .group1 {
+      margin: 0 0 10px;
+      padding: 0 0 0 10px;
+      width: calc(100% - 10px);
+      height: 48px;
+      border: lightgray 1px solid;
+      border-radius: 5px;
+    }
+    input.group2 {
+      margin: 10px 8px 0px 0px;
+      padding: 0 0 0 10px;
+      width: calc(50% - 10px);
+      height: 48px;
+      border: lightgray 1px solid;
+      border-radius: 5px;
+      margin-right: 8px;
+    }
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 0px);
+    height: 48px;
+    background-color: #fff;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .select_wrap {
+    position: relative;
+  }
+    .select_wrap i {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      color: rgb(180, 175, 175);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .select-wrap span {
+      margin: 20px 10px;
+      font-weight: 600;
+    }
+      .checkbox-default {
+        margin: 16px 0 0;
+        display: flex;
+        #reveal_password {
+          padding: 0 0 0 28px;
+          height: 14px;
+        }
+      }
+      .form-group {
+        margin-top: 32px;
+      }
+      .text{
+        font-weight: 400;
+        margin: 8px 0 0;
+        margin-top: 32px;
+    
+      }
+.birthday-select-wrap {
+  margin: 0;
+  .select-wrap {
+    margin: 8px 0 0;
+    select {
+      padding: 0 10px;
+      width: 76px;
+    }
+  }
+}
+  .form-info{
+    font-weight: 400;
+    margin: 8px 0 0;
+    color: #888;
+  }
+.form__inputs button{
+  height: 50px;
+  width: 100%;
+  margin: 40px 0 0;
+  font-size: 14px;
+  } 
+  .form-group__text-right {
+    
+    p.text-right{
+      font-weight: 400;
+      text-align: right;
+      margin: 32px 0 0;
+    }
+  }
+}
+}

@@ -1,0 +1,152 @@
+header.user_new0 {
+  background-color: rgb(245, 245, 245);
+  height: calc(128px - 39px);
+  padding: 39px 0 0;
+
+  .title {
+    height: 50px;
+    width: fit-content;
+    margin: 0 auto 39px;
+  }
+}
+/* header end   */
+
+.contents_wrapper_signin {
+  background-color: rgb(245, 245, 245);
+
+
+section:first-of-type {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+  h3 {
+    font-weight: 550;
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+    border-bottom: 1px solid rgb(236, 236, 236);
+  }
+
+  form {
+    padding: 40px 40px 64px;
+  }
+  .form__inputs {
+    width: 343px;
+    margin: 0 auto;
+  }
+  form p {
+    font-weight: 550;
+    margin: 20px 0 8px;
+  }
+    form p span {
+      margin: 0 0 0 10px;
+      color: white;
+      font-size: 12px;
+      font-weight: normal;
+      padding: 3px 4px;
+      border-radius: 3px;
+    }
+    .white_in_red {
+      background-color: #ea352d;
+      color: white;
+    }
+    form p span.white_in_gray {
+      background-color: lightgray;
+    }
+  input {
+    margin: 0 0 20px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 10px);
+    height: 48px;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 0px);
+    height: 48px;
+    background-color: #fff;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .select_wrap {
+    position: relative;
+  }
+    .select_wrap i {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      color: rgb(180, 175, 175);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+.snsbuttons {
+  margin: 0 0 0px;
+}
+  .snsbutton_wrap {
+    position: relative;
+  }
+  .snsbutton_wrap i {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 30px;
+  }
+  .fa-facebook-square {
+    color: white;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  .google_botton {
+    background-color: white;
+    width: 341px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .snsbutton_wrap img {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+  }
+button{
+  height: 50px;
+  width: 100%;
+  margin: 0 0 20px;
+  border-radius: 5px;
+}
+h3 button {
+  width: 343px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: rgb(49, 176, 226);
+  color: white;
+}
+form .blue_text a {
+  display: block;
+  margin: 20px 0 0;
+  text-decoration: none;
+  color: skyblue;
+}
+form .blue_text a:hover {
+  text-decoration: underline;
+  color: rgb(162, 222, 247);
+}
+
+}

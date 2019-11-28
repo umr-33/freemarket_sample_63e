@@ -1,0 +1,53 @@
+<header class="user_new user_new4">
+  <%=render partial: "users/new/uheader"%>
+</header>
+<div class="contents_wrapper4">
+<section>
+  <h3>支払い方法</h3>
+  <form action="">
+  <div class="form__inputs">
+    <p>カード番号<span class="white_in_red">必須</span></p>
+    <input type="text" placeholder="半角数字のみ"/>
+    <div class="credit_cards">
+    <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
+    <img src="/images/credit_cards/master-card.svg" alt="" width="34" height="20">
+    <img src="/images/credit_cards/saison-card.svg" alt="" width="30" height="20">
+    <img src="/images/credit_cards/jcb.svg" alt="" width="32" width="20">
+    <img src="/images/credit_cards/american_express.svg" alt="" width="21" height="20">
+    <img src="/images/credit_cards/dinersclub.svg" alt="" width="32" height="20">
+    <img src="/images/credit_cards/discover.svg" alt="" width="32" height="20">
+    </div>
+
+    <p>有効期限<span class="white_in_red">必須</span></p>
+    <div class="harf_width_wrap">
+      <div class="select_wrap harf_width">
+        <select name="prefecture" id="">
+          <option value="">1</option>
+          <option value="">2</option>
+        </select>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <p>月</p>
+    </div>
+    <div class="harf_width_wrap">
+      <div class="select_wrap harf_width">
+        <select name="prefecture" id="">
+          <option value="">2019</option>
+          <option value="">2018</option>
+        </select>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <p>年</p>
+    </div>
+
+    <p>セキュリティーコード<span class="white_in_red">必須</span></p>
+    <input type="text" placeholder="カード背面４桁もしくは３桁の番号">
+    <a class="blue_info" href="">カード裏面の番号とは？</a>
+    <%=link_to new5_users_path do%>
+    <button type="button" class="white_in_red">次へ進む</button>
+    <%end%>
+  </div>
+  </form>
+</section>
+</div>
+<%= render partial: "users/new/ufooter" %>

@@ -1,0 +1,86 @@
+header.user_new2 {
+  td:nth-child(2) {
+    position: relative;
+    z-index: 5;
+    color: red;
+  }
+  tr:nth-child(2) td:nth-child(1) {
+    color: red;
+  }
+  .border div {
+    border-top: rgb(180, 179, 179) solid 2px;
+  }
+  .border div:nth-child(1) {
+    border-top: red solid 2px;
+  }
+}
+
+
+main.user_new2 {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  
+  .center-container {
+    width: 700px;
+    height: 498px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    .head {
+      text-align: center;
+      h2.completion {
+        font-size: 22px;
+        font-weight: bold;
+        padding: 32px;
+        border-bottom: 1px solid #f5f5f5;
+      }  
+    }  
+    .inner {
+      padding: 40px 40px 64px;
+      &__content {
+        width: 343px;
+        height: 298px;
+        margin: 0 auto;  
+        text-align: left;
+        p {
+            font-size: 14px;
+            margin: 8px 0 0 ;
+        }  
+            label {
+            font-size: 14px;  
+            }
+            input.input-default {
+            padding: 10px 16px 8px;
+            margin: 8px 0 0; 
+            height: 30px;
+            width: calc(343px - 34px);
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            }
+        button {
+            background-color: #ea352d;
+            color: #ffffff;
+            width: 343px;
+            height: 50px;
+            margin: 24px 0 0;
+            font-size: 14px;
+            a {
+              color: white;
+              text-decoration: none;
+            }
+        } 
+        .text-right {
+          text-align: right;
+          margin: 32px 0 0;
+          a {
+            color: #0099e8;
+            font-size: 14px;
+            text-decoration: none;
+          }
+        }
+      }  
+    } 
+  }
+}  

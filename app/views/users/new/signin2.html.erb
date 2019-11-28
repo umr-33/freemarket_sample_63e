@@ -1,0 +1,32 @@
+<header class="user_new user_new2">
+  <%=render partial: "users/new/uheader"%>
+</header>
+<main class="user_new2">  
+  <div class="center-container">
+    <div class="head">
+      <h2 class="completion">電話番号の確認</h2>
+    </div>
+    <div class="inner">
+      <div class="inner__content">
+        <div class="form-group">
+          <label for="phone_number">携帯電話の番号</label>
+          <input type="tel" value="" name="phone_number" placeholder="携帯電話の番号を入力" class="input-default"> 
+        </div> 
+          <p>本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。</p>
+        <div>
+          <%=link_to new3_users_path do%>
+          <button type="submit" class="btn-default btn-red">
+            SMSを送信する
+          </button>
+          <%end%>
+        </div>
+        <div>
+          <p>※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。</p>  
+        </div> 
+        <div class="text-right">
+          <a href="">電話番号の確認が必要な理由＞<a>
+        </div>
+      </div>  
+  </div> 
+</main>  
+<%= render partial: "users/new/ufooter" %>

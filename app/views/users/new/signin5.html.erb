@@ -1,0 +1,41 @@
+<header class="user_new user_new5">
+  <%=render partial: "users/new/uheader"%>
+</header>
+<main class="user_new5">  
+  <div class="center-container">
+    <div class="head">
+      <h2 class="completion">会員登録完了</h2>
+    </div>
+    <div class="inner">
+      <p>ありがとうございます。</p>
+      <p>会員登録が完了しました。</p>
+      <div>
+        <%=link_to root_path do%>
+        <button class="btn-start" type="button">メルカリをはじめる</button>  
+        <%end%>
+      </div>
+      <div class="footer-wrapper">
+        <aside class="banner">
+            <div class="app-banner">
+              <div class="app-banner__inner">     
+                <h2>＼ スマホで簡単フリマアプリ ／</h2>
+                <p>今すぐ無料ダウンロード</p>
+                <div class="app-banner__icon">       
+                  <a href="">
+                    <img src="/images/app-store.svg">  
+                  </a> 
+                  <a href="">
+                    <img src="/images/google-play.svg">  
+                  </a>  
+                </div>
+              </div>
+              <div class="sample">
+                <img src="/images/download_content_pc.png">  
+              </div>
+            </div>
+          </aside>
+        </div>  
+    </div> 
+  </div>
+</main>
+<%= render partial: "users/new/ufooter" %>

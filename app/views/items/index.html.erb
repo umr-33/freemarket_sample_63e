@@ -1,4 +1,3 @@
-
 <div class="items_index_wrapper">
 <div class="top-content-image">
   <div class="top-content-image-picture">
@@ -30,59 +29,10 @@
     </div>
     <section class="card-section">
       <ul class="card-list">
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-            <h3 class="A">¥1,200</h3>
-          <figcaption class="card-text"><p>ワコールセーター:秋の最新モデルバージョン６,３行目は表示されない</p></figcaption>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</span></p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-      </ul>
-    </section>
-    </div>
+      <%= render @items, partial: 'items/item' %>
+     </ul>
+  </section>
+</div>
     <div clas="women-group">
     <div class="women-group__title">
       <h3 class="group-new">レディース新着アイテム</h3>

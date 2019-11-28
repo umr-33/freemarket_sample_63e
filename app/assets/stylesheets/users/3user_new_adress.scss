@@ -1,0 +1,110 @@
+header.user_new3 {
+  td:nth-child(3) {
+    position: relative;
+    z-index: 5;
+    color: red;
+  }
+  tr:nth-child(2) {
+    td:nth-child(1), td:nth-child(2) {
+      color: red;
+    }
+  }
+  .border div {
+    border-top: rgb(180, 179, 179) solid 2px;
+  }
+  .border {
+    div:nth-child(1), div:nth-child(2) {
+      border-top: red solid 2px;
+    }
+  }
+}
+/* header end   */
+
+.contents_wrapper3 {
+  background-color: rgb(245, 245, 245);
+
+  button a {
+    color: white;
+    text-decoration: none;
+  }
+section:first-of-type {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+  h3 {
+    font-weight: 550;
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+    border-bottom: 1px solid rgb(236, 236, 236);
+  }
+
+  form {
+    padding: 40px 40px 64px;
+  }
+  .form__inputs {
+    width: 343px;
+    margin: 0 auto;
+  }
+  form p {
+    font-weight: 550;
+    margin: 20px 0 8px;
+  }
+    form p span {
+      margin: 0 0 0 10px;
+      color: white;
+      font-size: 12px;
+      font-weight: normal;
+      padding: 3px 4px;
+      border-radius: 3px;
+    }
+    .white_in_red {
+      background-color: #ea352d;
+      color: white;
+    }
+    form p span.white_in_gray {
+      background-color: lightgray;
+    }
+  input {
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 10px);
+    height: 48px;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    width: calc(100% - 0px);
+    height: 48px;
+    background-color: #fff;
+    border: lightgray 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .select_wrap {
+    position: relative;
+  }
+    .select_wrap i {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      color: rgb(180, 175, 175);
+      font-size: 20px;
+      cursor: pointer;
+    }
+.form__inputs button{
+  height: 50px;
+  width: 100%;
+  margin: 40px 0 0;
+}
+}
