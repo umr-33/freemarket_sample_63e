@@ -1,0 +1,65 @@
+<div class="brand_index_wrap" style="background-color: rgb(239, 239, 239);">
+<div class="brands_wrapper">
+<%if @brand_cat.parent_id == 1%>
+<section>
+  <h3>ブランド一覧</h3>
+  <div class="brand_categories">
+  <%@brand_cats.each do |bc|%>
+    <%if bc.id == @brand_cat.id%>
+      <div class="brand_cat white_in_red">
+        <%=bc.name%>
+      </div>
+    <%else%>
+      <%=link_to brand_path(bc.id) do%>
+      <div class="brand_cat">
+        <%=bc.name%>
+      </div>
+      <%end%>
+    <%end%>
+  <%end%>
+  </div>
+</section>
+<div class="brand_index">
+  <%@abclist.each do |topchar, brands|%>
+    <span class="topchar" data-topchar="<%=topchar%>"><a href="#"><%=topchar%></a></span>
+    <span>|</span>
+  <%end%>
+</div> <!-- brand_index end-->
+<div class="brands">
+<h3><%=@brand_cat.name%></h3>
+<%@abclist.each do |topchar, brands|%>
+<section>
+  <h4 id="<%=topchar%>"><%=topchar%></h4>
+  <div class="common_initial_brands">
+    <%brands.each do |b|%>
+      <%=link_to brand_path(b.id) do%>
+      <div class="brand_name"><%=b.name%></div>
+      <%end%>
+    <%end%>
+  </div>
+</section>
+<%end%>
+</div>
+
+<%else%><!--最下層のブランドの場合-->
+<section>
+  <h3><%=@brand_cat.name%>の商品一覧</h3>
+  <div class="brand_categories">
+  <%@brand_cats.each do |bc|%>
+    <%if bc.id == @brand_cat.id%>
+      <div class="brand_cat white_in_red">
+        <%=bc.name%>
+      </div>
+    <%else%>
+      <%=link_to brand_path(bc.id) do%>
+      <div class="brand_cat">
+        <%=bc.name%>
+      </div>
+      <%end%>
+    <%end%>
+  <%end%>
+  </div>
+</section>
+<%end%>
+</div>
+</div>

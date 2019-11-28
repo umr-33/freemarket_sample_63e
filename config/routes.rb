@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       get "new5", to: "users#new5"
     end
   end
+
+  resources :brands, only: [:index, :show]
 end
