@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :show]
   def index
     @items = Item.limit(10)
   end
@@ -15,7 +16,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   private
   def item_params
     params.require(:item).permit(
@@ -28,5 +28,8 @@ class ItemsController < ApplicationController
     params.require(:item_images).permit(image: [])
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
 
