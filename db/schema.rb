@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20191126054557) do
     t.integer "shipping_method_id",  null: false
     t.integer "days_to_ship_id",     null: false
     t.integer "item_status_id",      null: false
-    t.integer "trade_method_id",     null: false
+    t.integer "trade_status_id",     null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
