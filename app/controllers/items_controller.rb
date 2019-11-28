@@ -19,6 +19,14 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def update
+    if @item.update(item_params)
+      redirect_to root_path, 'グループを更新しました'
+    else
+      render :edit
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(

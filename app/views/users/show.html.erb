@@ -9,7 +9,7 @@
             <figure>
               <img src="#" alt="" width="60" height="60">
             </figure>
-            <h2 class="bold">zhongcheng</h2>
+            <h2 class="bold"><%=@user.email%></h2>
             <div class="mypage-number">
               <div>評価 <span class="bold">0</span></div>
               <div>出品数 <span class="bold">0</span></div>
@@ -79,9 +79,11 @@
         <li><span>やることリスト</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>いいね！一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <%= link_to edit_item_path(@user.items[0].id) do %>
+
+        <%=link_to edit_item_path(@user.items[0].id) do%>
         <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <% end %>
+        <%end%>
+        
         <li><span>出品した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品した商品 - 売却済み</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>購入した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
