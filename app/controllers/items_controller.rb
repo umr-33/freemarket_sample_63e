@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
   def index
     @items = Item.limit(10)
   end
@@ -13,6 +13,17 @@ class ItemsController < ApplicationController
     image_params[:image].each do |img|
       @item.images.create(image: img)
       # Image.create(image: img, user_id: @item.id)
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
