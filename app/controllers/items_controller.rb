@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
   def index
     @items = Item.limit(10)
   end
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path, 'グループを更新しました'
+      redirect_to root_path
     else
       render :edit
     end
