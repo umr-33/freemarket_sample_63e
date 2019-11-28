@@ -61,9 +61,11 @@
             <div class="mypage-icon">
               <i class="far fa-smile"></i>
             </div>
+            <%=link_to user_path(current_user.id) do%>
             <div class="mypage-font">
               マイページ
             </div>
+            <%end%>
           </div>
         </div>
         <% else %>
