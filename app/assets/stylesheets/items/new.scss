@@ -2,10 +2,10 @@
 
 $new-item_color: #efefef;
 
-@mixin new-item_main_element() {
-  padding: 40px;
-
-  border-bottom: solid 1px $new-item_color;
+@mixin input-form() {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .new-item {
@@ -23,7 +23,7 @@ $new-item_color: #efefef;
     }
   }
   &__main {
-    width: 800px;
+    width: 710px;
     margin: 0 auto;
     background-color: #fff;
 
@@ -35,6 +35,51 @@ $new-item_color: #efefef;
       border-bottom: solid 1px $new-item_color;
     }
     &__input {
+      &__element {
+        padding: 40px;
+        border-bottom: solid 1px $new-item_color;
+        box-sizing: border-box;
+      
+        &__caption {
+          margin-bottom: 10px;
+
+          &__text {
+            font-weight: bold;
+            margin-right: 10px;
+          }
+
+          .require-icon {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            font-size: 0.75rem;
+            border-radius: 2px;
+            padding: 3px;
+          }
+        }
+
+        &__description {
+          font-size: 0.85rem;
+          margin-bottom: 20px;
+        }
+
+        .image-post-area {
+          width: 100%;
+          height: 200px;
+          border: dashed 1px #bfbfbf;
+        }
+
+        .input-form {
+          margin-bottom: 40px;
+          @include input-form();
+        }
+
+        .text-area {
+          @include input-form();
+          height: 160px;
+        }
+
+      }
     }
   }
 
