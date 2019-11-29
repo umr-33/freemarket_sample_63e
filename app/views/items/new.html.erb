@@ -50,7 +50,7 @@
             </div>
             <div class="new-item__main__input__element__container__right">
               <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
+                <div class="new-item__main__input__element__entry__caption first-caption">
                   <span class="new-item__main__input__element__entry__caption__text">カテゴリー</span>
                   <span class="require-icon">必須</span>
                 </div>
@@ -87,7 +87,7 @@
 
             <div class="new-item__main__input__element__container__right">
               <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
+                <div class="new-item__main__input__element__entry__caption first-caption">
                   <span class="new-item__main__input__element__entry__caption__text">配送料の負担</span>
                   <span class="require-icon">必須</span>
                 </div>
@@ -128,12 +128,14 @@
             </div>
             <div class="new-item__main__input__element__container__right">
               <div class="new-item__main__input__element__entry flex">
-                <div class="new-item__main__input__element__entry__caption">
+                <div class="new-item__main__input__element__entry__caption first-caption">
                   <span class="new-item__main__input__element__entry__caption__text">価格</span>
                   <span class="require-icon">必須</span>
                 </div>
-                <span class="">¥</span>
-                <%= f.text_field :price, class: "input-form", placeholder: "例）300" %>
+                <div class="new-item__main__input__element__entry__currency">
+                  <span>¥</span>
+                  <%= f.text_field :price, class: "input-form", placeholder: "例）300" %>
+                </div>
             </div>
             </div>
           </div>

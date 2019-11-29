@@ -64,10 +64,6 @@ $new-item_input_element_margin: 30px;
             margin-top: $new-item_input_element_margin;
             width: 400px;
           }
-
-          .flex {
-            display: flex;
-          }
         }
          &__entry {
 
@@ -90,6 +86,23 @@ $new-item_input_element_margin: 30px;
               background-color: #afafaf;
               @include icon();
             }
+          }
+          .first-caption {
+            margin-top: 0px;
+          }
+
+          .flex {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          &__currency {
+            font-size: 0.8rem;
+            line-height: 2;
+          }
+
+          #item_price {
+            width: 100px;
           }
 
           &__description {
