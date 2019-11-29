@@ -31,7 +31,9 @@
         <li><span>発送元・お届け先住所変更</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span><%=link_to payment_users_path do%>支払い方法<%end%></span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>メール/パスワード</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to identification_users_path do%>
         <li><span>本人情報</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
         <li><span>電話番号の確認</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%=link_to logout_users_path do%>
           <li><span>ログアウト</span><span><i class="fas fa-chevron-right"></i></span></li>
