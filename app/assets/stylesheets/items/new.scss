@@ -1,6 +1,8 @@
 @import "header";
 
 $new-item_color: #efefef;
+$new-item_input_element_padding: 40px;
+$new-item_input_element_margin: $new-item_input_element_padding;
 
 @mixin input-form() {
   width: 100%;
@@ -36,11 +38,12 @@ $new-item_color: #efefef;
     }
     &__input {
       &__element {
-        padding: 40px;
+        padding: 0 $new-item_input_element_padding $new-item_input_element_padding $new-item_input_element_padding;
         border-bottom: solid 1px $new-item_color;
         box-sizing: border-box;
       
         &__caption {
+          margin-top: $new-item_input_element_margin;
           margin-bottom: 10px;
 
           &__text {
@@ -87,13 +90,21 @@ $new-item_color: #efefef;
 
         .input-form {
           @include input-form();
-          margin-bottom: 40px;
           display: block;
+
+          &__nest {
+            margin-bottom: 10px;
+          }
         }
 
         .text-area {
           @include input-form();
           height: 160px;
+        }
+
+        select {
+          height: 50px;
+          width: 100%;
         }
 
       }
