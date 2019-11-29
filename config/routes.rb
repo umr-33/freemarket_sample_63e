@@ -15,6 +15,9 @@ Rails.application.routes.draw do
       get "payment"
       get "identification"
     end
+    member do
+      get "listing"
+    end
   end
 
   resources :brands, only: [:index, :show]
