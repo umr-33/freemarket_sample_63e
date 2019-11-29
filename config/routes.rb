@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
   root to: "items#index"
   resources :items
-  resources :users, only: [:index, :show, :new] do
+  resources :users, only: [:index, :show, :new, :update, :edit] do
     collection do
       get "new1", to: "users#new1"
       get "new2", to: "users#new2"
