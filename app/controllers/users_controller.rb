@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:logout, :payment, :identification]
 
   def show
     @user = User.find(current_user.id)
@@ -20,14 +21,6 @@ class UsersController < ApplicationController
   def new5
     render "users/new/signin5"
   end
-  def logout
-    @user = User.find(current_user.id)
-    render "users/logout"
-  end
-  def payment
-    @user = User.find(current_user.id)
-    render "users/payment"
-  end
   def new
   end
 
@@ -42,10 +35,17 @@ class UsersController < ApplicationController
       render :new1
     end
   end
+  def identification
+  end
+
   private
   def user_params
     params.require(:user).permit(:nickname, :email,
      :family_name, :first_name, :family_name_kana, :first_name_kana,
      :birth_year, :birth_month, :birth_date)
+  end
+  
+  def set_user
+    @user = User.find(current_user.id)
   end
 end

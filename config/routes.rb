@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get "new5", to: "users#new5"
       get "logout", to: "users#logout"
       get "payment"
+      get "identification"
     end
   end
 
