@@ -49,33 +49,7 @@ $new-item_input_element_margin: 30px;
         padding: 0 $new-item_input_element_padding $new-item_input_element_padding $new-item_input_element_padding;
         border-bottom: solid 1px $new-item_color;
         box-sizing: border-box;
-      
-        &__caption {
-          margin-top: $new-item_input_element_margin;
-          margin-bottom: 10px;
-
-          &__text {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-right: 10px;
-          }
-
-          .require-icon {
-            background-color: red;
-            @include icon();
-          }
-
-          .option-icon {
-            background-color: #afafaf;
-            @include icon();
-          }
-        }
-
-        &__description {
-          font-size: 0.85rem;
-          margin-bottom: 20px;
-        }
-
+        
         &__container {
           display: flex;
 
@@ -87,35 +61,67 @@ $new-item_input_element_margin: 30px;
             margin-top: $new-item_input_element_margin;
           }
           &__right {
+            margin-top: $new-item_input_element_margin;
             width: 400px;
           }
-        }
 
-        .image-post-area {
-          width: 100%;
-          height: 200px;
-          border: dashed 1px #bfbfbf;
-        }
-
-        .input-form {
-          @include input-form();
-          display: block;
-
-          &__nest {
-            margin-bottom: 10px;
+          .flex {
+            display: flex;
           }
         }
+         &__entry {
 
-        .text-area {
-          @include input-form();
-          height: 160px;
+          &__caption {
+            margin-top: $new-item_input_element_margin;
+            margin-bottom: 10px;
+
+            &__text {
+              font-size: 0.9rem;
+              font-weight: bold;
+              margin-right: 10px;
+            }
+
+            .require-icon {
+              background-color: red;
+              @include icon();
+            }
+
+            .option-icon {
+              background-color: #afafaf;
+              @include icon();
+            }
+          }
+
+          &__description {
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+          }
+
+          .image-post-area {
+            width: 100%;
+            height: 200px;
+            border: dashed 1px #bfbfbf;
+          }
+
+          .input-form {
+            @include input-form();
+            display: block;
+
+            &__nest {
+              margin-bottom: 10px;
+            }
+          }
+
+          .text-area {
+            @include input-form();
+            height: 160px;
+          }
+
+          select {
+            height: 50px;
+            width: 100%;
+          }
         }
-
-        select {
-          height: 50px;
-          width: 100%;
-        }
-
       }
     }
   }
