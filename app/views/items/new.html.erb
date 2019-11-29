@@ -47,6 +47,11 @@
               <%= f.collection_select :category_id, Category.find(2).children, :id, :name, {include_blank: "---"}, class: "input-form__nest" %>
               <%= f.collection_select :category_id, Category.find(15).children, :id, :name, {include_blank: "---"}, class: "input-form__nest" %>
               <div class="new-item__main__input__element__caption">
+                <span class="new-item__main__input__element__caption__text">ブランド</span>
+                <span class="option-icon">任意</span>
+              </div>
+              <%= f.text_field :brand_id, class: "input-form", placeholder: "例）シャネル" %>
+              <div class="new-item__main__input__element__caption">
                 <span class="new-item__main__input__element__caption__text">商品の状態</span>
                 <span class="require-icon">必須</span>
               </div>
@@ -59,7 +64,6 @@
         <%= f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
         <%= f.collection_select :days_to_ship_id, DaysToShip.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
         <%= f.collection_select :trade_status_id, TradeStatus.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
-        <%= f.text_field :brand_id, placeholder: "brand" %>
         <%= f.submit "出品する" %>
       <% end %>
       <%= link_to root_path do %>

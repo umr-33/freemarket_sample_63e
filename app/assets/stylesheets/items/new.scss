@@ -2,12 +2,20 @@
 
 $new-item_color: #efefef;
 $new-item_input_element_padding: 40px;
-$new-item_input_element_margin: $new-item_input_element_padding;
+$new-item_input_element_margin: 30px;
 
 @mixin input-form() {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+}
+
+@mixin icon() {
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  padding: 3px;
 }
 
 .new-item {
@@ -54,11 +62,12 @@ $new-item_input_element_margin: $new-item_input_element_padding;
 
           .require-icon {
             background-color: red;
-            color: white;
-            font-weight: bold;
-            font-size: 0.75rem;
-            border-radius: 2px;
-            padding: 3px;
+            @include icon();
+          }
+
+          .option-icon {
+            background-color: #afafaf;
+            @include icon();
           }
         }
 
@@ -69,16 +78,16 @@ $new-item_input_element_margin: $new-item_input_element_padding;
 
         &__container {
           display: flex;
+
           &__left {
             width: 250px;
             font-size: 0.9rem;
             font-weight: bold;
             color: #6f6f6f;
-
+            margin-top: $new-item_input_element_margin;
           }
           &__right {
             width: 400px;
-
           }
         }
 
