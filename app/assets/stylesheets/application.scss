@@ -3,7 +3,7 @@
 @import "./footer.scss";
 @import "./items_index.scss";
 @import "./user_show.scss";
-@import "./new.scss";
+
 @import "./item_show.scss";
  
 
@@ -18,4 +18,6 @@
 @import "./users/login.scss";
 
 @import "./brands/index.scss";
+@import "bootstrap-sprockets";
+@import "bootstrap";
  

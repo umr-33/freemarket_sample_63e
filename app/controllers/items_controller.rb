@@ -27,6 +27,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def  destroy
+    if @item.destroy
+        redirect_to root_path
+    else
+        render :edit
+    end
+    
+end
+
   private
   def item_params
     params.require(:item).permit(
