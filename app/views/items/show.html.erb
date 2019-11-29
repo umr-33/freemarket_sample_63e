@@ -181,4 +181,18 @@
       </div>
     </div>
   </section>
+
+  <div class="contents row">
+  <div class="container">
+    <% if user_signed_in? && current_user.id == @item.user_id %>
+      <div class="more">
+        <ul class="more_list">
+          <li>
+            <%= link_to '編集', "/items/#{@item.id}/edit", method: :get %>
+          </li>
+      <% end %>
+      
+    </h3>
+  </div>
+</div>
 </body>
