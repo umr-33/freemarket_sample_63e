@@ -21,16 +21,17 @@
               カテゴリーから探す
             </div>
           </div>
+
+          <%=link_to brand_path(2) do%>
           <div class="brand-list">
             <div class="brand-icon" style="color:red;">
               <i class="fas fa-tags"></i>
             </div>
             <div class="brand-font">
-              <%=link_to brand_path(2) do%>
                 ブランドから探す
-              <%end%>
             </div>
           </div>
+          <%end%>
         </div>
         <% if user_signed_in? %>
         <div class="my-lists">
@@ -58,16 +59,16 @@
               やることリスト
             </div>
           </div>
-          <div class="mypage-list">
-            <div class="mypage-icon">
-              <i class="far fa-smile"></i>
-            </div>
             <%=link_to user_path(current_user.id) do%>
-            <div class="mypage-font">
-              マイページ
+            <div class="mypage-list">
+              <div class="mypage-icon">
+                <i class="far fa-smile"></i>
+              </div>
+              <div class="mypage-font">
+                マイページ
+              </div>
             </div>
             <%end%>
-          </div>
         </div>
         <% else %>
           <div class="no-signin">

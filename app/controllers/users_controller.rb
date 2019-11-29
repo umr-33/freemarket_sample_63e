@@ -23,7 +23,10 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     render "users/logout"
   end
-  
+  def payment
+    @user = User.find(current_user.id)
+    render "users/payment"
+  end
   def new
   end
 

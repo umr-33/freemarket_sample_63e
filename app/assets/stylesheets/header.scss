@@ -138,16 +138,27 @@ i[class="fas fa-search"] {
     }
   }
 
-.my-lists i {
-  color: lightgray;
-}
-.my-lists div:hover{
-  color: lightblue;
-}
-.my-lists div:hover i {
-  color: lightblue;
-}
-
+.my-lists{
+  i {
+    color: lightgray;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  a:hover {
+    color: lightblue;
+    i {
+      color: lightblue;
+    }
+  }
+  div:hover{
+    color: lightblue;
+  }
+  div:hover i {
+    color: lightblue;
+  }
+} 
 .good-list{
   display:flex;
   margin:0px 10px;

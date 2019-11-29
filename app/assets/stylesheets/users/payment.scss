@@ -1,0 +1,70 @@
+.payment_board {
+  h2 {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 13px 0;
+    text-align: center;
+    background-color: white;
+    margin: 0;border-bottom: lightgray 1px solid;
+
+  }
+  section {
+    width: 320px;
+    margin: 60px auto 0;
+    text-align: left;
+    h4 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 0 20px;
+    }
+    button {
+      float: right;
+      background-color: white;
+      border: #ea352d 1px solid;
+      color: #ea352d;
+      border-radius: 3px;
+    }
+    .creditcard_list {
+      margin: 30px 0 0;
+      p {
+        font-weight: normal;
+        margin: 10px 0 0;
+      }
+    }
+
+    .add_card_btn {
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      font-weight: normal;
+      background-color: #ea352d;
+      color: white;
+      i {
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+  section:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+  .right_blue_text {
+    border-top: lightgray 1px solid;
+    margin: 0 auto;
+    padding: 30px 0 30px;
+    width: 572px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: normal;
+    a {
+      color: rgb(106, 201, 238);
+    }
+    a:hover {
+      color: rgb(168, 213, 241);
+      text-decoration: underline;
+    }
+  }
+
+}

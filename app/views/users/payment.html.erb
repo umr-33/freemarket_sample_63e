@@ -1,0 +1,42 @@
+<%= render "layouts/header" %>
+<div class="contents-wrapper">
+   <div class="contents clearfix">
+    <div class="right-content">
+      <div class="user-board">
+        <section class="user-board__tag payment_board">
+          <h2>支払い方法<h2>
+          <section>
+            <h4>クレジットカード一覧<h4>
+            <%if 1 == 1%>
+              <div class="creditcard_list">
+                <button type="button">削除する</button>
+                <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
+                <p>*************4368</p>
+                <p>10/24</p>
+              </div>
+              
+              <div class="creditcard_list">
+                <button type="button">削除する</button>
+                <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
+                <p>*************4368</p>
+                <p>10/24</p>
+              </div>
+            <%else%>
+              <div class="add_card_btn" >
+              <i class="far fa-credit-card"></i>
+              クレジットカードを追加する
+              </div>
+            <%end%>
+          </section>
+          <div class="right_blue_text">
+          <a href="#">支払い方法について<a>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <%= render partial: "users/left_nav", locals: { user: @user }%>
+  </div>
+</div>
+<%= render "layouts/footer" %>
