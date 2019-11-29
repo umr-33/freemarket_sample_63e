@@ -19,6 +19,10 @@ class UsersController < ApplicationController
   def new5
     render "users/new/signin5"
   end
+  def logout
+    @user = User.find(current_user.id)
+    render "users/logout"
+  end
   
   def new
   end

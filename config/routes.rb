@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get "new3", to: "users#new3"
       get "new4", to: "users#new4"
       get "new5", to: "users#new5"
+      get "logout", to: "users#logout"
     end
   end
 
