@@ -1,6 +1,6 @@
 <div class="new-item">
-  <div class="new-item__header">
-    <div class="new-item__header__icon">
+  <div class="new-item__top">
+    <div class="new-item__top__icon">
       <%= link_to root_path do %>
         <img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg" alt="Mercari" class="merukari-icon">
       <% end %>
@@ -110,15 +110,20 @@
                 <span class="new-item__main__input__element__caption__text">価格</span>
                 <span class="require-icon">必須</span>
               </div>
+              <span class="">¥</span>
+              <%= f.text_field :price, class: "input-form", placeholder: "例）300" %>
             </div>
           </div>
         </div>
-
-
-        <%= f.submit "出品する" %>
-      <% end %>
-      <%= link_to root_path do %>
-        もどる
+        <div class="new-item__bottom">
+          <p class="">禁止されている出品、行為を必ずご確認ください。</p>
+          <p class="">またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。</p>
+          <p class="">また、出品をもちまして加盟店規約に同意したことになります。</p>
+          <%= f.submit "出品する", class: "submit-btn" %>
+          <%= link_to root_path, class: "return-btn" do %>
+            もどる
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

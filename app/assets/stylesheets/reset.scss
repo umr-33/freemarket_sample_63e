@@ -24,6 +24,11 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 /* make sure to set some focus styles for accessibility */
 :focus {
     outline: 0;

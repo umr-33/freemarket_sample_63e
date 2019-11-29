@@ -21,7 +21,7 @@ $new-item_input_element_margin: 30px;
 .new-item {
   background-color: $new-item_color;
   
-  &__header {
+  &__top {
     padding: 50px;
     &__icon {
       width: 200px;
@@ -120,4 +120,26 @@ $new-item_input_element_margin: 30px;
     }
   }
 
+  &__bottom {
+    padding: $new-item_input_element_padding;
+    font-size: 0.9rem;
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 50px;
+      padding: 15px;
+      color: white;
+      background-color: rgb(231, 41, 41);
+    }
+
+    .return-btn {
+      width: 250px;
+      margin: 30px auto 0;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      background-color:#afafaf;
+      display: block;
+    }
+  }
 }
