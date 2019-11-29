@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       get "new4", to: "users#new4"
       get "new5", to: "users#new5"
     end
+    member do
+      get "listing"
+    end
   end
 
   resources :brands, only: [:index, :show]
