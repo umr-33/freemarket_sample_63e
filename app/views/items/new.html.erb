@@ -49,14 +49,12 @@
               商品の詳細
             </div>
             <div class="new-item__main__input__element__container__right">
-              <div class="new-item__main__input__element__entry">
+              <div class="new-item__main__input__element__entry" id="add-category">
                 <div class="new-item__main__input__element__entry__caption first-caption">
                   <span class="new-item__main__input__element__entry__caption__text">カテゴリー</span>
                   <span class="require-icon">必須</span>
                 </div>
                 <%= f.collection_select :category_id, Category.get_root_category.children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "major-category" %>
-                <%= f.collection_select :category_id, Category.find( 2).children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "medium-category" %>
-                <%= f.collection_select :category_id, Category.find(15).children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "minor-category" %>
               </div>
 
               <div class="new-item__main__input__element__entry">
