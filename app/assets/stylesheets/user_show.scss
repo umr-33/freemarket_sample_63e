@@ -152,39 +152,43 @@ ul {
   }
 }
 
-    .left-nav ul li {
+.left-nav {
+  ul {
+    li {
       height: 47px;
       line-height: 47px;
       padding: 0 10px 0 10px;
       border-bottom: lightgray solid 1px;
       color: lightgray;
       cursor: pointer;
+
+      span:first-child {
+        color: #333;
+      }
+      span:last-child{
+        float: right;
+        margin: 0 0px 0 0;
+      }
     }
-    .left-nav ul:first-child li:first-child {
-      background-color: rgb(230, 225, 225);
-      font-weight: bold;
-    }
-    .left-nav ul li:hover{
+    li:hover{
       padding: 0 7px 0 10px;
       color: #333;
       background-color: rgb(247, 247, 247);
-      
     }
-      .left-nav ul li:last-child {
-        border-bottom: 0px;
-      } 
-      .left-nav ul li span:first-child {
-        color: #333;
-      }
-
-        .left-nav ul li span:last-child{
-          float: right;
-          margin: 0 0px 0 0;
-        }
-
-    .left-nav h3 {
-      margin: 40px 0 8px;
-      font-size: 16px;
-      font-weight: bold;
+    li:last-child {
+      border-bottom: 0px;
     }
   }
+
+  ul:first-of-type li:first-child {
+    background-color: rgb(230, 225, 225);
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 40px 0 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+}

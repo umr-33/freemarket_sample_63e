@@ -1,29 +1,38 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<header class="user_new user_new1">
+  <%=render partial: "users/new/uheader"%>
+</header>
+<div class="contents_wrapper1">
+  <section class="l-single-container">
+    <h3>会員情報入力</h3>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="form__inputs">
+      <p>メールアドレス<span class="white_in_red">必須</span></p>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "group1", placeholder: "PC・携帯どちらでも可"%>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <p>パスワード<span class="white_in_red">必須</span></p>
+      <%= f.password_field :password, autocomplete: "new-password", class: "group1", placeholder: "6文字以上"%>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+      <p>パスワードの確認<span class="white_in_red">必須</span></p>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "group1", placeholder: "上と同じものを入力してください" %>
+    <div class="form-password">
+      <div class="checkbox-default">
+        <input type="checkbox" id="reveal_password">
+        <i class="icon-check"></i>
+        <label for="reveal_password">パスワードを表示する</label>
+      </div>
+      <div class="form-password-revelation-revealed-password-container">
+        <span class="form-password-revelation-revealed-password"></span>
+      </div>
+      <div class=form-group>
+        <p class=text>「次へ進む」のボタンを押すことにより、<a href="#" >利用規約</a>に同意したものとみなします</p>
+        
+        <%= f.submit "次へ進む", class: "white_in_red button"%>
+      </div>
+      <div class=form-group__text-right>
+        <p class=text-right><a href="#">本人情報の登録について></a></p>
+      </div>
+    <% end %>
+  </section>
+</div>
+<%= render partial: "users/new/ufooter" %>

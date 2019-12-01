@@ -43,8 +43,9 @@
     <p>セキュリティーコード<span class="white_in_red">必須</span></p>
     <input type="text" placeholder="カード背面４桁もしくは３桁の番号">
     <a class="blue_info" href="">カード裏面の番号とは？</a>
-
-    <button type="button" class="white_in_red"><%=link_to "次へ進む", new5_users_path%></button>
+    <%=link_to new5_users_path do%>
+    <button type="button" class="white_in_red">次へ進む</button>
+    <%end%>
   </div>
   </form>
 </section>

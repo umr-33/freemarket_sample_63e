@@ -1,0 +1,58 @@
+<%= render "layouts/header" %>
+<div class="contents-wrapper">
+   <div class="contents clearfix">
+    <div class="right-content">
+      <div class="contents_wrapper_identification">
+        <section>
+          <h3>本人情報の登録</h3>
+          <form action="">
+            <div>
+              <p class = "form-group">お客さまの本人情報をご登録ください。<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。</p>
+              <p class = "text-right remark-top form-group">
+                <a href = "">本人確認書類のアップロードについて
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+              </p>
+            </div>
+            <div class="form__inputs">
+              <p class = "form-p">お名前</p>
+              <p class = "form-group">
+                <%=@user.family_name%> <%=@user.first_name%>
+              </p>
+              <p class = "form-p">お名前カナ</p>
+              <p class = "form-group"><%=@user.family_name_kana%> <%=@user.first_name_kana%></p>
+              <p class = "form-p">生年月日</p>
+              <p class = "form-group"><%=@user.birth_year%>/<%=@user.birth_month%>/<%=@user.birth_date%></p>
+              <p class = "form-p">郵便番号<span class="white_in_gray">任意</span></p>
+              <input type="text" placeholder="例）123-456">
+              <p class = "form-p">都道府県<span class="white_in_gray">任意</span></p>
+              <div class="select_wrap">
+                <%=select("post", "person_id", Prefecture.all.collect {|p| [ p.name, p.id ] })%>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <p class = "form-p">市区町村<span class="white_in_gray">任意</span></p>
+              <input type="text" placeholder="例）横浜市緑区">
+              <p class = "form-p">番地<span class="white_in_gray">任意</span></p>
+              <input type="text" placeholder="例）青山1-1-1">
+              <p class = "form-p">建物名<span class="white_in_gray">任意</span></p>
+              <input type="text" placeholder="例）柳ビル103">
+              <%=link_to do%>
+              <button type="button" class="white_in_red">登録する</button>
+              <%end%>
+              <div class="remark-bottom text-right">
+                <p>
+                  <a href="">本人情報の登録について
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <%= render partial: "users/left_nav", locals: { user: @user }%>
+  </div>
+</div>
+<%= render "layouts/footer" %>

@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
   def index
+    @items = Item.limit(10)
   end
 
   def new
@@ -13,6 +15,25 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def  destroy
+    if @item.destroy
+        redirect_to root_path
+    else
+        render :edit
+    end
+    
+end
 
   private
   def item_params
@@ -26,5 +47,8 @@ class ItemsController < ApplicationController
     params.require(:item_images).permit(image: [])
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
 

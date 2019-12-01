@@ -34,6 +34,10 @@ i[class="fas fa-search"] {
 .item-lists .category-icon i, .brand-icon i{
   color: red;
 }
+.item-lists a {
+  color: black;
+  text-decoration: none;
+}
 
 
 .header-contents{
@@ -106,17 +110,55 @@ i[class="fas fa-search"] {
   font-size:13px;
   padding:2px;
 }
+  .no-signin {
+    display: flex;
+    a {
+      text-decoration: none;
+    }
+    div.button {
+      height: 12px;
+      padding: 10px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    div.button.new {
+      color: white;
+      background-color: rgb(253, 55, 55);
+      margin: 0 10px 0 0;
+    }
+    div.button.login {
+      color: skyblue;
+      border: skyblue solid 1px;
+      margin: 0 10px 0 0;
+    }
+    div.button.login:hover {
+      background-color: skyblue;
+      color: white;
+      transition-duration: 500ms;
+    }
+  }
 
-.my-lists i {
-  color: lightgray;
-}
-.my-lists div:hover{
-  color: lightblue;
-}
-.my-lists div:hover i {
-  color: lightblue;
-}
-
+.my-lists{
+  i {
+    color: lightgray;
+  }
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  a:hover {
+    color: lightblue;
+    i {
+      color: lightblue;
+    }
+  }
+  div:hover{
+    color: lightblue;
+  }
+  div:hover i {
+    color: lightblue;
+  }
+} 
 .good-list{
   display:flex;
   margin:0px 10px;
