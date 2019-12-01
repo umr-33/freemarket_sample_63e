@@ -22,7 +22,8 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer :shipping_method_id, null: false
       t.integer :days_to_ship_id, null: false
       t.integer :item_status_id, null: false
-      t.integer :trade_method_id, null: false
+      t.integer :trade_status_id, null: false
+      t.integer :price, null: false
     end
   end
 end
