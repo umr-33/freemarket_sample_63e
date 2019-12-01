@@ -21,4 +21,8 @@ class Brand < ApplicationRecord
     return abclist
   end
 
+  def self.search(keyword)
+    return Brand.limit(10).order("name") unless keyword
+    Brand.where('name LIKE(?)', "#{keyword}%").order("name").limit(10)
+  end
 end

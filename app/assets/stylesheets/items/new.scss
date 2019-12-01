@@ -161,4 +161,29 @@ $new-item_input_element_margin: 30px;
       display: block;
     }
   }
+
+  #brand-form-wrapper {
+    position: relative;
+  }
+  #add-brands {
+    width: 100%;
+    background-color: white;
+    position: absolute;
+
+    li {
+      height: 30px;
+      padding: 10px 0 30px 10px;
+      width: 100%;
+      border-left: lightgrey solid 1px;
+      border-right: lightgrey solid 1px;
+    }
+    li:last-of-type {
+      border-bottom: lightgrey solid 1px;
+    }
+    li:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+  }
+  
 }

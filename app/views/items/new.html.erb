@@ -57,12 +57,14 @@
                 <%= f.collection_select :category_id, Category.get_root_category.children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "major-category" %>
               </div>
 
-              <div class="new-item__main__input__element__entry">
+              <div class="new-item__main__input__element__entry" id="brand-form-wrapper">
                 <div class="new-item__main__input__element__entry__caption">
                   <span class="new-item__main__input__element__entry__caption__text">ブランド</span>
                   <span class="option-icon">任意</span>
                 </div>
-                <%= f.text_field :brand_id, class: "input-form", placeholder: "例）シャネル" %>
+                <%= f.text_field :brand_id, class: "input-form", placeholder: "例）シャネル", name: "brand" %>
+                <ul id="add-brands">
+                </ul>
               </div>
 
               <div class="new-item__main__input__element__entry">
