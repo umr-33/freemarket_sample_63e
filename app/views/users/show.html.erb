@@ -1,5 +1,8 @@
 <%= render "layouts/header" %>
-    
+<div class="wrap">
+</div>
+<% breadcrumb :users %>
+ <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
 <div class="contents-wrapper">
    <div class="contents clearfix">
     <div class="right-content">
@@ -79,11 +82,8 @@
         <li><span>やることリスト</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>いいね！一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
-
-        <%=link_to "users/listing" do%>
+        <%=link_to edit_item_path(@user.items[0].id) do%>
         <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <%end%>
-        
         <li><span>出品した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品した商品 - 売却済み</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>購入した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -112,3 +112,4 @@
    </div>
   </div>
 <%= render "layouts/footer" %>
+<% end %>
