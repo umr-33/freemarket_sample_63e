@@ -1,5 +1,8 @@
 <%= render "layouts/header" %>
-    
+<div class="wrap">
+</div>
+<% breadcrumb :users %>
+ <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
 <div class="contents-wrapper">
    <div class="contents clearfix">
     <div class="right-content">
@@ -74,5 +77,7 @@
       
     </div>
     <%= render partial: "users/left_nav", locals: { user: @user }%>
-
+  </div>
+</div>
 <%= render "layouts/footer" %>
+
