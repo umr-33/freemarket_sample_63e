@@ -13,9 +13,7 @@
 ActiveRecord::Schema.define(version: 20191126054557) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_brands_on_ancestry", using: :btree
+    t.string "name", null: false
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
