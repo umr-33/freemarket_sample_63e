@@ -20,6 +20,26 @@
             </div>
             <div class="category-font">
               カテゴリーから探す
+              <% Category.find(1).children.each do |major_category| %>
+              <div class="major_category">
+                <%= major_category.name %>
+              </div>
+                <% major_category.children.each do |medium_category| %>
+                <div class="medium_category">
+                  <%= medium_category.name %>
+              </div>
+                  <% medium_category.children.each do |minor_category| %>
+                  <div class="minor_category">
+                  <%= minor_category.name %>
+              </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+
+              
+              
+              
+
             </div>
           </div>
           <div class="brand-list">
