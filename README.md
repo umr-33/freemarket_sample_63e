@@ -50,6 +50,7 @@
 |days_to_ship_id|integer|null: false|
 |item_status_id|integer|null: false|
 |trade_status_id|integer|null: false|
+|price|integer|null: false|
 
 ### Association
 - belongs_to :user

@@ -1,0 +1,164 @@
+@import "header";
+
+$new-item_color: #efefef;
+$new-item_input_element_padding: 40px;
+$new-item_input_element_margin: 30px;
+
+@mixin input-form() {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@mixin icon() {
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  padding: 3px;
+}
+
+.new-item {
+  background-color: $new-item_color;
+  
+  &__top {
+    padding: 50px;
+    &__icon {
+      width: 200px;
+      height: 50px;
+      margin: auto;
+      
+      .merukari-icon {
+      }
+    }
+  }
+  &__main {
+    width: 710px;
+    margin: 0 auto;
+    background-color: #fff;
+
+    &__title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 40px;
+      text-align: center;
+      border-bottom: solid 1px $new-item_color;
+    }
+    &__input {
+      &__element {
+        padding: 0 $new-item_input_element_padding $new-item_input_element_padding $new-item_input_element_padding;
+        border-bottom: solid 1px $new-item_color;
+        box-sizing: border-box;
+        
+        &__container {
+          display: flex;
+
+          &__left {
+            width: 250px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #7f7f7f;
+            margin-top: $new-item_input_element_margin;
+          }
+          &__right {
+            margin-top: $new-item_input_element_margin;
+            width: 400px;
+          }
+        }
+         &__entry {
+
+          &__caption {
+            margin-top: $new-item_input_element_margin;
+            margin-bottom: 10px;
+
+            &__text {
+              font-size: 0.9rem;
+              font-weight: bold;
+              margin-right: 10px;
+            }
+
+            .require-icon {
+              background-color: red;
+              @include icon();
+            }
+
+            .option-icon {
+              background-color: #afafaf;
+              @include icon();
+            }
+          }
+          .first-caption {
+            margin-top: 0px;
+          }
+
+          .flex {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          &__currency {
+            font-size: 0.8rem;
+            line-height: 2;
+          }
+
+          #item_price {
+            width: 100px;
+          }
+
+          &__description {
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+          }
+
+          .image-post-area {
+            width: 100%;
+            height: 200px;
+            border: dashed 1px #bfbfbf;
+          }
+
+          .input-form {
+            @include input-form();
+            display: block;
+
+            &__nest {
+              margin-bottom: 10px;
+            }
+          }
+
+          .text-area {
+            @include input-form();
+            height: 160px;
+          }
+
+          select {
+            height: 50px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding: $new-item_input_element_padding;
+    font-size: 0.9rem;
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 50px;
+      padding: 15px;
+      color: white;
+      background-color: rgb(231, 41, 41);
+    }
+
+    .return-btn {
+      width: 250px;
+      margin: 30px auto 0;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      background-color:#afafaf;
+      display: block;
+    }
+  }
+}

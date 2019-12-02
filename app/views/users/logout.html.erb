@@ -1,0 +1,17 @@
+<%= render "layouts/header" %>
+<div class="contents-wrapper">
+   <div class="contents clearfix">
+    <div class="right-content">
+      <div class="user-board">
+        <section class="user-board__tag">
+          <ul>
+            <%=link_to destroy_user_session_path, method: :delete do%>
+            <li style="background-color:red; color:white;">ログアウト</li>
+            <%end%>
+          </ul>
+        </section>
+      </div>
+      
+    </div>
+    <%= render partial: "users/left_nav", locals: { user: @user }%>
+<%= render "layouts/footer" %>
