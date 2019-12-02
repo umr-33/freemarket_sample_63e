@@ -1,6 +1,6 @@
 @import "header";
 
-$new-item_color: #efefef;
+$new-item_color: #f5f5f5;
 $new-item_input_element_padding: 40px;
 $new-item_input_element_margin: 30px;
 
@@ -42,12 +42,12 @@ $new-item_input_element_margin: 30px;
       font-weight: bold;
       padding: 40px;
       text-align: center;
-      border-bottom: solid 1px $new-item_color;
+      border-bottom: solid 2px $new-item_color;
     }
     &__input {
       &__element {
         padding: 0 $new-item_input_element_padding $new-item_input_element_padding $new-item_input_element_padding;
-        border-bottom: solid 1px $new-item_color;
+        border-bottom: solid 2px $new-item_color;
         box-sizing: border-box;
         
         &__container {
@@ -94,9 +94,16 @@ $new-item_input_element_margin: 30px;
           .price-caption {
             line-height: 5rem;
           }
+
+          .sales-breakdown {
+            margin: 0;
+            padding: 0;
+
+          }
           
           &__price {
             font-size: 1.3rem;
+            padding-bottom: 20px;
             line-height: 2;
             display: flex;
             
@@ -141,11 +148,27 @@ $new-item_input_element_margin: 30px;
             height: 50px;
             width: 100%;
           }
+
+          .sales-margin {
+
+          }
+
+          .sales-profit {
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
         }
 
         .flex {
           display: flex;
           justify-content: space-between;
+        }
+        
+        .sub-entry {
+          border-top: solid 2px $new-item_color;
+          margin: 0;
+          padding: 20px 0;
+          
         }
       }
     }

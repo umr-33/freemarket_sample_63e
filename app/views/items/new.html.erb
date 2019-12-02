@@ -1,3 +1,8 @@
+<style type='text/css'>
+.header, .footer-wrapper {
+  display: none;
+}
+</style>
 <div class="new-item">
   <div class="new-item__top">
     <div class="new-item__top__icon">
@@ -136,7 +141,19 @@
                   <span class="new-item__main__input__element__entry__price__icon">¥</span>
                   <%= f.text_field :price, class: "input-form", placeholder: "例）300" %>
                 </div>
-            </div>
+              </div>
+              <div class="new-item__main__input__element__entry flex sub-entry">
+                <div class="new-item__main__input__element__entry__caption sales-breakdown">
+                  <span class="new-item__main__input__element__entry__caption__text">販売手数料 (10%)</span>
+                </div>
+                <span class="sales-margin">-</span>
+              </div>
+              <div class="new-item__main__input__element__entry flex sub-entry">
+                <div class="new-item__main__input__element__entry__caption sales-breakdown">
+                  <span class="new-item__main__input__element__entry__caption__text">販売利益</span>
+                </div>
+                <span class="sales-profit">-</span>
+              </div>
             </div>
           </div>
         </div>
@@ -152,4 +169,5 @@
       <% end %>
     </div>
   </div>
+  <%= render partial: "users/new/ufooter" %>
 </div>
