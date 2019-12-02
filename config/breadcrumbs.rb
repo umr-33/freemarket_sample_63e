@@ -12,8 +12,8 @@ crumb :edit do
   parent :users
 end
 
-crumb :users do
-  link "マイページ", user_path
+crumb :brands do
+  link "ブランド一覧", brands_path
   parent :root
 end
 
