@@ -13,7 +13,7 @@ $new-item_input_element_margin: 30px;
 @mixin icon() {
   color: white;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   border-radius: 2px;
   padding: 3px;
 }
@@ -38,7 +38,7 @@ $new-item_input_element_margin: 30px;
     background-color: #fff;
 
     &__title {
-      font-size: 1.3rem;
+      font-size: 1.8rem;
       font-weight: bold;
       padding: 40px;
       text-align: center;
@@ -55,7 +55,7 @@ $new-item_input_element_margin: 30px;
 
           &__left {
             width: 250px;
-            font-size: 0.75rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: #7f7f7f;
             margin-top: $new-item_input_element_margin;
@@ -72,7 +72,7 @@ $new-item_input_element_margin: 30px;
             margin-bottom: 10px;
 
             &__text {
-              font-size: 0.9rem;
+              font-size: 1.3rem;
               font-weight: bold;
               margin-right: 10px;
             }
@@ -91,22 +91,28 @@ $new-item_input_element_margin: 30px;
             margin-top: 0px;
           }
 
-          .flex {
-            display: flex;
-            justify-content: space-between;
+          .price-caption {
+            line-height: 5rem;
           }
-
-          &__currency {
-            font-size: 0.8rem;
+          
+          &__price {
+            font-size: 1.3rem;
             line-height: 2;
+            display: flex;
+            
+            &__icon {
+              line-height: 5rem;
+              margin-right: 10px;
+            }
           }
 
           #item_price {
-            width: 100px;
+            width: 160px;
+            text-align: right;
           }
 
           &__description {
-            font-size: 0.85rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
           }
 
@@ -119,6 +125,7 @@ $new-item_input_element_margin: 30px;
           .input-form {
             @include input-form();
             display: block;
+            font-size: 1.3rem;
 
             &__nest {
               margin-bottom: 10px;
@@ -135,6 +142,11 @@ $new-item_input_element_margin: 30px;
             width: 100%;
           }
         }
+
+        .flex {
+          display: flex;
+          justify-content: space-between;
+        }
       }
     }
   }
@@ -149,6 +161,7 @@ $new-item_input_element_margin: 30px;
       padding: 15px;
       color: white;
       background-color: rgb(231, 41, 41);
+      font-size: 1.3rem;
     }
 
     .return-btn {
@@ -159,6 +172,12 @@ $new-item_input_element_margin: 30px;
       text-align: center;
       background-color:#afafaf;
       display: block;
+      font-size: 1.3rem;
+    }
+
+    &__note {
+      font-size: 1.3rem;
+      margin-bottom: 0;
     }
   }
 
