@@ -3,8 +3,23 @@ crumb :root do
 end
 
 crumb :users do
-  link "マイページ", user_path
+  link "マイページ", users_path
   parent :root
+end
+
+crumb :logout do
+  link "ログアウト", logout_users_path
+  parent :users
+end
+
+crumb :payment do
+  link "支払い方法", payment_users_path
+  parent :users
+end
+
+crumb :identification_users do
+  link "本人情報の登録", identification_users_path
+  parent :users
 end
 
 crumb :edit do
@@ -13,7 +28,7 @@ crumb :edit do
 end
 
 crumb :brands do
-  link "ブランド一覧", brands_path
+  link "ブランド一覧", brand_path
   parent :root
 end
 
