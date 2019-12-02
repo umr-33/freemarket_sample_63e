@@ -83,8 +83,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
-    data-confirm-modal (1.6.2)
-      railties (>= 3.0)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -285,7 +283,6 @@ DEPENDENCIES
   capistrano3-unicorn
   carrierwave
   coffee-rails (~> 4.2)
-  data-confirm-modal
   devise
   fog-aws
   gretel
