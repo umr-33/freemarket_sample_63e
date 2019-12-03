@@ -17,6 +17,18 @@
 - has_many :items
 - has_many :comments
 - has_many :trade_histories
+- has_many :cards
+
+
+## cardテーブル
+|column|Type|Option|
+|------|----|------|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+
+### Association
+- belongs_to :users
 
 
 
