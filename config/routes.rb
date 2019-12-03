@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'card/new'
-
-  get 'card/show'
+  
 
   devise_for :users, controllers: {
     omniauth_callbacks:  "users/omniauth_callbacks"
@@ -24,9 +22,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :card, only: [:create, :show, :edit] do
+  resources :cards, only: [:new, :create, :show] do
     collection do
-      post 'delete', to: 'card#delete'
+      post 'delete', to: 'cards#delete'
       post 'show'
     end
     member do

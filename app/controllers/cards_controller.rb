@@ -1,11 +1,11 @@
-class CardController < ApplicationController
+class CardsController < ApplicationController
 
   before_action :get_user_params, only: [:edit, :confirmation, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
 
-  def edit
+  def new
   end
-
+  
   def create
     if params['payjp-token'].blank?
       redirect_to action: "edit", id: current_user.id
@@ -49,7 +49,7 @@ class CardController < ApplicationController
     redirect_to action: "show" if card.exists?
   end
 
-  privatep
+  private
 
   def get_payjp_info
     if Rails.env == 'development'
