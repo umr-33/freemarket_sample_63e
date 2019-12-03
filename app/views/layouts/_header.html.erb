@@ -14,21 +14,21 @@
       </div>
       <div class="title-lists">
         <div class="item-lists">
-          <div class="category-list">
+          <div class="category-list item-list">
             <div class="category-icon" style="color:red;">
               <i class="fas fa-list-ul"></i>
             </div>
-            <div class="category-font">
+            <div class="category-font item-list-font">
               カテゴリーから探す
             </div>
           </div>
 
           <%=link_to brand_path(2) do%>
-          <div class="brand-list">
+          <div class="brand-list item-list">
             <div class="brand-icon" style="color:red;">
               <i class="fas fa-tags"></i>
             </div>
-            <div class="brand-font">
+            <div class="brand-font item-list-font">
                 ブランドから探す
             </div>
           </div>
@@ -36,36 +36,36 @@
         </div>
         <% if user_signed_in? %>
         <div class="my-lists">
-          <div class="good-list">
+          <div class="good-list my-list">
             <div class="good-icon">
               <i class="far fa-heart"></i>
             </div>
-            <div class="good-font">
+            <div class="good-font my-list-font">
               いいね！一覧
             </div>
           </div>
-          <div class="news-list">
+          <div class="news-list my-list">
             <div class="news-icon">
               <i class="far fa-bell"></i>
             </div>
-            <div class="news-font">
+            <div class="news-font my-list-font">
               お知らせ
             </div>
           </div>
-          <div class="todo-list">
+          <div class="todo-list my-list">
             <div class="todo-icon">
               <i class="fas fa-check"></i>
             </div>
-            <div class="todo-font">
+            <div class="todo-font my-list-font">
               やることリスト
             </div>
           </div>
             <%=link_to user_path(current_user.id) do%>
-            <div class="mypage-list">
+            <div class="mypage-list my-list">
               <div class="mypage-icon">
                 <i class="far fa-smile"></i>
               </div>
-              <div class="mypage-font">
+              <div class="mypage-font my-list-font">
                 マイページ
               </div>
             </div>

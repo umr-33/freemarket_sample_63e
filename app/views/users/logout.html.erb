@@ -19,3 +19,9 @@
     </div>
     <%= render partial: "users/left_nav", locals: { user: @user }%>
 <%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_logout').addClass('active_nav')
+})
+</script>

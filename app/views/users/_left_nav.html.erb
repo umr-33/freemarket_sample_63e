@@ -1,6 +1,8 @@
 <div class="left-nav">
       <ul>
-        <li><span>マイページ</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%= link_to user_path(@user.id) do%>
+          <li id="li_mypage"><span>マイページ</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
         <li><span>やることリスト</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>いいね！一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -29,14 +31,16 @@
       <ul>
         <li><span>プロフィール</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>発送元・お届け先住所変更</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <li><span><%=link_to payment_users_path do%>支払い方法<%end%></span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to payment_users_path do%>
+          <li id="user_payment"><span>支払い方法</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
         <li><span>メール/パスワード</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%=link_to identification_users_path do%>
-        <li><span>本人情報</span><span><i class="fas fa-chevron-right"></i></span></li>
+          <li id="user_identification"><span>本人情報</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
         <li><span>電話番号の確認</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%=link_to logout_users_path do%>
-          <li><span>ログアウト</span><span><i class="fas fa-chevron-right"></i></span></li>
+          <li id="user_logout"><span>ログアウト</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
       </ul>
     </div>

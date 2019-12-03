@@ -35,8 +35,6 @@
 
 
   .main {
-    margin: 0px 210px;
-    height: 100%;
   }
 
 a {
@@ -59,6 +57,11 @@ h2 {
   position: relative;
   top: 0px;
   width: 100vw;
+  @media (max-width: 768px) {
+    margin: 0;
+    position: static;
+  }
+
   &__box {
     border-radius: 20px;
     position: relative;
@@ -80,7 +83,16 @@ h2 {
     }
   }
 }
-
+.wrap {
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 95%;
+  }
+  @media (min-width: 768px) {
+    width: calc(700px);
+  }
+  @media (min-width: 1068px) {width: calc(1040px);}
+}
 .women-group {
   margin: 0 0 40px;
 
@@ -106,6 +118,8 @@ h2 {
 .card-section{
   margin: -10px;
   .card-list {
+    @media (min-width: 768px) {width: calc(720px);}
+    @media (min-width: 1068px) {width: calc(1040px);}
     flex-wrap: wrap;
     display: flex;
   }
@@ -113,7 +127,8 @@ h2 {
     font-size: 14px;
     margin: -6px 0 0;
     padding: 12px;
-    width: calc(188px - 24px);
+    @media (min-width: 768px) {width: calc(122px - 24px);}
+    @media (min-width: 1068px) {width: calc(188px - 24px);}
     height: 40px;
     background-color:rgb(255, 255, 255);
     overflow-wrap: normal;
@@ -124,10 +139,28 @@ h2 {
       overflow: hidden;
     }
   }
-  .card-item {
+  li.card-item {
     position: relative;
-    margin: 10px;
+    margin: 5px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.4);
+    @media (max-width: 768px) {
+      width: calc(31.5%);
+      height: 30%;
+    }
+
+    @media (min-width: 768px) {
+      img {
+        width: 122px;
+        height: 122px;
+      }
+    }
+    @media (min-width: 1068px) {
+      img {
+        width: 188px;
+        height: 188px;
+      }
+    }
+
     .A {
       position:absolute;
       bottom: 70px;
@@ -141,6 +174,12 @@ h2 {
       letter-spacing: .02em;
       padding: 0 12px;
       align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    li:nth-of-type(10) {
+      display: none;
     }
   }
 }

@@ -13,7 +13,7 @@ class Brand < ApplicationRecord
       else
         abclist << [topchar ,common_initial_brands]
         common_initial_brands = []
-        # topchar と　その配列をセットし直す
+        # topcharとその配列をセットし直す
         topchar = c.name[0]
         common_initial_brands << c
       end
