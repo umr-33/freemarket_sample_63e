@@ -8,7 +8,7 @@ body.item_show_wrap {
   line-height: 1;
 
 .l-single-container {
-  width: calc(100vw - 820px);
+  width: calc(620px);
 }
 .item-box-container {
   padding: 24px 40px 40px;
@@ -42,9 +42,9 @@ body.item_show_wrap {
   }
   .item-photo {
     float: left;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 375px;
+    width: 300px;
+    height: 375px;
+    background-color: #fafafa;
   }
   .owl-stage-outer {
     position: relative;
@@ -84,7 +84,8 @@ body.item_show_wrap {
     display: none;
   }
   .owl-dots {
-    line-height: 0;
+    width: 300px;
+    height: 60px;
     display: flex;
   }
   .owl-dot {
