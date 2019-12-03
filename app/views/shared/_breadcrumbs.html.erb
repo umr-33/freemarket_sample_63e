@@ -1,0 +1,10 @@
+<div class="breadcrumbs">
+<% case params.values_at :controller, :action %>
+<% when ['users', 'show'] %>
+  <% breadcrumb :users_show %>
+<% when ['user_chat_rooms', 'index'] %>
+  <% breadcrumb :user_chat_rooms_index %>
+<% end %>
+<%= breadcrumbs separator: "  &nbsp;&nbsp;&#12297;&nbsp;  " %>
+  <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  " %>
+</div>

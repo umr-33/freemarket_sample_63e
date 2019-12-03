@@ -69,5 +69,4 @@ gem 'active_hash'
 gem 'ancestry'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'bootstrap-sass'
-gem 'data-confirm-modal'
+gem "gretel"

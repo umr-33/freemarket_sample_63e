@@ -1,7 +1,7 @@
 <li class="card-item">
   <%= link_to "/items/#{item.id}", class: "card-item", method: :get do %>
-    <%= image_tag item.images[0].image, class: 'hoge', size: '188x188' %>
-      <h3 class="A">¥1,200</h3>
+    <%= image_tag item.images[0].image, class: 'hoge', size: '188x188' if item.images[0]%>
+      <h3 class="A"><%="¥#{item.price}"%></h3>
     <figcaption class="card-text">
       <%= item.description %>
     </figcaption>
