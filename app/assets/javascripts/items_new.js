@@ -10,7 +10,7 @@ $(function () {
     })
     .done(function (cats) {
       let select = `
-      <select class="input-form__nest" id=${catLevel} name="item[${catLevel}_category_id]">
+      <select class="input-form__nest" id=${catLevel} name="item[category_id]">
         <option value="">---</option>
       `;
       for (let cat of cats) {
@@ -27,7 +27,7 @@ $(function () {
 
   $('#major-category').change(function () {
     $('#medium-category').remove();
-    $('#bottom-category').remove();
+    $('#minor-category').remove();
     let catId = this.value;
     if (catId === "") {
       return false;
@@ -36,12 +36,12 @@ $(function () {
   });
 
   $('#add-category').on('change', '#medium-category', function () {
-    $('#bottom-category').remove();
+    $('#minor-category').remove();
     let catId = this.value;
     if (catId === "") {
       return false;
     }
-    addCategories(catId, "bottom-category");
+    addCategories(catId, "minor-category");
   });
 
 
