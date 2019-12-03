@@ -8,7 +8,7 @@
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
 
         <% if user.items.length > 0%>
-        <%=link_to edit_item_path(user.items[0].id) do%>
+        <%=link_to "#{@user.id}/listing" do%>
         <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
         <%end%>

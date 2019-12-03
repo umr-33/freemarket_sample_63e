@@ -1,0 +1,67 @@
+.contents-row {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin: 30px 0 0 0;
+  &__container {
+    width: calc(620px);
+    margin: 0 auto;  
+    padding: 12px 40px;
+    font-size: 0.9rem;
+    background-color: #fff; 
+    text-align: center;   
+    .link_to_edit-btn {
+      width: 100%;
+      margin:16px 0;
+      line-height: 50px;
+      color: white;
+      background-color: rgb(231, 41, 41);
+      display: block;
+    } 
+    .text-danger {
+      .delete-btn {
+        width:100%;
+        margin: 16px 0;
+        line-height: 50px;
+        color: white;
+        text-align: center;
+        background-color:#afafaf;
+        display: block;
+      }  
+    }
+  }    
+}
+
+.comment-form {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin: 30px 0;
+  &__container {
+    width: calc(620px);
+    margin: 0 auto;  
+    background-color: #fff; 
+    padding: 12px 40px;
+    .attention {
+      background-color: #fff6de;
+      padding: 8px; 
+    }  
+    textarea.textarea-default {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;  
+      margin: 8px 0 0; 
+      padding: 10px;
+      display: block;
+      height: 100px;
+      color: #afafaf;
+    }
+    input {
+      width:100%;
+      margin: 8px 0 0;
+      padding: 15px;
+      color: white;
+      text-align: center;
+      background-color:#afafaf;
+      display: block;  
+    }
+  }  
+}
