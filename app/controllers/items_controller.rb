@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def create
     ActiveRecord::Base.transaction do
       brand_name = params.permit(:brand)[:brand]
-      brand_id = Brand.find_by(name: brand_name[:brand]).id
+      brand_id = Brand.find_by(name: brand_name).id
       @item = Item.create(item_params.merge(brand_id: brand_id))
       image_params[:image].each do |img|
         @item.images.create(image: img)
