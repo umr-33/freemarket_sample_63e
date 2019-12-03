@@ -30,7 +30,7 @@
     </div>
     <section class="card-section">
       <ul class="card-list">
-      <%= render @items, partial: 'items/item' %>
+        <%= render @items, partial: 'items/items_index'%>
      </ul>
   </section>
 </div>
@@ -41,56 +41,13 @@
     </div>
     <section class="card-section">
       <ul class="card-list">
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-            <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</span></p>
-        </li>
-        <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
-                <li class="card-item">
-          <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-          <h3 class="A">¥1,200</h3>
-          <p class="card-text">ワコールセーター</p>
-        </li>
+        <% 0.upto(9) do |t|%>
+          <li class="card-item">
+            <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
+              <h3 class="A">¥1,200</h3>
+            <p class="card-text">ワコールセーター</p>
+          </li>
+        <%end%>
       </ul>
     </section>
   </div>
