@@ -1,79 +1,63 @@
 <body class="item_show_wrap">
-  <section class="item-box-container l-single-container">
-    <h1 class="item-name"><%=@item.title%></h1>
+  <div class="l-single-container">
+  <div class="l-content">
+    <section class="item-box-container">
+      <h1 class="item-name"><%=@item.title%></h1>
     
-    <div class="item-main-content">
-      <div class="item-photo">
-        <div class="owl-carousel owl-loaded owl-drag">
-          <div class="owl-stage-outer">
-            <div class="owl-stage" style="left: 0px; width: 1500px;">
-              <div class="owl-item active" style="width: 300px;">
-                <div class="owl-item-inner is-higher-height">
-                  <%= image_tag @item.images[0].image, class: 'owl-lazy', size: '300x300' %>
+      <div class="item-main-content">
+        <div class="item-photo">
+          <div class="owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+              <div class="owl-stage" style="left: 0px; width: 1500px;">
+                <div class="owl-item active" style="width: 300px;">
+                  <div class="owl-item-inner is-higher-height">
+                    <%= image_tag @item.images[0].image, class: 'owl-lazy', size: '300x300' %>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="owl-nav disabled">
-          <div class="owl-prev">prev</div>
-          <div class="owl-next">next</div>
-        </div>
-        <div class="owl-dots">
-          <!--<div class="owl-dot active"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">
-            </div>
+          <div class="owl-nav disabled">
+            <div class="owl-prev">prev</div>
+            <div class="owl-next">next</div>
           </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_2.jpg?1574782868" class="is-higher-height" width="60" height="60">
+          <div class="owl-dots">
+
+          <!--　imageを2枚以上投稿すると表示される
+            <div class="owl-dot active"><span></span>
+              <div class="owl-dot-inner">
+                <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">
+              </div>
             </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_3.jpg?1574782868" class="is-higher-height" width="60" height="60">
-            </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_4.jpg?1574782868" class="is-higher-width" width="60" height="60">
-            </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_5.jpg?1574782868" class="is-higher-width" width="60" height="60">
-            </div>
-          </div>   
           -->
-        </div>
+          </div>
       </div>
 
-      <section class="visible-sp">
+    <!--  <section class="visible-sp">
         <div class="item-btn-float-area">
           <a class="item-buy-btn" href="https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm72019720622%2F">
             購入画面に進む
           </a>
         </div>
       </section>
+      -->
       <table class="item-detail-table">
         <tbody>
           <tr>
             <th>出品者</th>
             <td>
-              <%= link_to @item.user.nickname %>
-              <!-- 出品者ページへのリンク貼る -->
+              <%= link_to "#{@item.user.nickname}", "#" %>
               <div>
                 <div class="item-user-ratings-good">
                   <i class="fas fa-laugh"></i>
                   <span>471</span>
                 </div>
-              <div class="item-user-ratings">
-                  <i class="fas fa-meh"></i>
-                  <span>7</span>
+                <div class="item-user-ratings">
+                    <i class="fas fa-meh"></i>
+                    <span>7</span>
                 </div>
-              <div class="item-user-ratings">
-                <i class="fas fa-frown"></i>
+                <div class="item-user-ratings">
+                  <i class="fas fa-frown"></i>
                   <span>1</span>
                 </div>
               </div>
@@ -101,12 +85,10 @@
           </tr>
           <tr>
             <th>ブランド</th>
-            <td>
-              <!--リンク-->
-                <div>
-                  <%= link_to @item.brand.name, "/brands/#{@item.brand.id}" %>
-                </div>
-              </a>
+            <td>          
+              <div>
+                <%= link_to @item.brand.name, "/brands/#{@item.brand.id}" %>
+              </div>
             </td>
           </tr>
           <tr>
@@ -124,7 +106,7 @@
           <tr>
             <th>配送元地域</th>
             <td>
-              <%= link_to @item.prefecture.name %>
+              <%= link_to "#{@item.prefecture.name}", "#" %>
             </td>
           </tr>
           <tr>
@@ -134,10 +116,15 @@
         </tbody>
       </table>
     </div>
+
     <div class="item-price-box">
       <span class="item-price bold"><%= "¥#{@item.price}" %></span>
-      <span class="item-tax">(税込)</span>
-      <span class="item-shipping-fee">送料込み</span>
+      <span class="item-tax">（税込）</span>
+      <% if @item.shipping_charger.id == 1 %>
+        <span class="item-shipping-fee">送料込み</span>
+      <% else %>
+        <span class="item-shipping-fee">着払い</span>
+      <% end %>
     </div>
     <% if user_signed_in? && current_user.id == @item.user_id %>
     <% else %>
@@ -150,14 +137,14 @@
         <%= @item.description %>
       </p>
  
-  <%= link_to "##{@item.brand.name}", brand_path(@item.brand.id) %>
-  <%= link_to "##{@item.category.name}" %>
+      <%= link_to "##{@item.brand.name}", brand_path(@item.brand.id) %>
+      <%= link_to "##{@item.category.name}" %>
 
     </div>
     <div class="item-button-container">
       <div class="item-button-left">
         <a href="" class="item-button item-button-like">
-            <i class="far fa-heart"></i>
+          <i class="far fa-heart"></i>
           <span>いいね!</span>
           <span data-num="like">1</span>
         </a>
@@ -174,20 +161,22 @@
       </div>
     </div>
   </section>
+  </div>
+</div>  
 
   <% if user_signed_in? && current_user.id == @item.user_id %>
-  <div class="contents-row">
-    <div class="contents-row__container">
-      <%= link_to '商品の編集', "/items/#{@item.id}/edit", class: "link_to_edit-btn", method: :get %> 
-      <h4 class="text-danger">
-      <p class="text-center">or</p>
+  　<div class="contents-row">
+    　<div class="contents-row__container">
+      　<%= link_to '商品の編集', "/items/#{@item.id}/edit", class: "link_to_edit-btn", method: :get %> 
+      　<h4 class="text-danger">
+      　<p class="text-center">or</p>
         <%= link_to 'この商品を削除する', "/items/#{@item.id}", class: "delete-btn", method: :delete, data:
-          { confirm: '本当に削除しますか?',
+        { confirm: '本当に削除しますか?',
           cancel: 'やめる',
           commit: '削除する'}, title: '削除確認' %>
-      </h4>   
-    </div>
-  </div>
+      　</h4>   
+   　 </div>
+  　</div>
   <% end %>
 
   <div class="comment-form">
@@ -200,19 +189,3 @@
     </div>
   </div>
 </body>
-
-<!--<div class="contents row">
-  <div class="container">
-    <% if user_signed_in? && current_user.id == @item.user_id %>
-      <div class="more">
-        <ul class="more_list">
-    <h4 class="text-danger">
-      <%= link_to '削除する', "/items/#{@item.id}", method: :delete, data:
-      { confirm: '本当に削除しますか?',
-        cancel: 'やめる',
-        commit: '削除する'}, title: '削除確認' %>
-      <% end %>
-    </h4>
-  </div>
-</div>
--->
