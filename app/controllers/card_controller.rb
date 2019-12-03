@@ -1,52 +1,61 @@
 class CardController < ApplicationController
 
-  require "payjp"
+  before_action :get_user_params, only: [:edit, :confirmation, :show]
+  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
 
-  def new
-    card = Card.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+  def edit
   end
 
-  def pay #payjpとCardのデータベース作成を実施します。
-    Payjp.api_key = ENV["sk_test_71fec3f0e656dcb9752baaf0"]
-    if params['whook_11a9c4cd95cae7b0e9c74f1069'].blank?
-      redirect_to action: "new"
+  def create
+    if params['payjp-token'].blank?
+      redirect_to action: "edit", id: current_user.id
     else
       customer = Payjp::Customer.create(
-      description: '登録テスト', #なくてもOK
-      email: current_user.email, #なくてもOK
-      card: params['whook_11a9c4cd95cae7b0e9c74f1069'],
+      email: current_user.email,
+      card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      )
+      @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
       else
-        redirect_to action: "pay"
+        redirect_to action: "edit", id: current_user.id
       end
     end
   end
 
-  def delete #PayjpとCardデータベースを削除します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-    else
-      Payjp.api_key = ENV["sk_test_71fec3f0e656dcb9752baaf0"]
+  def delete
+    card = current_user.credit_cards.first
+    if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+      redirect_to action: "confirmation", id: current_user.id
   end
 
-  def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to action: "new" 
-    else
-      Payjp.api_key = ENV["sk_test_71fec3f0e656dcb9752baaf0"]
+  def show
+    card = current_user.credit_cards.first
+    if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
+    else
+      redirect_to action: "confirmation", id: current_user.id
+    end
+  end
+
+  def confirmation
+    card = current_user.credit_cards
+    redirect_to action: "show" if card.exists?
+  end
+
+  privatep
+
+  def get_payjp_info
+    if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     end
   end
 end

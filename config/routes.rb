@@ -24,5 +24,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :card, only: [:create, :show, :edit] do
+    collection do
+      post 'delete', to: 'card#delete'
+      post 'show'
+    end
+    member do
+      get 'confirmation'
+    end
+  end 
+
   resources :brands, only: [:index, :show]
 end
