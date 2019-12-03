@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   def index
-    @brand_cats = Brand.find(1).children
+    @brands = Brand.search(params[:keyword])
   end
   def show
     @brand_cats = Brand.find(1).children

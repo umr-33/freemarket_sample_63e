@@ -13,7 +13,7 @@ class Brand < ApplicationRecord
       else
         abclist << [topchar ,common_initial_brands]
         common_initial_brands = []
-        # topchar と　その配列をセットし直す
+        # topcharとその配列をセットし直す
         topchar = c.name[0]
         common_initial_brands << c
       end
@@ -21,4 +21,8 @@ class Brand < ApplicationRecord
     return abclist
   end
 
+  def self.search(keyword)
+    return Brand.limit(10).order("name") unless keyword
+    Brand.where('name LIKE(?)', "#{keyword}%").order("name").limit(10)
+  end
 end

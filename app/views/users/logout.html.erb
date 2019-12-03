@@ -1,4 +1,8 @@
 <%= render "layouts/header" %>
+<div class="wrap">
+</div>
+<% breadcrumb :logout %>
+ <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
 <div class="contents-wrapper">
    <div class="contents clearfix">
     <div class="right-content">
@@ -15,3 +19,9 @@
     </div>
     <%= render partial: "users/left_nav", locals: { user: @user }%>
 <%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_logout').addClass('active_nav')
+})
+</script>

@@ -1,6 +1,6 @@
 @import "header";
 
-$new-item_color: #efefef;
+$new-item_color: #f5f5f5;
 $new-item_input_element_padding: 40px;
 $new-item_input_element_margin: 30px;
 
@@ -13,7 +13,7 @@ $new-item_input_element_margin: 30px;
 @mixin icon() {
   color: white;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   border-radius: 2px;
   padding: 3px;
 }
@@ -38,16 +38,16 @@ $new-item_input_element_margin: 30px;
     background-color: #fff;
 
     &__title {
-      font-size: 1.3rem;
+      font-size: 1.8rem;
       font-weight: bold;
       padding: 40px;
       text-align: center;
-      border-bottom: solid 1px $new-item_color;
+      border-bottom: solid 2px $new-item_color;
     }
     &__input {
       &__element {
         padding: 0 $new-item_input_element_padding $new-item_input_element_padding $new-item_input_element_padding;
-        border-bottom: solid 1px $new-item_color;
+        border-bottom: solid 2px $new-item_color;
         box-sizing: border-box;
         
         &__container {
@@ -55,7 +55,7 @@ $new-item_input_element_margin: 30px;
 
           &__left {
             width: 250px;
-            font-size: 0.75rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: #7f7f7f;
             margin-top: $new-item_input_element_margin;
@@ -72,7 +72,7 @@ $new-item_input_element_margin: 30px;
             margin-bottom: 10px;
 
             &__text {
-              font-size: 0.9rem;
+              font-size: 1.3rem;
               font-weight: bold;
               margin-right: 10px;
             }
@@ -91,22 +91,35 @@ $new-item_input_element_margin: 30px;
             margin-top: 0px;
           }
 
-          .flex {
-            display: flex;
-            justify-content: space-between;
+          .price-caption {
+            line-height: 5rem;
           }
 
-          &__currency {
-            font-size: 0.8rem;
+          .sales-breakdown {
+            margin: 0;
+            padding: 0;
+
+          }
+          
+          &__price {
+            font-size: 1.3rem;
+            padding-bottom: 20px;
             line-height: 2;
+            display: flex;
+            
+            &__icon {
+              line-height: 5rem;
+              margin-right: 10px;
+            }
           }
 
           #item_price {
-            width: 100px;
+            width: 160px;
+            text-align: right;
           }
 
           &__description {
-            font-size: 0.85rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
           }
 
@@ -119,6 +132,7 @@ $new-item_input_element_margin: 30px;
           .input-form {
             @include input-form();
             display: block;
+            font-size: 1.3rem;
 
             &__nest {
               margin-bottom: 10px;
@@ -134,6 +148,27 @@ $new-item_input_element_margin: 30px;
             height: 50px;
             width: 100%;
           }
+
+          .sales-margin {
+
+          }
+
+          .sales-profit {
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+        }
+
+        .flex {
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        .sub-entry {
+          border-top: solid 2px $new-item_color;
+          margin: 0;
+          padding: 20px 0;
+          
         }
       }
     }
@@ -149,6 +184,7 @@ $new-item_input_element_margin: 30px;
       padding: 15px;
       color: white;
       background-color: rgb(231, 41, 41);
+      font-size: 1.3rem;
     }
 
     .return-btn {
@@ -159,6 +195,37 @@ $new-item_input_element_margin: 30px;
       text-align: center;
       background-color:#afafaf;
       display: block;
+      font-size: 1.3rem;
+    }
+
+    &__note {
+      font-size: 1.3rem;
+      margin-bottom: 0;
     }
   }
+
+  #brand-form-wrapper {
+    position: relative;
+  }
+  #add-brands {
+    width: 100%;
+    background-color: white;
+    position: absolute;
+
+    li {
+      height: 30px;
+      padding: 10px 0 30px 10px;
+      width: 100%;
+      border-left: lightgrey solid 1px;
+      border-right: lightgrey solid 1px;
+    }
+    li:last-of-type {
+      border-bottom: lightgrey solid 1px;
+    }
+    li:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+  }
+  
 }

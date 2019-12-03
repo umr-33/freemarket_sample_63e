@@ -1,4 +1,8 @@
 <%= render "layouts/header" %>
+<div class="wrap">
+</div>
+<% breadcrumb :identification_users %>
+ <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
 <div class="contents-wrapper">
    <div class="contents clearfix">
     <div class="right-content">
@@ -56,3 +60,9 @@
   </div>
 </div>
 <%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_identification').addClass('active_nav')
+})
+</script>
