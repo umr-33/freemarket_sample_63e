@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get "listing"
     end
   end
-
+  resources :categories, only: [:index],
+    constraints: lambda { |req| req.format == :json }
   resources :brands, only: [:index, :show]
 end
