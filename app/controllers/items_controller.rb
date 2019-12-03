@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
+
+
   def index
     @items = Item.limit(10)
   end
@@ -32,8 +34,11 @@ class ItemsController < ApplicationController
     else
         render :edit
     end
-    
-end
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
+  end
 
   private
   def item_params

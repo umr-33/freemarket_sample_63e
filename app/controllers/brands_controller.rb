@@ -1,4 +1,5 @@
 class BrandsController < ApplicationController
+  
   def index
     @brand_cats = Brand.find(1).children
   end
@@ -9,4 +10,5 @@ class BrandsController < ApplicationController
       @abclist = Brand.new.abc_sort(@brand_cat)
     end
   end
+
 end

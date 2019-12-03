@@ -13,4 +13,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_to_ship
   belongs_to_active_hash :shipping_charger
   belongs_to_active_hash :shipping_method
+
+  def self.search(search)
+    return Item.all.limit(20) unless search
+    Item.where(['title LIKE ?', "%#{search}"])
+  end
 end

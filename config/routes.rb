@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   root to: "items#index"
   resources :items
+  
   resources :users, only: [:index, :show, :new, :update, :edit] do
     collection do
       get "new1", to: "users#new1"
@@ -19,6 +20,6 @@ Rails.application.routes.draw do
       get "listing"
     end
   end
-
+  resources :searches,only:[:index]
   resources :brands, only: [:index, :show]
 end

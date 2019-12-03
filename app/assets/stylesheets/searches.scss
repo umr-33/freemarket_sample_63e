@@ -1,0 +1,18 @@
+.search {
+  margin: 40px 128px;
+  width: (100%-128);
+  background: rgb(245, 245, 245);
+  
+  &__left {
+    
+    width: 280px;
+    margin-right: 40px;
+  }
+  &__right {
+    float: right;
+    width: 700px;
+    height: 100%;
+  
+    
+  }
+}

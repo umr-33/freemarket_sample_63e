@@ -1,0 +1,12 @@
+<div class="contents row">
+  <% @items.each do |item| %>
+    <%= render partial: "items/item", locals: { item: item }%>
+  <% end %>
+  <%=@search%>
+<div>
+ <%= search_form_for @q, url: searches_path, html: {method: :get} do |f| %>
+  <%= f.label :name, "Keyword" %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.submit "検索" %>
+<% end%>
