@@ -99,7 +99,7 @@ $(function () {
 
   const priceLower = 300;     // 最低価格
   const prcieUpper = 9999999; // 最高価格
-  const marginRate = 10;      // 販売手数料率(10%)
+  const marginRate = 10;      // 販売手数料率[%]
   // 販売価格計算
   $('#item_price').on('keyup', function() {
     var price = $('#item_price').val();
