@@ -11,8 +11,11 @@
             <div class="owl-stage-outer">
               <div class="owl-stage" style="left: 0px; width: 1500px;">
                 <div class="owl-item active" style="width: 300px;">
-                  <div class="owl-item-inner is-higher-height">
-                    <%= image_tag image_url, class: 'owl-lazy', size: '300x300' %>
+                  <div class="owl-item-inner is-higher-height" id="display_img">
+                    <% @item.images.each do |i| %>
+                      <%= image_tag i.image, id: "image#{i.id}",
+                     class: 'owl-lazy img_displayed hidden', size: '300x300' %>
+                    <%end%>
                     </div>
                   </div>
                 </div>
@@ -25,12 +28,23 @@
             <div class="owl-dots">
              <!--imageを2枚以上投稿すると表示される-->
               <div class="owl-dot active"><span></span>
-                <div class="owl-dot-inner">
-                  <%= image_tag @item.images[0].image, class: "is-higher-height", size: "60x60" %>
+                <div class="owl-dot-inner" id="select_img">
+                  <% @item.images.each do |i|%>
+                    <%= image_tag i.image, class: "is-higher-height", size: "60x60", "data-image-id": i.id %>
+                  <%end%>
                 <!--<img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">-->
                 </div>
               </div>
             </div>
+            <script>
+              $($("#display_img img")[0]).removeClass("hidden");
+              $("#select_img img").on("click", function () {
+                let imageId= $(this).data("image-id");
+                
+                $("#display_img img").addClass("hidden");
+                $(`#display_img #image${imageId}`).removeClass("hidden");
+              })
+            </script>
           </div>
           <table class="item-detail-table">
             <tbody>

@@ -54,3 +54,47 @@
   </div>
 </div>
 </div>
+
+
+    <div class="camera-wrapper">
+      <%=link_to new_item_path do%>
+        <div class="camera-icon">
+            <i class="fas fa-camera fa-4x"></i>
+        </div>
+      <%end%>
+      <div class="exhibit-font">
+        出品
+      </div>
+    </div>
+
+<style>
+.camera-wrapper {
+  background-color: red;
+  border-radius:50%;
+  height:160px;
+  width:160px;
+  position:relative;
+  position:absolute;
+  bottom:30px;
+  right:20px;
+  position:fixed;
+  z-index: 2;
+}
+
+.camera-icon{
+  color:white;
+  width:64px;
+  height:64px;
+  position: absolute;
+  top:60px;
+  left:48px;
+}
+
+.exhibit-font{
+  font-size:22px;
+  color:white;
+  position: absolute;
+  top:25px;
+  left:57px;
+}
+</style>
