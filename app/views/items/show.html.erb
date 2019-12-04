@@ -13,180 +13,173 @@
                 <div class="owl-item active" style="width: 300px;">
                   <div class="owl-item-inner is-higher-height">
                     <%= image_tag image_url, class: 'owl-lazy', size: '300x300' %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="owl-nav disabled">
-            <div class="owl-prev">prev</div>
-            <div class="owl-next">next</div>
-          </div>
-          <div class="owl-dots">
-
-          <!--　imageを2枚以上投稿すると表示される
-            <div class="owl-dot active"><span></span>
-              <div class="owl-dot-inner">
-                <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">
+            <div class="owl-nav disabled">
+              <div class="owl-prev">prev</div>
+              <div class="owl-next">next</div>
+            </div>
+            <div class="owl-dots">
+             <!--imageを2枚以上投稿すると表示される-->
+              <div class="owl-dot active"><span></span>
+                <div class="owl-dot-inner">
+                  <%= image_tag @item.images[0].image, class: "is-higher-height", size: "60x60" %>
+                <!--<img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">-->
+                </div>
               </div>
             </div>
-          -->
           </div>
-      </div>
+          <table class="item-detail-table">
+            <tbody>
+              <tr>
+                <th>出品者</th>
+                <td>
+                  <%= link_to "#{@item.user.nickname}", "#" %>
+                  <div>
+                    <div class="item-user-ratings-good">
+                      <i class="fas fa-laugh"></i>
+                      <span>471</span>
+                    </div>
+                    <div class="item-user-ratings">
+                      <i class="fas fa-meh"></i>
+                      <span>7</span>
+                    </div>
+                    <div class="item-user-ratings">
+                      <i class="fas fa-frown"></i>
+                      <span>1</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>カテゴリー</th>
+                <td>              
+                  <div>
+                    <%= link_to @item.category.parent.parent.name %>
+                  </div>
+                  <a href="https://www.mercari.com/jp/category/36/">
+                    <div class="item-detail-table-sub-category">
+                      <i class="fa fa-angle-right"></i> 
+                      <%= link_to @item.category.parent.name %>
+                    </div>
+                  </a>
+                  <a href="https://www.mercari.com/jp/category/371/">
+                    <div class="item-detail-table-sub-sub-category">
+                      <i class="fa fa-angle-right"></i> 
+                      <%= link_to @item.category.name %>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <th>ブランド</th>
+                <td>          
+                  <div>
+                    <%= link_to @item.brand.name, "/brands/#{@item.brand.id}" %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>商品の状態</th>
+                <td><%= @item.item_status.name %></td>
+              </tr>
+              <tr>
+                <th>配送料の負担</th>
+                <td><%= @item.shipping_charger.name %></td>
+              </tr>
+              <tr>
+                <th>配送の方法</th>
+                <td><%= @item.shipping_method.name %></td>
+              </tr>
+              <tr>
+                <th>配送元地域</th>
+                <td>
+                  <%= link_to "#{@item.prefecture.name}", "#" %>
+                </td>
+              </tr>
+              <tr>
+                <th>発送日の目安</th>
+                <td><%= @item.days_to_ship.name %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <!--  <section class="visible-sp">
-        <div class="item-btn-float-area">
-          <a class="item-buy-btn" href="https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm72019720622%2F">
+        <div class="item-price-box">
+          <span class="item-price bold"><%= "¥#{@item.price}" %></span>
+          <span class="item-tax">（税込）</span>
+          <% if @item.shipping_charger.id == 1 %>
+            <span class="item-shipping-fee">送料込み</span>
+          <% else %>
+            <span class="item-shipping-fee">着払い</span>
+          <% end %>
+        </div>
+        <% if user_signed_in? && current_user.id != @item.user_id %>
+          <a class="item-buy-btn" href="">
             購入画面に進む
           </a>
+        <%end%>         
+        <div class="item-description">
+          <p class="item-description-inner">
+            <%= @item.description %>
+          </p>
+          <%= link_to "##{@item.brand.name}", brand_path(@item.brand.id) %>
+          <%= link_to "##{@item.category.name}" %>
         </div>
+        <% if user_signed_in? && current_user.id != @item.user_id %>
+          <div class="item-button-container">
+            <div class="item-button-left">
+              <a href="" class="item-button item-button-like">
+                <i class="far fa-heart"></i>
+                <span>いいね!</span>
+                <span data-num="like">1</span>
+              </a>
+              <a href="" class="item-button item-button-report clearfix">
+                <i class="far fa-flag"></i>
+                <span>不適切な商品の報告</span>
+              </a>
+            </div>
+            <div class="item-button-right">
+              <a href="" target="_blank">
+                <i class="fas fa-lock"></i>
+                <span>あんしん・あんぜんへの取り組み</span>
+              </a>
+            </div>
+           </div>
+        <% end %>
       </section>
-      -->
-      <table class="item-detail-table">
-        <tbody>
-          <tr>
-            <th>出品者</th>
-            <td>
-              <%= link_to "#{@item.user.nickname}", "#" %>
-              <div>
-                <div class="item-user-ratings-good">
-                  <i class="fas fa-laugh"></i>
-                  <span>471</span>
-                </div>
-                <div class="item-user-ratings">
-                    <i class="fas fa-meh"></i>
-                    <span>7</span>
-                </div>
-                <div class="item-user-ratings">
-                  <i class="fas fa-frown"></i>
-                  <span>1</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>カテゴリー</th>
-            <td>              
-              <div>
-                <%= link_to @item.category.parent.parent.name %>
-              </div>
-              <a href="https://www.mercari.com/jp/category/36/">
-                <div class="item-detail-table-sub-category">
-                  <i class="fa fa-angle-right"></i> 
-                  <%= link_to @item.category.parent.name %>
-                </div>
-              </a>
-              <a href="https://www.mercari.com/jp/category/371/">
-                <div class="item-detail-table-sub-sub-category">
-                  <i class="fa fa-angle-right"></i> 
-                  <%= link_to @item.category.name %>
-                </div>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <th>ブランド</th>
-            <td>          
-              <div>
-                <%= link_to @item.brand.name, "/brands/#{@item.brand.id}" %>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>商品の状態</th>
-            <td><%= @item.item_status.name %></td>
-          </tr>
-          <tr>
-            <th>配送料の負担</th>
-            <td><%= @item.shipping_charger.name %></td>
-          </tr>
-          <tr>
-            <th>配送の方法</th>
-            <td><%= @item.shipping_method.name %></td>
-          </tr>
-          <tr>
-            <th>配送元地域</th>
-            <td>
-              <%= link_to "#{@item.prefecture.name}", "#" %>
-            </td>
-          </tr>
-          <tr>
-            <th>発送日の目安</th>
-            <td><%= @item.days_to_ship.name %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="item-price-box">
-      <span class="item-price bold"><%= "¥#{@item.price}" %></span>
-      <span class="item-tax">（税込）</span>
-      <% if @item.shipping_charger.id == 1 %>
-        <span class="item-shipping-fee">送料込み</span>
-      <% else %>
-        <span class="item-shipping-fee">着払い</span>
-      <% end %>
-    </div>
+  
     <% if user_signed_in? && current_user.id == @item.user_id %>
-    <% else %>
-      <a class="item-buy-btn" href="">
-        購入画面に進む
-      </a>
-    <%end%>         
-    <div class="item-description">
-      <p class="item-description-inner">
-        <%= @item.description %>
-      </p>
- 
-      <%= link_to "##{@item.brand.name}", brand_path(@item.brand.id) %>
-      <%= link_to "##{@item.category.name}" %>
-
-    </div>
-    <div class="item-button-container">
-      <div class="item-button-left">
-        <a href="" class="item-button item-button-like">
-          <i class="far fa-heart"></i>
-          <span>いいね!</span>
-          <span data-num="like">1</span>
-        </a>
-        <a href="" class="item-button item-button-report clearfix">
-          <i class="far fa-flag"></i>
-          <span>不適切な商品の報告</span>
-        </a>
+      <div class="contents-row">
+        <div class="contents-row__container">
+          <%= link_to '商品の編集', "/items/#{@item.id}/edit", class: "link_to_edit-btn", method: :get %> 
+          <h4 class="text-danger">
+          <p class="text-center">or</p>
+          <%= link_to 'この商品を削除する', "/items/#{@item.id}", class: "delete-btn", method: :delete, data:
+          { confirm: '本当に削除しますか?',
+            cancel: 'やめる',
+            commit: '削除する'}, title: '削除確認' %>
+          </h4>   
+        </div>
       </div>
-      <div class="item-button-right">
-        <a href="" target="_blank">
-            <i class="fas fa-lock"></i>
-          <span>あんしん・あんぜんへの取り組み</span>
-        </a>
+    <% end %>
+
+    <div class="comment-form">
+      <div class="comment-form__container">
+        <div class="attention">相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。</div>
+        <form method="post" action="sample.cgi">
+          <textarea name="kansou" class="textarea-default"></textarea>
+          <input type="submit" value="コメントする">
+        </form>
       </div>
     </div>
-  </section>
-  </div>
-</div>  
-
-  <% if user_signed_in? && current_user.id == @item.user_id %>
-  　<div class="contents-row">
-    　<div class="contents-row__container">
-      　<%= link_to '商品の編集', "/items/#{@item.id}/edit", class: "link_to_edit-btn", method: :get %> 
-      　<h4 class="text-danger">
-      　<p class="text-center">or</p>
-        <%= link_to 'この商品を削除する', "/items/#{@item.id}", class: "delete-btn", method: :delete, data:
-        { confirm: '本当に削除しますか?',
-          cancel: 'やめる',
-          commit: '削除する'}, title: '削除確認' %>
-      　</h4>   
-   　 </div>
-  　</div>
-  <% end %>
-
-  <div class="comment-form">
-    <div class="comment-form__container">
-      <div class="attention">相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。</div>
-      <form method="post" action="sample.cgi">
-        <textarea name="kansou" class="textarea-default"></textarea>
-        <input type="submit" value="コメントする">
-      </form>
-    </div>
+   </div>
+  </div> 
+  <div class="breadcrumbs-bottom">
+    <% breadcrumb :items %>
+    <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
   </div>
 </body>
