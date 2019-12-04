@@ -1,7 +1,8 @@
-$(function () {
+$(document).on("turbolinks:load", function () {
 
   // category 追加
   function addCategories(catId, catLevel) {
+    let dataName = (catLevel=="minor-category") ? "item[category_id]" : "medium_cat";
     $.ajax({
       type: "GET",
       url: "/categories",
@@ -10,7 +11,7 @@ $(function () {
     })
     .done(function (cats) {
       let select = `
-      <select class="input-form__nest" id=${catLevel} name="item[category_id]">
+      <select class="input-form__nest" id=${catLevel} name=${dataName}>
         <option value="">---</option>
       `;
       for (let cat of cats) {
@@ -75,7 +76,7 @@ $(function () {
     let bName = $(this).text();
     let bid = $(this).data().brandId;
     let hiddenInput = `
-      <input name='item[brand_id]' type='hidden' value=${bid}></input>`
+      <input name='item[brand_id]' type='hidden' value=${bid}>`
     $(document.getElementsByName("brand")[0]).val(bName);
     $(document.getElementsByName('item[brand_id]')).remove();
     $(document.getElementsByName("brand")[0]).parent().append(hiddenInput);

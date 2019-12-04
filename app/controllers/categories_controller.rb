@@ -6,5 +6,8 @@ class CategoriesController < ApplicationController
     end
   end
 
-
+  def show
+    @category = Category.find(params[:id])
+    @category.update(items_size: @category.items.size)
+  end
 end

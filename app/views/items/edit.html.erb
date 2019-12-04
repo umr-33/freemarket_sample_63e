@@ -8,145 +8,24 @@
   </div>
   <div class="new-item__main">
     <div class="new-item__main__title">
-      商品の情報を入力
+      商品の情報を編集
     </div>
-
     <div class="new-item__main__input">
-      <%= form_for(@item, local: true, method: 'patch') do |f| %>
-
-        <div class="new-item__main__input__element">
-          <div class="new-item__main__input__element__entry">
-            <div class="new-item__main__input__element__entry__caption">
-              <span class="new-item__main__input__element__entry__caption__text">出品画像</span>
-              <span class="require-icon">必須</span>
-            </div>
-            <p class="new-item__main__input__element__entry__description">最大10枚までアップロードできます</p>
-            <%= f.file_field :images, class: 'image-post-area', name: 'item_images[image][]', multiple: true %>
-          </div>
-        </div>
-
-        <div class="new-item__main__input__element">
-          <div class="new-item__main__input__element__entry">
-            <div class="new-item__main__input__element__entry__caption">
-              <span class="new-item__main__input__element__entry__caption__text">商品名</span>
-              <span class="require-icon">必須</span>
-            </div>
-            <%= f.text_field :title, class: "input-form", placeholder: "商品名（必須40文字まで）" %>
-          </div>
-
-          <div class="new-item__main__input__element__entry">
-            <div class="new-item__main__input__element__entry__caption">
-              <span class="new-item__main__input__element__entry__caption__text">商品の説明</span>
-              <span class="require-icon">必須</span>
-            </div>
-            <%= f.text_area :description, class: "text-area", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" %>
-          </div>
-        </div>
-
-        <div class="new-item__main__input__element">
-          <div class="new-item__main__input__element__container">
-            <div class="new-item__main__input__element__container__left">
-              商品の詳細
-            </div>
-            <div class="new-item__main__input__element__container__right">
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption first-caption">
-                  <span class="new-item__main__input__element__entry__caption__text">カテゴリー</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <%= f.collection_select :category_id, Category.get_root_category.children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "major-category", name: "top-cat" %>
-                <%= f.collection_select :category_id, Category.find( 2).children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "medium-category", name: "mid-cat" %>
-                <%= f.collection_select :category_id, Category.find(15).children, :id , :name, {include_blank: "---"}, class: "input-form__nest", id: "minor-category" %>
-              </div>
-
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
-                  <span class="new-item__main__input__element__entry__caption__text">ブランド</span>
-                  <span class="option-icon">任意</span>
-                </div>
-                <%= f.text_field :brand_id, class: "input-form", placeholder: "例）シャネル" %>
-              </div>
-
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
-                  <span class="new-item__main__input__element__entry__caption__text">商品の状態</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <%= f.collection_select :item_status_id, ItemStatus.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="new-item__main__input__element">
-          <div class="new-item__main__input__element__container">
-            <div class="new-item__main__input__element__container__left">
-              配送について
-            </div>
-
-            <div class="new-item__main__input__element__container__right">
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption first-caption">
-                  <span class="new-item__main__input__element__entry__caption__text">配送料の負担</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <%= f.collection_select :shipping_charger_id, ShippingCharger.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
-              </div>
-              
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
-                  <span class="new-item__main__input__element__entry__caption__text">配送の方法</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <%= f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
-              </div>
-
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
-                  <span class="new-item__main__input__element__entry__caption__text">発送元の地域</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
-              </div>
-              
-              <div class="new-item__main__input__element__entry">
-                <div class="new-item__main__input__element__entry__caption">
-                  <span class="new-item__main__input__element__entry__caption__text">発送までの日数</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <%= f.collection_select :days_to_ship_id, DaysToShip.all, :id, :name, {include_blank: "---"}, class: "input-form" %>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="new-item__main__input__element">
-          <div class="new-item__main__input__element__container">
-            <div class="new-item__main__input__element__container__left">
-              販売価格(300〜9,999,999)
-            </div>
-            <div class="new-item__main__input__element__container__right">
-              <div class="new-item__main__input__element__entry flex">
-                <div class="new-item__main__input__element__entry__caption first-caption">
-                  <span class="new-item__main__input__element__entry__caption__text">価格</span>
-                  <span class="require-icon">必須</span>
-                </div>
-                <div class="new-item__main__input__element__entry__currency">
-                  <span>¥</span>
-                  <%= f.text_field :price, class: "input-form", placeholder: "例）300" %>
-                </div>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div class="new-item__bottom">
-          <%= f.submit "変更する", class: "submit-btn" %>
-          <%= link_to root_path, class: "return-btn" do %>
-            キャンセル
-          <% end %>
-        </div>
-      <% end %>
+      <%=render partial: 'items/form'%>
     </div>
   </div>
 </div>
+
+<style type='text/css'>
+.header, .footer-wrapper {
+  display: none;
+}
+</style>
+<script>
+$(".submit-btn").val("変更する");
+$(".submit-btn").attr("data-disable-with","処理中");
+$(".return-btn").text("キャンセル");
+$(".return-btn").attr("href", "/items/<%=@item.id%>");
+$("form.edit_item").prepend(`<input type="hidden" name="_method" value="patch">`);
+$('.image_preview_wrap .file_button').text('追加する画像を選択');
+</script>

@@ -1,3 +1,4 @@
+<% image_url = (@item.images.length > 0) ? @item.images[0].image : '/images/images.jpeg' %>
 <body class="item_show_wrap">
   <div class="l-single-container">
   <div class="l-content">
@@ -11,7 +12,7 @@
               <div class="owl-stage" style="left: 0px; width: 1500px;">
                 <div class="owl-item active" style="width: 300px;">
                   <div class="owl-item-inner is-higher-height">
-                    <%= image_tag @item.images[0].image, class: 'owl-lazy', size: '300x300' %>
+                    <%= image_tag image_url, class: 'owl-lazy', size: '300x300' %>
                   </div>
                 </div>
               </div>

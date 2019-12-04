@@ -1,6 +1,7 @@
 class Brand < ApplicationRecord
   has_ancestry
-  
+  has_many :items
+
   def abc_sort(brand_cat)
     children = brand_cat.children.sort{|a,b| a.name <=> b.name}
     
