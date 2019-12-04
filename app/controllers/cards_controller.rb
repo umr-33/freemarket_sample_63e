@@ -1,12 +1,14 @@
 class CardsController < ApplicationController
 
-  before_action :get_user_params, only: [:edit, :confirmation]
+
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
 
   def new
   end
   
   def create
+    
+    puts "params['payjp-token'] = #{params['payjp-token']}"
     if params['payjp-token'].blank?
       redirect_to action: "show", id: current_user.id
     else
@@ -25,7 +27,7 @@ class CardsController < ApplicationController
   end
 
   def delete
-    card = current_user.credit_cards.first
+    card = current_user.card
     if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
@@ -35,7 +37,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    card = current_user.card.first
+    card = current_user.card
     if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
@@ -45,8 +47,8 @@ class CardsController < ApplicationController
   end
 
   def confirmation
-    card = current_user.credit_cards
-    redirect_to action: "show" if card.exists?
+    card = current_user.card
+    # redirect_to action: "show"
   end
 
   private
@@ -54,10 +56,10 @@ class CardsController < ApplicationController
   def get_payjp_info
     if Rails.env == 'development'
       # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     else
       # Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
-      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
+      Payjp.api_key = Rails.application.credentials.payjp["PAYJP_PRIVATE_KEY"]
     end
   end
 end
