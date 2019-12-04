@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     member do
       get "listing"
+      get "profile"
     end
   end
   resources :categories, only: [:index],
