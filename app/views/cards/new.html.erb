@@ -7,7 +7,7 @@
   <%= form_tag('/cards', method: :post) do %>
     <div class="form__inputs">
       <p>カード番号<span class="white_in_red">必須</span></p>
-      <input type="text" value="半角数字のみ">
+      <input type="text" value="半角数字のみ" class="card_number">
       <div class="credit_cards">
         <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
         <img src="/images/credit_cards/master-card.svg" alt="" width="34" height="20">
@@ -21,7 +21,7 @@
       <p>有効期限<span class="white_in_red">必須</span></p>
       <div class="harf_width_wrap">
         <div class="select_wrap harf_width">
-          <select name ="prefecture" id="">
+          <select name ="prefecture" class="exp_month">
             <option value="">1</option>
             <option value="">2</option>
             <option value="">3</option>
@@ -41,7 +41,7 @@
       </div>
       <div class="harf_width_wrap">
         <div class="select_wrap harf_width">
-          <select name ="prefecture" id="">
+          <select name ="prefecture" class="exp_year">
             <option value="">2019</option>
             <option value="">2020</option>
             <option value="">2021</option>
@@ -60,11 +60,11 @@
       </div>
 
       <p>セキュリティーコード<span class="white_in_red">必須</span></p>
-      <input type="text" value="カード背面４桁もしくは３桁の番号">
+      <input type="text" value="カード背面４桁もしくは３桁の番号" class="cvc">
       <%# <%= f.text_field placeholder: "カード背面４桁もしくは３桁の番号" %> 
         <a class="blue_info" href="">カード裏面の番号とは？</a>
       <%# <%=link_to new5_users_path do%> %>
-      <input type="submit" value="追加する">
+      <input type="submit" value="追加する" class="token_submit">
       <%# <% f.submit '追加する', type: "button", class: "white_in_red" %> %>
       <%# <%end%> %>
     </div>
