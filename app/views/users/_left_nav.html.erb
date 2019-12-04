@@ -8,8 +8,8 @@
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
 
         <% if user.items.length > 0%>
-        <%=link_to "#{@user.id}/listing" do%>
-        <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to listing_user_path(user.id) do%>
+          <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
         <%end%>
         
@@ -29,8 +29,11 @@
       </ul>
       <h3>設定</h3>
       <ul>
-        <li><span>プロフィール</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to profile_user_path(user.id) do%>
+          <li id="user_profile"><span>プロフィール</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <% end %>
         <li><span>発送元・お届け先住所変更</span><span><i class="fas fa-chevron-right"></i></span></li>
+          
         <%=link_to payment_users_path do%>
           <li id="user_payment"><span>支払い方法</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>

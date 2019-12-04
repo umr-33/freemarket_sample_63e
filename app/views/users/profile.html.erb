@@ -1,0 +1,36 @@
+<%= render "layouts/header" %>
+<% breadcrumb :profile %>
+ <%= breadcrumbs separator: " &rsaquo; " %>
+   
+<div class="contents-wrapper">
+  <div class="contents clearfix">
+    <div class="right-content">
+      <div class="user-board">
+        <section class="user-icon">
+          <h2 class="profile-title">プロフィール</h2>
+          <div class="setting-profile-icon">
+            <figure class="profile-img">
+              <img src="/images/member_photo_noimage_thumb.png" alt="" width="60" height="60">
+            </figure>
+            <input type="text" value="" name="nickname" placeholder="例)AYA☆セール中" class="input-nickname">
+          </div>
+        </section>
+        <section class="user-board__tag">
+          <div class="setting-profile-content">
+            <textarea name="introduction" placeholder="例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" class="textarea-profile"></textarea>
+            <button type="submit" class="edit-profile-btn btn-red">変更する</button>
+          </div>  
+        </section>   
+      </div>
+    </div>
+    <%= render partial: "users/left_nav", locals: { user: @user }%>
+  </div>
+</div>   
+
+<%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_profile').addClass('active_nav')
+})
+</script>
