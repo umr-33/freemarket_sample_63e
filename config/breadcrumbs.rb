@@ -12,6 +12,11 @@ crumb :profile do
   parent :users
 end
 
+crumb :listing do
+  link "出品した商品-出品中", listing_user_path
+  parent :users
+end
+
 crumb :logout do
   link "ログアウト", logout_users_path
   parent :users

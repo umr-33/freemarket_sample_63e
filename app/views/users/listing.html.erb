@@ -1,35 +1,31 @@
 <%= render "layouts/header" %>
 
+<% breadcrumb :listing %>
+  <%= breadcrumbs separator: " &rsaquo; "%>
 <div class="contents-wrapper">
    <div class="contents clearfix">
     <div class="right-content">
-      <div class="user-board">
-        <section class="user-icon">
-          <a href="#">
-            <figure>
-              <img src="#" alt="" width="60" height="60">
-            </figure>
-
-            <div class="mypage-number">
-              <div>評価 <span class="bold">0</span></div>
-              <div>出品数 <span class="bold"><%= Item.where(user_id: "#{current_user.id}").count %></span></div>
-            </div>
-          </a>
-        </section>
-      </div>
+      
 
     <div class="listings">
-      <ul class="listing-lists">
+      <ul class="listing-items">
       出品した商品 
       </ul> 
+      <ul class="listing-tabs">
+        <li class="active"><h3>出品中</h3></li>
+        <li class=""><h3>取引中</h3></li>
+        <li class=""><h3>売却済み</h3></li>
+      </ul>
       <%current_user.items.each do |i|%>
         <ul class="listing-lists"> 
           <%=link_to item_path(i.id) do%>
-          <li class="clearfix"> 
-          <%= image_tag i.images[0].image, class: 'listing-item', size: '48x48' %>
-          <p class="item-title"><%=i.title%></p>
-          <p><i class="fas fa-chevron-right"></i></p>
-          </li>
+            <li class="clearfix"> 
+              <%= image_tag i.images[0].image, class: 'listing-item', size: '48x48' %>
+              <div class="listing-item-body">
+                <p class="item-title"><%=i.title%></p>
+              </div>
+              <p><i class="fas fa-chevron-right"></i></p>
+            </li>
           <%end%> 
         </ul> 
       <%end%> 
@@ -39,13 +35,15 @@
     
     <div class="left-nav">
       <ul>
-        <li><span>マイページ</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%= link_to user_path do%>
+          <li><span>マイページ</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <% end %>  
         <li><span>やることリスト</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>いいね！一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
 
         <%=link_to listing_user_path do%>
-        <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
+          <li id="user_listing"><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
         
         <li><span>出品した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -64,16 +62,31 @@
       </ul>
       <h3>設定</h3>
       <ul>
-        <li><span>プロフィール</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to profile_user_path do%>
+          <li id="user_profile"><span>プロフィール</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <% end %>
         <li><span>発送元・お届け先住所変更</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <li><span>支払い方法</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to payment_users_path do%>
+          <li id="user_payment"><span>支払い方法</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
         <li><span>メール/パスワード</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <li><span>本人情報</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to identification_users_path do%>
+          <li id="user_identification"><span>本人情報</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
         <li><span>電話番号の確認</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <li><span>ログアウト</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to logout_users_path do%>
+          <li id="user_logout"><span>ログアウト</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
       </ul>
     </div>
     
    </div>
   </div>
 <%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_listing').addClass('active_nav')
+})
+</script>
+
