@@ -1,5 +1,7 @@
 <% image_url = (@item.images.length > 0) ? @item.images[0].image : '/images/images.jpeg' %>
 <body class="item_show_wrap">
+
+<%=link_to "to_purchases", purchases_path %>
   <div class="l-single-container">
   <div class="l-content">
     <section class="item-box-container">
