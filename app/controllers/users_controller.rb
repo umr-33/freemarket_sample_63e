@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user,
     only: [:logout, :payment, :identification, :update, :new1, :show, :profile]
 
-  def show
+  def payment
+    card = current_user.card
+    if card
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def new1

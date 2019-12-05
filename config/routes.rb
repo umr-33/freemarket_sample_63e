@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users, controllers: {
     omniauth_callbacks:  "users/omniauth_callbacks"
   }
@@ -15,12 +17,20 @@ Rails.application.routes.draw do
       get "logout", to: "users#logout"
       get "payment"
       get "identification"
+      get "peyment"
     end
     member do
       get "listing"
       get "profile"
     end
   end
+
+  resources :cards, only: [:new, :create, :show, :destroy] do
+    collection do
+      post 'show'
+    end
+  end 
+
   resources :categories, only: [:index, :show]
   resources :brands, only: [:index, :show]
   # items_newの非同期通信で categories#index, 

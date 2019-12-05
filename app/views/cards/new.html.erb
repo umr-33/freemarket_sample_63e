@@ -1,0 +1,75 @@
+
+<div class="contents_wrapper4">
+<section>
+  <h3>支払い方法</h3>
+  <%= form_tag('/cards', method: :post, name: 'inputForm') do %>
+    <div class="form__inputs">
+      <p>カード番号<span class="white_in_red" name="card_number">必須</span></p>
+      <input type="text" placeholder="半角数字のみ" class="card_number" id="card_number" name="card_number">
+      <div class="credit_cards">
+        <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
+        <img src="/images/credit_cards/master-card.svg" alt="" width="34" height="20">
+        <img src="/images/credit_cards/saison-card.svg" alt="" width="30" height="20">
+        <img src="/images/credit_cards/jcb.svg" alt="" width="32" width="20">
+        <img src="/images/credit_cards/american_express.svg" alt="" width="21" height="20">
+        <img src="/images/credit_cards/dinersclub.svg" alt="" width="32" height="20">
+        <img src="/images/credit_cards/discover.svg" alt="" width="32" height="20">
+      </div>
+
+      <p>有効期限<span class="white_in_red">必須</span></p>
+      <div class="harf_width_wrap">
+        <div class="select_wrap harf_width">
+          <select name ="exp_month" class="exp_month" id="exp_month">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <p>月</p>
+      </div>
+      <div class="harf_width_wrap">
+        <div class="select_wrap harf_width">
+          <select name ="exp_year" class="exp_year" id="exp_year">
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+          <i class="fas fa-chevron-down"></i>
+          </select>
+        </div>
+        <p>年</p>
+      </div>
+
+      <p>セキュリティーコード<span class="white_in_red" name="cvc">必須</span></p>
+      <input type="text" placeholder="カード背面４桁もしくは３桁の番号" class="cvc" id="cvc">
+        <a class="blue_info" href="">カード裏面の番号とは？</a>
+      <div id="card_token"></div>
+      <input type="submit" value="追加する" class="token_submit button white_in_red" id="token_submit">
+    </div>
+  <% end %>
+</section>
+</div>
+<%= render partial: "users/new/ufooter" %>
+
+<style>
+.contents_wrapper4 {
+  padding: 60px 0 0;
+}
+</style>
