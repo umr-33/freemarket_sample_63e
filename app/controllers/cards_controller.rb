@@ -1,13 +1,13 @@
 class CardsController < ApplicationController
 
 
-  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+  before_action :get_payjp_info, only: [:new, :create, :delete]
 
   def new
+    render :new, layout: "users"
   end
   
   def create
-    
     puts "params[:'payjp-token'] = #{params[:'payjp-token']}"
     if params['payjp-token'].blank?
       redirect_to action: "show", id: current_user.id
@@ -19,36 +19,21 @@ class CardsController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        redirect_to payment_users_path
       else
         redirect_to action: "edit", id: current_user.id
       end
     end
   end
 
-  def delete
+  def destroy
     card = current_user.card
     if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
     end
-      redirect_to action: "confirmation", id: current_user.id
-  end
-
-  def show
-    card = current_user.card
-    if card.present?
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
-    else
-      redirect_to action: "confirmation", id: current_user.id
-    end
-  end
-
-  def confirmation
-    card = current_user.card
-    # redirect_to action: "show"
+      redirect_to payment_users_path
   end
 
   private

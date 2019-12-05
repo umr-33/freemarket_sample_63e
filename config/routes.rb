@@ -16,20 +16,21 @@ Rails.application.routes.draw do
       get "logout", to: "users#logout"
       get "payment"
       get "identification"
+      get "peyment"
     end
     member do
       get "listing"
+      get 'confirmation'
     end
   end
 
-  resources :cards, only: [:new, :create, :show] do
+  resources :cards, only: [:new, :create, :show, :destroy] do
     collection do
-      post 'delete', to: 'cards#delete'
       post 'show'
     end
-    member do
-      get 'confirmation'
-    end
+    #member do
+      #get 'confirmation'
+    #end
   end 
 
   resources :brands, only: [:index, :show]

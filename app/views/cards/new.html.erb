@@ -1,13 +1,11 @@
-<header class="user_new user_new4">
-  <%=render partial: "users/new/uheader"%>
-</header>
+
 <div class="contents_wrapper4">
 <section>
   <h3>支払い方法</h3>
   <%= form_tag('/cards', method: :post, name: 'inputForm') do %>
     <div class="form__inputs">
       <p>カード番号<span class="white_in_red" name="card_number">必須</span></p>
-      <input type="text" value="半角数字のみ" class="card_number" id="card_number" name="card_number">
+      <input type="text" placeholder="半角数字のみ" class="card_number" id="card_number" name="card_number">
       <div class="credit_cards">
         <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
         <img src="/images/credit_cards/master-card.svg" alt="" width="34" height="20">
@@ -60,16 +58,18 @@
       </div>
 
       <p>セキュリティーコード<span class="white_in_red" name="cvc">必須</span></p>
-      <input type="text" value="カード背面４桁もしくは３桁の番号" class="cvc" id="cvc">
-      <%# <%= f.text_field placeholder: "カード背面４桁もしくは３桁の番号" %> 
+      <input type="text" placeholder="カード背面４桁もしくは３桁の番号" class="cvc" id="cvc">
         <a class="blue_info" href="">カード裏面の番号とは？</a>
-      <%# <%=link_to new5_users_path do%> %>
       <div id="card_token"></div>
-      <input type="submit" value="追加する" class="token_submit" id="token_submit">
-      <%# <% f.submit '追加する', type: "button", class: "white_in_red" %> %>
-      <%# <%end%> %>
+      <input type="submit" value="追加する" class="token_submit button white_in_red" id="token_submit">
     </div>
   <% end %>
 </section>
 </div>
 <%= render partial: "users/new/ufooter" %>
+
+<style>
+.contents_wrapper4 {
+  padding: 60px 0 0;
+}
+</style>

@@ -11,25 +11,27 @@
           <h2>支払い方法<h2>
           <section>
             <h4>クレジットカード一覧<h4>
-            <%if 1 == 1%>
-              <div class="creditcard_list">
-                <button type="button">削除する</button>
-                <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
-                <p>*************4368</p>
-                <p>10/24</p>
-              </div>
+            <%if card = current_user.card%>
               
               <div class="creditcard_list">
-                <button type="button">削除する</button>
+                  <input type="hidden", name="card_id", value="<%=card.id%>" >
+                  <%=link_to "/cards/#{card.id}", method: :delete do%>
+                    <button type="button">削除する</button>
+                  <%end%>
                 <img src="/images/credit_cards/visa.svg" alt="" width="49" height="20">
-                <p>*************4368</p>
-                <p>10/24</p>
+                <p><%= "**** **** **** " + @default_card_information.last4%></p>
+                <% exp_month = @default_card_information.exp_month.to_s %>
+                <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
+                <p><%= exp_month + " / " + exp_year%></p>
               </div>
+              
             <%else%>
-              <div class="add_card_btn" >
-              <i class="far fa-credit-card"></i>
+              <%=link_to new_card_path do%>
+                <div class="add_card_btn" >
+                <i class="far fa-credit-card"></i>
               クレジットカードを追加する
-              </div>
+                </div>
+              <%end%>
             <%end%>
           </section>
           <div class="right_blue_text">
