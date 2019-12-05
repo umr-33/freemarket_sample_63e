@@ -12,6 +12,11 @@ crumb :users do
   parent :root
 end
 
+crumb :listing do		
+  link "出品した商品-出品中", listing_user_path
+  parent :users
+end
+
 crumb :profile do
   link "プロフィール", profile_user_path
   parent :users
