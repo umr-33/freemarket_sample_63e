@@ -21,7 +21,7 @@ class CardsController < ApplicationController
       if @card.save
         redirect_to payment_users_path
       else
-        redirect_to action: "edit", id: current_user.id
+        render :new, layout: "users"
       end
     end
   end
