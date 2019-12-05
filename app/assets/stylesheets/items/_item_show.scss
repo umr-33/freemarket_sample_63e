@@ -276,6 +276,7 @@ body.item_show_wrap {
 .item-description-inner {
   white-space: pre-wrap;
   text-align: left;
+  word-wrap: break-word;
 }
 .item-button-container {
   margin: 16px 0 0;

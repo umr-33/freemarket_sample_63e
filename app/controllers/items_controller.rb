@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   def index
-    @items = Item.limit(10)
+    @redy_items = Item.where("category_id >= 16 AND category_id < 213")
+      .order("id DESC").limit(10)
+    @mens_items = Item.limit(10)
+      .where("category_id >= 213 AND category_id < 358")
+      .order("id DESC").limit(10)
   end
 
   def new

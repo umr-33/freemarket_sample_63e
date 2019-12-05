@@ -1,7 +1,7 @@
 
 <div class="brand_index_wrap" style="background-color: rgb(239, 239, 239);">
   <div class="brands_wrapper">
-    <section>
+    <section class="brand_show_wrapper">
       <h3><%=@category.parent.parent.name%>/<%=@category.parent.name%>/
         <br><%=@category.name%>の商品一覧
       </h3>
@@ -24,7 +24,8 @@
 }
 li.card-item {
   margin: 10px 10px 20px 0;
-  border: solid 1px #333;
+  border: solid 1px #cccccc;
+  background-color: white;
 }
 li.card-item img{
   width: 122px;

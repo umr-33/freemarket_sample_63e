@@ -111,7 +111,7 @@ h2 {
         font-size: 14px;
         padding: 5px 16px 5px 5px;
         color:rgb(0, 149, 238);
-
+        margin: 0 45px 0 0;
     }
   }
 }
@@ -131,12 +131,14 @@ h2 {
     @media (min-width: 1068px) {width: calc(188px - 24px);}
     height: 40px;
     background-color:rgb(255, 255, 255);
-    overflow-wrap: normal;
+
     p {
       display: inline-block;
+      width: 100%;
       height: 40px;
       line-height: 20px;
       overflow: hidden;
+      word-wrap: break-word;
     }
   }
   li.card-item {

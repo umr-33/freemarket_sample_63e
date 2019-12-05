@@ -21,12 +21,15 @@
     <div class="listings">
       <ul class="listing-lists">
       出品した商品 
-      </ul> 
+      </ul>
+
       <%current_user.items.each do |i|%>
         <ul class="listing-lists"> 
           <%=link_to item_path(i.id) do%>
           <li class="clearfix"> 
-          <%= image_tag i.images[0].image, class: 'listing-item', size: '48x48' %>
+
+          <% image_url = (i.images.size > 0) ? i.images[0].image : '/images/images.jpeg' %>
+          <%= image_tag image_url, class: 'listing-item', size: '48x48' %>
           <p class="item-title"><%=i.title%></p>
           <p><i class="fas fa-chevron-right"></i></p>
           </li>

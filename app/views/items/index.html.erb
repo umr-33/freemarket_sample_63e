@@ -1,4 +1,9 @@
-
+<style>
+#default_header {
+  display: none;
+}
+</style>
+<%= render "layouts/header_with_category" %>
 <div class="items_index_wrapper">
 <div class="top-content-image">
   <div class="top-content-image-picture">
@@ -30,25 +35,19 @@
     </div>
     <section class="card-section">
       <ul class="card-list">
-        <%= render @items, partial: 'items/items_index'%>
+        <%= render @items = @redy_items, partial: 'items/items_index'%>
      </ul>
     </section>
 </div>
     <div clas="women-group">
     <div class="women-group__title">
-      <h3 class="group-new">レディース新着アイテム</h3>
+      <h3 class="group-new">メンズ新着アイテム</h3>
       <a href="#" class="details">もっと見る ></a>
     </div>
     <section class="card-section">
       <ul class="card-list">
-        <% 0.upto(9) do |t|%>
-          <li class="card-item">
-            <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-              <h3 class="A">¥1,200</h3>
-            <p class="card-text">ワコールセーター</p>
-          </li>
-        <%end%>
-      </ul>
+        <%= render @items = @mens_items, partial: 'items/items_index'%>
+     </ul>
     </section>
   </div>
   </div>
@@ -56,6 +55,7 @@
 </div>
 
 
+  <% if user_signed_in? && current_user.nickname %>
     <div class="camera-wrapper">
       <%=link_to new_item_path do%>
         <div class="camera-icon">
@@ -66,6 +66,7 @@
         出品
       </div>
     </div>
+  <%end%>
 
 <style>
 .camera-wrapper {

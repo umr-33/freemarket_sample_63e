@@ -83,7 +83,7 @@
                   <a href="https://www.mercari.com/jp/category/371/">
                     <div class="item-detail-table-sub-sub-category">
                       <i class="fa fa-angle-right"></i> 
-                      <%= link_to @item.category.name %>
+                      <%= link_to @item.category.name, category_path(@item.category.id) %>
                     </div>
                   </a>
                 </td>
