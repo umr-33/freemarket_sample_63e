@@ -1,4 +1,9 @@
-
+<style>
+#default_header {
+  display: none;
+}
+</style>
+<%= render "layouts/header_with_category" %>
 <div class="items_index_wrapper">
 <div class="top-content-image">
   <div class="top-content-image-picture">
@@ -30,27 +35,67 @@
     </div>
     <section class="card-section">
       <ul class="card-list">
-        <%= render @items, partial: 'items/items_index'%>
+        <%= render @items = @redy_items, partial: 'items/items_index'%>
      </ul>
-  </section>
+    </section>
 </div>
     <div clas="women-group">
     <div class="women-group__title">
-      <h3 class="group-new">レディース新着アイテム</h3>
+      <h3 class="group-new">メンズ新着アイテム</h3>
       <a href="#" class="details">もっと見る ></a>
     </div>
     <section class="card-section">
       <ul class="card-list">
-        <% 0.upto(9) do |t|%>
-          <li class="card-item">
-            <%= image_tag 'images.jpeg', class: 'hoge', size: '188x188' %>
-              <h3 class="A">¥1,200</h3>
-            <p class="card-text">ワコールセーター</p>
-          </li>
-        <%end%>
-      </ul>
+        <%= render @items = @mens_items, partial: 'items/items_index'%>
+     </ul>
     </section>
   </div>
   </div>
 </div>
 </div>
+
+
+  <% if user_signed_in? && current_user.nickname %>
+    <div class="camera-wrapper">
+      <%=link_to new_item_path do%>
+        <div class="camera-icon">
+            <i class="fas fa-camera fa-4x"></i>
+        </div>
+      <%end%>
+      <div class="exhibit-font">
+        出品
+      </div>
+    </div>
+  <%end%>
+
+<style>
+.camera-wrapper {
+  background-color: red;
+  border-radius:50%;
+  height:160px;
+  width:160px;
+  position:relative;
+  position:absolute;
+  bottom:30px;
+  right:20px;
+  position:fixed;
+  z-index: 2;
+}
+
+.camera-icon{
+  color:white;
+  width:64px;
+  height:64px;
+  position: absolute;
+  top:60px;
+  left:48px;
+}
+
+.exhibit-font{
+  font-size:22px;
+  color:white;
+  position: absolute;
+  top:25px;
+  left:57px;
+}
+</style>

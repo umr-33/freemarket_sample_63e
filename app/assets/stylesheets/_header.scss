@@ -85,7 +85,12 @@
       display:flex;
       .item-list{
         display:flex;
-        margin:0px 10px;
+
+        margin: 0 10px;
+        @media (max-width: 1068px) {
+          margin:0px 5px;
+        }
+
         .item-list-font{
           font-weight:bold;
           font-size:13px;
@@ -131,6 +136,9 @@
     .my-list {
       display:flex;
       margin:0px 10px;
+      @media (max-width: 1068px) {
+        margin:0px 5px;
+      }
       .my-list-font {
         font-size:13px;
         padding:2px;
@@ -182,10 +190,66 @@
       width: calc(100% - 10px);
       margin: 0;
     }
+  }
+
+  @media (max-width: 1068px) {
     .my-lists {
       .good-list {
         display: none;
       }
+    }
+  }
+
+  .content_wrapper {
+    position: absolute;
+    z-index: 5;
+    top: 90px;
+    left: 30px;
+    display: flex;
+    width: fit-content;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    ul.top_cat li {
+      height: 45px;
+      line-height: 45px;
+      padding: 0 10px 0;
+    }
+
+    ul {
+      background-color: white;
+      min-width: 200px;
+      min-height: 500px;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    }
+
+    ul.bottom_cat {
+      width: 300px;
+      li span {
+        float: right;
+
+      }
+    }
+    ul.middle_cat li, ul.bottom_cat li {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 10px 0;
+    }
+
+    ul.top_cat li.active_li {
+      background-color: red;
+      a {
+        color: white;
+      }
+    }
+    ul.middle_cat li.active_li, ul.bottom_cat li:hover {
+      background-color: rgb(228, 225, 225);
+    }
+    .hidden {
+      display: none;
     }
   }
 }

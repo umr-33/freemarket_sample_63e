@@ -46,9 +46,15 @@
 </div>
 
 <%else%><!--最下層のブランドの場合-->
-<section>
+<section class="brand_show_wrapper">
   <h3><%=@brand_cat.name%>の商品一覧</h3>
   <div class="brand_categories">
+        <section class="card-section">
+          <ul class="card-list">
+            <%= render @brand_cat.items, partial: 'items/items_index'%>
+            
+          </ul>
+        </section>
   <%@brand_cats.each do |bc|%>
     <%if bc.id == @brand_cat.id%>
       <div class="brand_cat white_in_red">
@@ -67,3 +73,37 @@
 <%end%>
 </div>
 </div>
+
+
+<style>
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+li.card-item {
+  margin: 10px 10px 20px 0;
+  border: solid 1px #cccccc;
+  background-color: white;
+}
+li.card-item img{
+  width: 122px;
+  height: 122px;
+}
+
+  .card-text {
+    font-size: 14px;
+    margin: -6px 0 0;
+    padding: 12px;
+    width: calc(122px - 24px);
+    height: 40px;
+    background-color:rgb(255, 255, 255);
+  }
+    p {
+      display: inline-block;
+      width: 100%;
+      height: 40px;
+      line-height: 20px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+</style>

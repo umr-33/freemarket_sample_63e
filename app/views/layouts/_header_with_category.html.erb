@@ -1,4 +1,4 @@
-<div class="header" id="default_header">
+<div class="header">
   <div class="header-contents">
       <div class="title">
         <div class="icon">
@@ -91,4 +91,39 @@
       </div>
     </div>
 
+  <div class="content_wrapper" id="search_with_category">
+    <ul class="top_cat hidden">
+      <% @root_cat = Category.find(1) %>
+      <% @root_cat.children.each do |topcat| %>
+        <li data-cat-id="<%=topcat.id%>">
+          <a href=""><%= topcat.name %></a>
+        </li>
+      <%end%>
+    </ul>
+
+    <% @root_cat.children.each do |topcat| %>
+      <ul class="middle_cat hidden" id="<%="cat#{topcat.id}"%>">
+        <%topcat.children.each do |midcat|%>
+        <li data-cat-id="<%=midcat.id%>">
+          <a href=""><%=midcat.name%></a>
+        </li>
+        <%end%>
+      </ul>
+      
+        <%topcat.children.each do |midcat|%>
+        <%if midcat.children.length > 0%>
+          <ul class="bottom_cat hidden" id="<%="cat#{midcat.id}"%>">
+            <%midcat.children.each do |botcat|%>
+            <li>
+              <a href="/categories/<%=botcat.id%>">
+                <%= botcat.name%>
+              </a>
+              <span><%=botcat.items_size%><span>
+            </li>
+            <%end%>
+          </ul>
+        <%end%>
+        <%end%>
+    <%end%>
+  </div>
 </div>

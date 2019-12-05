@@ -1,11 +1,13 @@
 
-<% image_url = (item.images[0]) ? item.images[0].image : '/images/images.jpeg' %>
+<% image_url = (item.images.length > 0) ? item.images[0].image : '/images/images.jpeg' %>
 <li class="card-item">
   <%= link_to "/items/#{item.id}", class: "card-item", method: :get do %>
     <%= image_tag image_url, class: 'hoge', size: '188x188' %>
       <h3 class="A"><%="¥#{item.price}"%></h3>
-    <figcaption class="card-text">
+    <div class="card-text">
+      <p>
       <%= item.description %>
-    </figcaption>
+      </p>
+    </div>
   <% end %>
 </li>

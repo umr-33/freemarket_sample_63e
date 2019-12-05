@@ -1,7 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   def index
-    @items = Item.limit(10)
+    @redy_items = Item.where("category_id >= 16 AND category_id < 213")
+      .order("id DESC").limit(10)
+    @mens_items = Item.limit(10)
+      .where("category_id >= 213 AND category_id < 358")
+      .order("id DESC").limit(10)
   end
 
   def new
@@ -10,11 +14,16 @@ class ItemsController < ApplicationController
 
   def create
     ActiveRecord::Base.transaction do
-      brand_name = params.permit(:brand)[:brand]
-      brand_id = Brand.find_by(name: brand_name).id
-      @item = Item.create(item_params.merge(brand_id: brand_id))
-      image_params[:image].each do |img|
-        @item.images.create(image: img)
+      @item = Item.new(item_params)
+      if @item.save
+        @item.category.update(items_size: @item.category.items.size)
+        if params[:item_images]
+          image_params[:image].each do |img|
+            @item.images.create(image: img)
+          end
+        end
+      else
+        render :new
       end
     end
   end
@@ -24,7 +33,13 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      @item.category.update(items_size: @item.category.items.size)
+      if params[:item_images]
+        image_params[:image].each do |img|
+          @item.images.create(image: img)
+        end
+      end
+      redirect_to item_path(@item.id)
     else
       render :edit
     end
@@ -32,12 +47,12 @@ class ItemsController < ApplicationController
 
   def  destroy
     if @item.destroy
-        redirect_to root_path
+      @item.category.update(items_size: @item.category.items.size)
+      redirect_to root_path
     else
-        render :edit
+      render :edit
     end
-    
-end
+  end
 
   private
   def item_params
