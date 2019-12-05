@@ -16,4 +16,6 @@
 # Ignore Byebug command history file.
 .byebug_history
 config/secrets.yml
+/.bash_profile
+/.env
 public/uploads/image/*

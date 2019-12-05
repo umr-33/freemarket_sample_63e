@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
 
+  get 'purchase/index'
+
+  get 'purchase/done'
+
   devise_for :users, controllers: {
     omniauth_callbacks:  "users/omniauth_callbacks"
   }
@@ -17,7 +21,6 @@ Rails.application.routes.draw do
       get "logout", to: "users#logout"
       get "payment"
       get "identification"
-      get "peyment"
     end
     member do
       get "listing"
@@ -30,6 +33,13 @@ Rails.application.routes.draw do
       post 'show'
     end
   end 
+
+  resources :purchases, only: [:index] do
+    collection do
+      post 'pay', to: 'purchases#pay'
+      get 'done', to: 'purchases#done'
+    end
+  end
 
   resources :categories, only: [:index, :show]
   resources :brands, only: [:index, :show]
