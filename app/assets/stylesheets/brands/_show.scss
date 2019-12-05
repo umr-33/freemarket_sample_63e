@@ -1,0 +1,48 @@
+section.brand_show_wrapper {
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+li.card-item {
+  margin: 10px 10px 20px 0;
+  border: solid 1px #cccccc;
+  background-color: white;
+  position: relative;
+}
+li.card-item img{
+  width: 122px;
+  height: 122px;
+}
+
+  .card-text {
+    font-size: 14px;
+    margin: -6px 0 0;
+    padding: 12px;
+    width: calc(122px - 24px);
+    height: 40px;
+    background-color:rgb(255, 255, 255);
+  }
+    p {
+      display: inline-block;
+      width: 100%;
+      height: 40px;
+      line-height: 20px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+
+    .A {
+      position:absolute;
+      bottom: 47px;
+      left: 0px;
+      font-size: 20px;
+      background: rgba(0,0,0,.4);
+      color: #fff;
+      border-radius: 0 14px 14px 0;
+      font-size: 12px;
+      height: 14px;
+      letter-spacing: .02em;
+      padding: 0 12px;
+      align-items: center;
+    }
+}

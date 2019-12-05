@@ -12,24 +12,34 @@
 
             <div class="mypage-number">
               <div>評価 <span class="bold">0</span></div>
-              <div>出品数 <span class="bold">0</span></div>
+              <div>出品数 <span class="bold"><%= Item.where(user_id: "#{current_user.id}").count %></span></div>
             </div>
           </a>
         </section>
       </div>
 
-    <div>
-        <%current_user.items.each do |i|%>
-        <%=link_to item_path(i.id) do%>
-        <%=i.title%>
-        <%= image_tag i.images[0].image, class: 'hoge', size: '188x188' %>
+    <div class="listings">
+      <ul class="listing-lists">
+      出品した商品 
+      </ul>
 
-        <%end%>
-        <%end%>
-    </div>
+      <%current_user.items.each do |i|%>
+        <ul class="listing-lists"> 
+          <%=link_to item_path(i.id) do%>
+          <li class="clearfix"> 
 
-      
+          <% image_url = (i.images.size > 0) ? i.images[0].image : '/images/images.jpeg' %>
+          <%= image_tag image_url, class: 'listing-item', size: '48x48' %>
+          <p class="item-title"><%=i.title%></p>
+          <p><i class="fas fa-chevron-right"></i></p>
+          </li>
+          <%end%> 
+        </ul> 
+      <%end%> 
     </div>
+    </div>
+    
+    
     <div class="left-nav">
       <ul>
         <li><span>マイページ</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -37,7 +47,7 @@
         <li><span>いいね！一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
 
-        <%=link_to "users/listing" do%>
+        <%=link_to listing_user_path do%>
         <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
         
@@ -66,6 +76,7 @@
         <li><span>ログアウト</span><span><i class="fas fa-chevron-right"></i></span></li>
       </ul>
     </div>
+    
    </div>
   </div>
 <%= render "layouts/footer" %>

@@ -1,13 +1,14 @@
 @import "./reset.scss";
 @import "./header.scss";
 @import "./footer.scss";
-@import "./items_index.scss";
-@import "./user_show.scss";
 
-@import "./item_show.scss";
+@import "./items/item_show.scss";
+@import "./items/items_index.scss";
+@import "./items/new";
  
 @import "./users/uheader.scss";
 @import "./users/ufooter.scss";
+@import "./users/user_show.scss";
 @import "./users/0signin.scss";
 @import "./users/1new_user1.scss";
 @import "./users/2sms_authentication.scss";
@@ -17,5 +18,9 @@
 @import "./users/login.scss";
 @import "./users/payment.scss";
 @import "./users/identification.scss";
+@import "./users/profile.scss";
+@import "./users/listing.scss";
 @import "./brands/index.scss";
-@import "./items/new" 
+@import "./brands/show.scss";
+@import "./items/new"; 
+

@@ -1,0 +1,255 @@
+.header{
+  height:90px;
+  width:100%;
+  background-color: white;
+  position: relative;
+
+  .header-contents{
+    margin:0 8%;
+    padding-bottom: 5px;
+  }
+  .header-sub {
+    margin: 20px 0 0;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-top: #d3d3d3 1px solid;
+    display: flex;
+    li span{
+      padding: 0 10px 0 0;
+    }
+    li:last-child span {
+      font-weight: bold;
+    }
+  }
+  .title{
+    display:flex;
+    padding: 0 0 10px;
+
+    .merukari-icon{
+      height:36px;
+      width:134px;
+      margin:10px 0px;
+    }
+  }
+
+  i {
+    padding: 0 5px 0 0;
+  }
+  i[class="fas fa-search"] {
+    color: #333;
+  }
+  .item-lists {
+    .category-icon i, .brand-icon i{
+      color: red;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  .search-form{
+    margin:10px 20px 5px 40px;
+    justify-content: space-between;
+    width:88%;
+    height:40px;
+    font-size:16px;
+    line-height:1.4rem;
+    position:relative;
+
+    .search-form-space{
+      background-color: rgb(245, 245, 245);
+      border: 1px solid rgb(204, 204, 204);
+      width:100%;
+      height:40px;
+      font-size:16px;
+      line-height:1.4rem;
+      border-radius: 4px;
+      padding:0 0 0 10px;
+    }
+    .search-icon{
+      width:30px;
+      position:absolute;
+      top:9px;
+      right:10px;
+    }
+  }
+
+
+
+  .title-lists{
+    display:flex;
+    justify-content: space-between;
+
+    .item-lists{
+      display:flex;
+      .item-list{
+        display:flex;
+
+        margin: 0 10px;
+        @media (max-width: 1068px) {
+          margin:0px 5px;
+        }
+
+        .item-list-font{
+          font-weight:bold;
+          font-size:13px;
+          padding:2px;
+        }
+      }
+    }
+  }
+  .my-lists{
+    display:flex;
+    float:right;
+  }
+
+  .no-signin {
+    display: flex;
+    a {
+      text-decoration: none;
+    }
+    div.button {
+      height: 12px;
+      padding: 10px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    div.button.new {
+      color: white;
+      background-color: rgb(253, 55, 55);
+      margin: 0 10px 0 0;
+    }
+    div.button.login {
+      color: skyblue;
+      border: skyblue solid 1px;
+      margin: 0 10px 0 0;
+    }
+    div.button.login:hover {
+      background-color: skyblue;
+      color: white;
+      transition-duration: 500ms;
+    }
+  }
+
+  .my-lists{
+    .my-list {
+      display:flex;
+      margin:0px 10px;
+      @media (max-width: 1068px) {
+        margin:0px 5px;
+      }
+      .my-list-font {
+        font-size:13px;
+        padding:2px;
+      }
+    }
+    i {
+      color: lightgray;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover {
+      color: lightblue;
+      i {
+        color: lightblue;
+      }
+    }
+    div:hover{
+      color: lightblue;
+      i {
+        color: lightblue;
+      }
+    }
+  }
+
+.breadcrumbs {
+  border-top: 1px solid #f5f5f5;
+  height: 40px;
+  line-height: 40px;
+  
+  
+  a {
+    color: #333333;
+  }
+  span {
+    font-weight: bold;
+  }
+}
+  @media (max-width: 768px) {
+    height: 142px;
+    .title {
+      display: block;
+    }
+    .header-contents {
+      margin: 0 10px;
+    }
+    .search-form {
+      width: calc(100% - 10px);
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 1068px) {
+    .my-lists {
+      .good-list {
+        display: none;
+      }
+    }
+  }
+
+  .content_wrapper {
+    position: absolute;
+    z-index: 5;
+    top: 90px;
+    left: 30px;
+    display: flex;
+    width: fit-content;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    ul.top_cat li {
+      height: 45px;
+      line-height: 45px;
+      padding: 0 10px 0;
+    }
+
+    ul {
+      background-color: white;
+      min-width: 200px;
+      min-height: 500px;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    }
+
+    ul.bottom_cat {
+      width: 300px;
+      li span {
+        float: right;
+
+      }
+    }
+    ul.middle_cat li, ul.bottom_cat li {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 10px 0;
+    }
+
+    ul.top_cat li.active_li {
+      background-color: red;
+      a {
+        color: white;
+      }
+    }
+    ul.middle_cat li.active_li, ul.bottom_cat li:hover {
+      background-color: rgb(228, 225, 225);
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}

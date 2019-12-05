@@ -1,0 +1,17 @@
+.listings {
+  width: calc(100% - 40px);  
+  ul.listing-lists {
+    padding: 20px; 
+    
+    .listing-item {
+      float: left;  
+      
+    }
+    p.item-title {
+      font-size: 14px;  
+    }
+    i {
+      float: right;  
+    }
+  }
+}

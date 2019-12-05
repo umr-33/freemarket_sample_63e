@@ -1,198 +1,199 @@
+<% image_url = (@item.images.length > 0) ? @item.images[0].image : '/images/images.jpeg' %>
 <body class="item_show_wrap">
-  <section class="item-box-container l-single-container">
-    <h1 class="item-name"><%=@item.title%></h1>
-    <p class="item-wording">『【美品】supreme ビーニー 迷彩 ニット帽』は、470回の取引実績を持つ<a href="https://www.mercari.com/jp/u/202374949/">キャロット</a>さんから出品されました。<a href="https://www.mercari.com/jp/brand/1620/">シュプリーム</a>（<a href="https://www.mercari.com/jp/category/371/">ニットキャップ/ビーニー/メンズ</a>）の商品で、神奈川県から2~3日で発送されます。</p>
-    <div class="item-main-content">
-      <div class="item-photo">
-        <div class="owl-carousel owl-loaded owl-drag">
-          <div class="owl-stage-outer">
-            <div class="owl-stage" style="left: 0px; width: 1500px;">
-              <div class="owl-item active" style="width: 300px;">
-                <div class="owl-item-inner is-higher-height">
-                  <img alt="【美品】supreme ビーニー 迷彩 ニット帽" class="owl-lazy" src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" width="300" height="300">
+  <div class="l-single-container">
+  <div class="l-content">
+    <section class="item-box-container">
+      <h1 class="item-name"><%=@item.title%></h1>
+    
+      <div class="item-main-content">
+        <div class="item-photo">
+          <div class="owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+              <div class="owl-stage" style="left: 0px; width: 1500px;">
+                <div class="owl-item active" style="width: 300px;">
+                  <div class="owl-item-inner is-higher-height" id="display_img">
+                    <% @item.images.each do |i| %>
+                      <%= image_tag i.image, id: "image#{i.id}",
+                     class: 'owl-lazy img_displayed hidden', size: '300x300' %>
+                    <%end%>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="owl-nav disabled">
+              <div class="owl-prev">prev</div>
+              <div class="owl-next">next</div>
+            </div>
+            <div class="owl-dots">
+             <!--imageを2枚以上投稿すると表示される-->
+              <div class="owl-dot active"><span></span>
+                <div class="owl-dot-inner" id="select_img">
+                  <% @item.images.each do |i|%>
+                    <%= image_tag i.image, class: "is-higher-height", size: "60x60", "data-image-id": i.id %>
+                  <%end%>
+                <!--<img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">-->
+                </div>
+              </div>
+            </div>
+            <script>
+              $($("#display_img img")[0]).removeClass("hidden");
+              $("#select_img img").on("click", function () {
+                let imageId= $(this).data("image-id");
+                
+                $("#display_img img").addClass("hidden");
+                $(`#display_img #image${imageId}`).removeClass("hidden");
+              })
+            </script>
           </div>
+          <table class="item-detail-table">
+            <tbody>
+              <tr>
+                <th>出品者</th>
+                <td>
+                  <%= link_to "#{@item.user.nickname}", "#" %>
+                  <div>
+                    <div class="item-user-ratings-good">
+                      <i class="fas fa-laugh"></i>
+                      <span>471</span>
+                    </div>
+                    <div class="item-user-ratings">
+                      <i class="fas fa-meh"></i>
+                      <span>7</span>
+                    </div>
+                    <div class="item-user-ratings">
+                      <i class="fas fa-frown"></i>
+                      <span>1</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>カテゴリー</th>
+                <td>              
+                  <div>
+                    <%= link_to @item.category.parent.parent.name %>
+                  </div>
+                  <a href="https://www.mercari.com/jp/category/36/">
+                    <div class="item-detail-table-sub-category">
+                      <i class="fa fa-angle-right"></i> 
+                      <%= link_to @item.category.parent.name %>
+                    </div>
+                  </a>
+                  <a href="https://www.mercari.com/jp/category/371/">
+                    <div class="item-detail-table-sub-sub-category">
+                      <i class="fa fa-angle-right"></i> 
+                      <%= link_to @item.category.name, category_path(@item.category.id) %>
+                    </div>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <th>ブランド</th>
+                <td>          
+                  <div>
+                    <%= link_to @item.brand.name, "/brands/#{@item.brand.id}" %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>商品の状態</th>
+                <td><%= @item.item_status.name %></td>
+              </tr>
+              <tr>
+                <th>配送料の負担</th>
+                <td><%= @item.shipping_charger.name %></td>
+              </tr>
+              <tr>
+                <th>配送の方法</th>
+                <td><%= @item.shipping_method.name %></td>
+              </tr>
+              <tr>
+                <th>配送元地域</th>
+                <td>
+                  <%= link_to "#{@item.prefecture.name}", "#" %>
+                </td>
+              </tr>
+              <tr>
+                <th>発送日の目安</th>
+                <td><%= @item.days_to_ship.name %></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="owl-nav disabled">
-          <div class="owl-prev">prev</div>
-          <div class="owl-next">next</div>
-        </div>
-        <div class="owl-dots">
-          <div class="owl-dot active"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_1.jpg?1574782868" class="is-higher-height" width="60" height="60">
-            </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_2.jpg?1574782868" class="is-higher-height" width="60" height="60">
-            </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_3.jpg?1574782868" class="is-higher-height" width="60" height="60">
-            </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_4.jpg?1574782868" class="is-higher-width" width="60" height="60">
-            </div>
-          </div>
-          <div class="owl-dot"><span></span>
-            <div class="owl-dot-inner">
-              <img src="https://static.mercdn.net/item/detail/orig/photos/m72019720622_5.jpg?1574782868" class="is-higher-width" width="60" height="60">
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <section class="visible-sp">
-        <div class="item-btn-float-area">
-          <a class="item-buy-btn" href="https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ftransaction%2Fbuy%2Fm72019720622%2F">
+        <div class="item-price-box">
+          <span class="item-price bold"><%= "¥#{@item.price}" %></span>
+          <span class="item-tax">（税込）</span>
+          <% if @item.shipping_charger.id == 1 %>
+            <span class="item-shipping-fee">送料込み</span>
+          <% else %>
+            <span class="item-shipping-fee">着払い</span>
+          <% end %>
+        </div>
+        <% if user_signed_in? && current_user.id != @item.user_id %>
+          <a class="item-buy-btn" href="">
             購入画面に進む
           </a>
+        <%end%>         
+        <div class="item-description">
+          <p class="item-description-inner">
+            <%= @item.description %>
+          </p>
+          <%= link_to "##{@item.brand.name}", brand_path(@item.brand.id) %>
+          <%= link_to "##{@item.category.name}" %>
         </div>
+        <% if user_signed_in? && current_user.id != @item.user_id %>
+          <div class="item-button-container">
+            <div class="item-button-left">
+              <a href="" class="item-button item-button-like">
+                <i class="far fa-heart"></i>
+                <span>いいね!</span>
+                <span data-num="like">1</span>
+              </a>
+              <a href="" class="item-button item-button-report clearfix">
+                <i class="far fa-flag"></i>
+                <span>不適切な商品の報告</span>
+              </a>
+            </div>
+            <div class="item-button-right">
+              <a href="" target="_blank">
+                <i class="fas fa-lock"></i>
+                <span>あんしん・あんぜんへの取り組み</span>
+              </a>
+            </div>
+           </div>
+        <% end %>
       </section>
-      <table class="item-detail-table">
-        <tbody>
-          <tr>
-            <th>出品者</th>
-            <td>
-              <a href="https://www.mercari.com/jp/u/202374949/">キャロット</a>
-              <div>
-                <div class="item-user-ratings-good">
-                  <i class="fas fa-laugh"></i>
-                  <span>471</span>
-                </div>
-              <div class="item-user-ratings">
-                  <i class="fas fa-meh"></i>
-                  <span>7</span>
-                </div>
-              <div class="item-user-ratings">
-                <i class="fas fa-frown"></i>
-                  <span>1</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>カテゴリー</th>
-            <td>
-              <a href="https://www.mercari.com/jp/category/2/">
-                <div>メンズ
-                </div>
-              </a>
-              <a href="https://www.mercari.com/jp/category/36/">
-                <div class="item-detail-table-sub-category">
-                  <i class="fa fa-angle-right"></i> 
-                  帽子
-                </div>
-              </a>
-              <a href="https://www.mercari.com/jp/category/371/">
-                <div class="item-detail-table-sub-sub-category">
-                  <i class="fa fa-angle-right"></i> 
-                  ニットキャップ/ビーニー
-                </div>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <th>ブランド</th>
-            <td>
-              <a href="https://www.mercari.com/jp/brand/1620/">
-                <div>
-                シュプリーム
-                </div>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <th>商品の状態</th>
-            <td>目立った傷や汚れなし</td>
-          </tr>
-          <tr>
-            <th>配送料の負担</th>
-            <td>送料込み(出品者負担)</td>
-          </tr>
-          <tr>
-            <th>配送の方法</th>
-            <td>ゆうゆうメルカリ便</td>
-          </tr>
-          <tr>
-            <th>配送元地域</th>
-            <td>
-              <a href="https://www.mercari.com/jp/area/14/">神奈川県</a>
-            </td>
-          </tr>
-          <tr>
-            <th>発送日の目安</th>
-            <td>2~3日で発送</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="item-price-box">
-      <span class="item-price bold">¥5,900</span>
-      <span class="item-tax"> (税込)</span>
-      <span class="item-shipping-fee">送料込み</span>
-    </div>
-
-    <a class="item-buy-btn" href="">
-      購入画面に進む
-    </a>
-    <p class="shipping-not-allowed-message has-error-text text-center">
-      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-    </p>
-    <a class=" item-action-text" data-toggle="open-app" data-url-scheme="mercari://" data-action="item/openDetail" data-key="id=m72019720622" data-play-id="com.kouzoh.mercari" data-adjust-url="http://app.adjust.io/xio2ii?campaign=iOS&amp;adgroup=items.buy_button1">
-      アプリで購入
-    </a>
-              
-    <div class="item-description">
-      <p class="item-description-inner">supremeのオンラインサイトにて購入しました。
-正規品です。
-数回着用しました。目立つ汚れ等や使用感はなく美品です。
-
-ご心配な方は私が過去のsupreme商品の内容をご参照ください。すべて納品書がある旨を画像と共に記載しています。
-
-
-#supreme
-#ビーニー
-#迷彩</p>
-    </div>
-    <div class="item-button-container">
-      <div class="item-button-left">
-        <a href="" class="item-button item-button-like">
-            <i class="far fa-heart"></i>
-          <span>いいね!</span>
-          <span data-num="like">1</span>
-        </a>
-        <a href="" class="item-button item-button-report clearfix">
-          <i class="far fa-flag"></i>
-          <span>不適切な商品の報告</span>
-        </a>
-      </div>
-      <div class="item-button-right">
-        <a href="" target="_blank">
-            <i class="fas fa-lock"></i>
-          <span>あんしん・あんぜんへの取り組み</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="contents row">
-  <div class="container">
+  
     <% if user_signed_in? && current_user.id == @item.user_id %>
-      <div class="more">
-        <ul class="more_list">
-          <li>
-            <%= link_to '編集', "/items/#{@item.id}/edit", method: :get %>
-          </li>
-      <% end %>
-      
-    </h3>
+      <div class="contents-row">
+        <div class="contents-row__container">
+          <%= link_to '商品の編集', "/items/#{@item.id}/edit", class: "link_to_edit-btn", method: :get %> 
+          <h4 class="text-danger">
+          <p class="text-center">or</p>
+          <%= link_to 'この商品を削除する', "/items/#{@item.id}", class: "delete-btn", method: :delete, data:
+          { confirm: '本当に削除しますか?',
+            cancel: 'やめる',
+            commit: '削除する'}, title: '削除確認' %>
+          </h4>   
+        </div>
+      </div>
+    <% end %>
+
+    <div class="comment-form">
+      <div class="comment-form__container">
+        <div class="attention">相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。</div>
+        <form method="post" action="sample.cgi">
+          <textarea name="kansou" class="textarea-default"></textarea>
+          <input type="submit" value="コメントする">
+        </form>
+      </div>
+    </div>
+   </div>
+  </div> 
+  <div class="breadcrumbs-bottom">
+    <% breadcrumb :items %>
+    <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
   </div>
-</div>
 </body>

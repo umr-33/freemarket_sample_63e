@@ -19,13 +19,20 @@
               </p>
             </div>
             <div class="form__inputs">
-              <p class = "form-p">お名前</p>
+              <%=link_to new1_users_path do%>
+                <p class = "form-p">お名前</p>
+              <%end%>
               <p class = "form-group">
                 <%=@user.family_name%> <%=@user.first_name%>
               </p>
-              <p class = "form-p">お名前カナ</p>
+              <%=link_to new1_users_path do%>
+                <p class = "form-p">お名前カナ</p>
+              <%end%>
               <p class = "form-group"><%=@user.family_name_kana%> <%=@user.first_name_kana%></p>
-              <p class = "form-p">生年月日</p>
+
+              <%=link_to new1_users_path do%>
+                <p class = "form-p">生年月日</p>
+              <%end%>
               <p class = "form-group"><%=@user.birth_year%>/<%=@user.birth_month%>/<%=@user.birth_date%></p>
               <p class = "form-p">郵便番号<span class="white_in_gray">任意</span></p>
               <input type="text" placeholder="例）123-456">
@@ -60,3 +67,9 @@
   </div>
 </div>
 <%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_identification').addClass('active_nav')
+})
+</script>

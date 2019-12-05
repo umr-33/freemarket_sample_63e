@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   root to: "items#index"
   resources :items
+  resources :images, only: [:destroy]
   resources :users, only: [:index, :show, :new, :update, :edit] do
     collection do
       get "new1", to: "users#new1"
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
     end
     member do
       get "listing"
-      get 'confirmation'
+      get "profile"
     end
   end
 
@@ -28,10 +29,10 @@ Rails.application.routes.draw do
     collection do
       post 'show'
     end
-    #member do
-      #get 'confirmation'
-    #end
   end 
 
+  resources :categories, only: [:index, :show]
   resources :brands, only: [:index, :show]
+  # items_newの非同期通信で categories#index, 
+  # brand#index, images#destroy を使用
 end

@@ -22,6 +22,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope.is_a?(User)
+      if current_user.nickname
+        return root_path
+      end
       new1_users_path
     else
       root_path

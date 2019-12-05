@@ -11,8 +11,8 @@
           <h2>支払い方法<h2>
           <section>
             <h4>クレジットカード一覧<h4>
-            <%if card = current_user.card%>
               
+            <%if card = current_user.card%>
               <div class="creditcard_list">
                   <input type="hidden", name="card_id", value="<%=card.id%>" >
                   <%=link_to "/cards/#{card.id}", method: :delete do%>
@@ -46,3 +46,9 @@
   </div>
 </div>
 <%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#user_payment').addClass('active_nav')
+})
+</script>
