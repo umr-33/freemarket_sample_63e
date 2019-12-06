@@ -2,13 +2,19 @@
   <div class="header-contents">
       <div class="title">
         <div class="icon">
-            <a href="/"><img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg" alt="Mercari" class="merukari-icon"></a>
+            <a href="/"><img src="/images/fmarket_icon/fmarket_logo_red.svg" alt="Mercari" class="merukari-icon"></a>
         </div>
         <div class="search-form">
-          <input type="search" name="keyword" placeholder="何かお探しですか？" class="search-form-space">
-          <div class="search-icon" >
-            <i class="fas fa-search"></i>
-          </div>
+          <%= search_form_for @q, url: "/items/search" do |f| %>
+            <%=f.search_field :title_cont, class: "search-form-space",
+            placeholder: "何かお探しですか？"%>
+            <label>
+              <%= f.submit style: "display:none;"%>
+              <div class="search-icon">
+                <i class="fas fa-search"></i>
+              </div>
+            </label>
+          <%end%>
         </div>
       </div>
       <div class="title-lists">

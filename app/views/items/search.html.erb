@@ -1,0 +1,72 @@
+
+<div class="brand_index_wrap items_search_wrap" style="background-color: rgb(239, 239, 239);">
+  <div class="brands_wrapper">
+    <div class="search_nav">
+      <div>
+        <i class="fas fa-sort"></i>
+        並び替え
+      </div>
+      <div id="complex_search">
+        <i class="fas fa-search-plus"></i>
+        詳細検索
+      </div>
+    </div>
+    <%= search_form_for @q, url: "/items/search", class: "hidden" do |f| %>
+      <div class="new-item__main__input__element__entry">
+        <div class="new-item__main__input__element__entry__caption first-caption">
+          <span class="new-item__main__input__element__entry__caption__text">
+            キーワード
+          </span>
+        </div>
+        <%=f.search_field :title_cont,
+        class: "search-form-space input-form__nest input-form",
+        placeholder: "何かお探しですか？"%>
+      </div>
+
+
+              <div class="new-item__main__input__element__entry" id="add-category-search">
+                <div class="new-item__main__input__element__entry__caption first-caption">
+                  <span class="new-item__main__input__element__entry__caption__text">カテゴリー</span>
+                </div>
+                  <%= f.collection_select :category_id, Category.get_root_category.children, :id, :name, {include_blank: "---"}, class: "input-form__nest", id: "major-category-search", name: "major_cat" %>
+              </div>
+
+              <div class="new-item__main__input__element__entry"    id="brand-form-wrapper">
+                <div class="new-item__main__input__element__entry__caption">
+                  <span class="new-item__main__input__element__entry__caption__text">ブランド</span>
+                </div>
+                  <%= f.search_field :brand_name_start, class: "input-form", placeholder: "例）シャネル", name: "brand" %>
+                  <ul id="add-brands">
+                  </ul>
+              </div>
+      <label class="search_button">
+        <%= f.submit style: "display:none;"%>
+        <div class="search-icon">
+          <i class="fas fa-search"></i>検索する
+        </div>
+      </label>
+    <%end%>
+    <section class="brand_show_wrapper">
+      <h3>ヒットした商品
+      </h3>
+      <div class="brand_categories">
+        <section class="card-section">
+          <ul class="card-list">
+            <%= render @items, partial: 'items/items_index'%>
+            
+          </ul>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<script>
+$("#complex_search").on('click', function () {
+  $('#item_search').removeClass('hidden');
+})
+//$('#item_search').on('mouseleave', function () {
+//  $(this).addClass('hidden');
+//})
+</script>
