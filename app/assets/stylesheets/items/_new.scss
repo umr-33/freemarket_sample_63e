@@ -234,11 +234,14 @@ $new-item_input_element_margin: 30px;
     position: absolute;
 
     li {
-      height: 30px;
-      padding: 10px 0 30px 10px;
+      height: 15px;
+      padding: 5px 10px 5px 10px;
       width: 100%;
       border-left: lightgrey solid 1px;
       border-right: lightgrey solid 1px;
+      span {
+        float: right;
+      }
     }
     li:last-of-type {
       border-bottom: lightgrey solid 1px;

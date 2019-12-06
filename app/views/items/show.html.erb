@@ -72,7 +72,7 @@
                 <th>カテゴリー</th>
                 <td>              
                   <div>
-                    <%= link_to @item.category.parent.parent.name %>
+                    <%= link_to @item.category.parent.parent.name if @item.category.parent.parent%>
                   </div>
                   <a href="https://www.mercari.com/jp/category/36/">
                     <div class="item-detail-table-sub-category">

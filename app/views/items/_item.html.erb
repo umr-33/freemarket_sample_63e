@@ -1,5 +1,5 @@
 
-<% image_url = (item.images.length > 0) ? item.images[0].image : '/images/images.jpeg' %>
+<% image_url = (item.images.length > 0) ? item.images[0].image : '/images/no_image.png' %>
 <li class="card-item">
   <%= link_to "/items/#{item.id}", class: "card-item", method: :get do %>
     <%= image_tag image_url, class: 'hoge', size: '188x188' %>
@@ -10,4 +10,21 @@
       </p>
     </div>
   <% end %>
+  <span class="item_info">
+  ブランド:<%=item.brand.name%><br>
+  <<%=item.brand.parent.name%><br>
+  カテゴリー:<%=item.category.name%><br>
+  <<%=item.category.parent.name%><br>
+  <<%=item.category.parent.parent.name%>
+  </span>
 </li>
+
+<style>
+span.item_info {
+  background-color: white;
+  position: absolute;
+  display: none;
+  font-size: 8px;
+  z-index: 8;
+}
+</style>
