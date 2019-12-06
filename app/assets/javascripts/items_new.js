@@ -19,6 +19,7 @@ $(document).on("turbolinks:load", function () {
       }
       select += `</select>`
       $('#add-category').append(select);
+      $('#add-category-search').append(select);
       return false;
     })
     .fail(function () {
@@ -45,6 +46,56 @@ $(document).on("turbolinks:load", function () {
     addCategories(catId, "minor-category");
   });
 
+  // item_search page
+  function addCategoryCheckBoxes(catId, catLevel) {
+    let dataName = (catLevel=="minor-category") ? "category_ids[]" : "medium_cat";
+    $.ajax({
+      type: "GET",
+      url: "/categories",
+      data: {cat_id: catId},
+      dataType: "json"
+    })
+    .done(function (cats) {
+      let select = `
+      <div class="" id="minor-category">
+      <div class="category_check_boxes">
+      `;
+      for (let cat of cats) {
+        let items_size = (cat.items_size) ? `(${cat.items_size})` : "";
+        select += `
+        <label>
+          <input class="input-form__nest" name="${dataName}" type="checkbox" value="${cat.id}">${cat.name} ${items_size}
+        </label>
+        `;
+      }
+      select += `</div></div>`
+      $('#add-category-search').append(select);
+      return false;
+    })
+    .fail(function () {
+      alert('error');
+    })
+  }
+
+  $('#major-category-search').change(function () {
+    $('#medium-category').remove();
+    $('#minor-category').remove();
+    let catId = this.value;
+    if (catId === "") {
+      return false;
+    }
+    addCategories(catId, "medium-category");
+  });
+
+  $('#add-category-search')
+  .on('change', '#medium-category', function () {
+    $('#minor-category').remove();
+    let catId = this.value;
+    if (catId === "") {
+      return false;
+    }
+    addCategoryCheckBoxes(catId, "minor-category");
+  });
 
   // brand incremental search
   $(document.getElementsByName("brand")[0]).on('keyup', function () {
@@ -60,7 +111,7 @@ $(document).on("turbolinks:load", function () {
       let html = ``
       for (let brand of brands) {
         html += `
-          <li data-brand-id="${brand.id}">${brand.name}</li>
+          <li data-brand-id="${brand.id}">${brand.name}<span>< ${brand.parent_name}</span></li>
         `;
       }
       $('#add-brands').children().remove();

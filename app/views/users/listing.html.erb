@@ -19,7 +19,8 @@
           <ul class="listing-lists"> 
             <%=link_to item_path(i.id) do%>
               <li class="clearfix"> 
-                <%= image_tag i.images[0].image, class: 'listing-item', size: '48x48' %>
+                <% image_url = (i.images.size > 0) ? i.images[0].image : '/images/no_image.png' %>
+                <%= image_tag image_url, class: 'listing-item', size: '48x48' %>
                 <div class="listing-item-body">
                   <p class="item-title"><%=i.title%></p>
                 </div>

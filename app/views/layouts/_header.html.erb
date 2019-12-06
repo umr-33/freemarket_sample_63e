@@ -2,14 +2,17 @@
   <div class="header-contents">
       <div class="title">
         <div class="icon">
-            <a href="/"><img src="https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg" alt="Mercari" class="merukari-icon"></a>
+            <a href="/"><img src="/images/fmarket_icon/fmarket_logo_white.svg" alt="Mercari" class="merukari-icon"></a>
         </div>
-        <div class="search-form">
-          <input type="search" name="keyword" placeholder="何かお探しですか？" class="search-form-space">
-          <div class="search-icon" >
-            <i class="fas fa-search"></i>
+          <div class="search-form">
+            <input type="text" class="search-form-space"
+            placeholder="何かお探しですか？">
+            <label>
+              <div class="search-icon" >
+                <i class="fas fa-search"></i>
+              </div>
+            </label>
           </div>
-        </div>
       </div>
       <div class="title-lists">
         <div class="item-lists">
@@ -17,9 +20,11 @@
             <div class="category-icon" style="color:red;">
               <i class="fas fa-list-ul"></i>
             </div>
-            <div class="category-font item-list-font">
-              カテゴリーから探す
-            </div>
+            <%=link_to root_path do%>
+              <div class="category-font item-list-font">
+                カテゴリーから探す
+              </div>
+            <%end%>
           </div>
 
           <%=link_to brand_path(2) do%>

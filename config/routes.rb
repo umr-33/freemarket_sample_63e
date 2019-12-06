@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     omniauth_callbacks:  "users/omniauth_callbacks"
   }
   root to: "items#index"
-  resources :items
+  resources :items do
+    collection do
+      get "search"
+    end
+  end
   resources :images, only: [:destroy]
   resources :users, only: [:index, :show, :new, :update, :edit] do
     collection do

@@ -6,6 +6,19 @@ class ItemsController < ApplicationController
     @mens_items = Item.limit(10)
       .where("category_id >= 213 AND category_id < 358")
       .order("id DESC").limit(10)
+    
+    @q = Item.ransack(params[:q])
+  end
+
+  def search
+    @q = Item.ransack(params[:q])
+    @items = @q.result()
+    if params[:item] && params[:item][:brand_id]
+      @items = @q.result().where(brand_id: params[:item][:brand_id])
+    end
+    if params[:category_ids]
+      @items = @q.result().where(category_id: params[:category_ids])
+    end
   end
 
   def new
@@ -48,7 +61,7 @@ class ItemsController < ApplicationController
   def  destroy
     if @item.destroy
       @item.category.update(items_size: @item.category.items.size)
-      redirect_to root_path
+      redirect_to listing_user_path(current_user.id)
     else
       render :edit
     end
