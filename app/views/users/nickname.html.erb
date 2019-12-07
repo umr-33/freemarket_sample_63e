@@ -1,0 +1,25 @@
+<header class="user_new user_new1">
+  <%=render partial: "users/new/uheader"%>
+</header>
+<div class="contents_wrapper1">
+  <section class="l-single-container">
+    <h3>商品の登録にはニックネームが必要です</h3>
+    <%= form_for @user, url: nickname_users_path, method:"patch" do |f| %>
+    <div class="form__inputs">
+      <p>ニックネーム<span class="white_in_red">必須</span></p>
+      <%=f.text_field :nickname, class: "group1", placeholder: "例）メルカリ太郎" %>
+      <p>メールアドレス<span class="white_in_red">必須</span></p>
+      <%=f.text_field :email, class: "group1", placeholder: "PC・携帯どちらでも可" %>
+
+        <div class=form-group>
+          <p class=text>「次へ進む」のボタンを押すことにより、<a href="#" >利用規約</a>に同意したものとみなします</p>
+          <%=f.submit "情報を登録して、次へ進む", class:"button white_in_red"%>
+        </div>
+      <div class=form-group__text-right>
+        <p class=text-right><a href="#">本人情報の登録について></a></p>
+      </div>
+    </div>
+    <%end%>
+  </section>
+</div>
+<%= render partial: "users/new/ufooter" %>

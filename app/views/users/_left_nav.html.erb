@@ -5,8 +5,9 @@
         <%end%>
         <li><span>やることリスト</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>いいね！一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to new_item_path do%>
         <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
-
+        <%end%>
         <% if user.items.length > 0%>
         <%=link_to listing_user_path(user.id) do%>
           <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>

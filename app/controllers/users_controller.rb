@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user,
-    only: [:logout, :payment, :identification, :update, :new1, :show, :profile]
+    only: [:logout, :payment, :identification,
+     :update, :new1, :show, :profile, :nickname, :update_nickname]
 
   def payment
     card = current_user.card
@@ -37,6 +38,13 @@ class UsersController < ApplicationController
       redirect_to new2_users_path
     else
       render :new1
+    end
+  end
+  def update_nickname
+    if @user.update(user_params)
+      redirect_to new_item_path
+    else
+      render :nickname
     end
   end
   def identification

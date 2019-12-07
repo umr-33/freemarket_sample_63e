@@ -12,6 +12,7 @@ class PurchasesController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
+    render :index, layout: "users"
   end
   
   def pay
@@ -30,6 +31,7 @@ class PurchasesController < ApplicationController
 
   def done
     @item = Item.find_by(params[:id])
+    render :done, layout: "users"
   end
 
 end

@@ -8,9 +8,11 @@
             <input type="text" class="search-form-space"
             placeholder="何かお探しですか？">
             <label>
-              <div class="search-icon" >
-                <i class="fas fa-search"></i>
-              </div>
+              <%=link_to search_items_path do%>
+                <div class="search-icon" >
+                  <i class="fas fa-search"></i>
+                </div>
+              <%end%>
             </label>
           </div>
       </div>

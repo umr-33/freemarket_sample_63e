@@ -1,6 +1,31 @@
-<h2> 購入が完了しました！</h2>
-<p><%= @item.title%></p>
-<p> ¥<%= @item.price%>(送料込み)</p>
-<%=link_to "/" do %> 
-   <button>戻る</button>
-<%end%>
+
+<div class="new-item">
+  <div class="new-item__top">
+    <div class="new-item__top__icon">
+      <%= link_to root_path do %>
+        <img src="/images/fmarket_icon/fmarket_logo_red.svg" alt="Mercari" class="merukari-icon">
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="contents_wrapper_purchases">
+  <section class="l-single-container">
+    <h3>購入が完了しました！</h3>
+    <div class="item_info">
+      <div>
+        <%= image_tag '/images/no_image.png', size: '80x80' %>
+      </div>
+      <div class="name_price">
+        <p><%=@item.title%></p>
+        <p class="bold">¥<%=@item.price%> (税込み)</p>
+      </div>
+    </div>
+    <%=link_to "/", class: "form" do %> 
+      <button class="button" type="button">
+        トップページへ
+      </button>
+   <%end%>
+  </section>
+</div>
+<%= render partial: "users/new/ufooter" %>

@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       get "logout", to: "users#logout"
       get "payment"
       get "identification"
+      get "nickname"
+      patch "nickname", to: "users#update_nickname"
     end
     member do
       get "listing"

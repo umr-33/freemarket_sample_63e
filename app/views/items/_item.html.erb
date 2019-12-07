@@ -11,11 +11,12 @@
     </div>
   <% end %>
   <span class="item_info">
+  商品名:<%=item.title%><br>
   ブランド:<%=item.brand.name%><br>
-  <<%=item.brand.parent.name%><br>
+  < <%=item.brand.parent.name%><br>
   カテゴリー:<%=item.category.name%><br>
-  <<%=item.category.parent.name%><br>
-  <<%=item.category.parent.parent.name%>
+  < <%=item.category.parent.name%><br>
+  < <%=item.category.parent.parent.name%>
   </span>
 </li>
 

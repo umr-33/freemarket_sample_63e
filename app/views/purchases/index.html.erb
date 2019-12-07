@@ -1,17 +1,59 @@
-<h2> 購入を確定しますか？</h2>
-<p><%= @item.title%></p>
-<p> ¥<%= @item.price%>(送料込み)</p>
-<br>
-<h3> 支払い方法</h3>
-<%if @default_card_information.blank? %>
-  <br> /
-<%else%>
-  <%= "**** **** **** " + @default_card_information.last4 %>
-    <% exp_month = @default_card_information.exp_month.to_s %>
-    <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
-  <%= exp_month + " / " + exp_year %>
-<% end %>
-<br>
-<%= form_tag(action: :pay, method: :post) do %>
-  <button>購入する</button>
-<% end %>
+<div class="new-item">
+  <div class="new-item__top">
+    <div class="new-item__top__icon">
+      <%= link_to root_path do %>
+        <img src="/images/fmarket_icon/fmarket_logo_red.svg" alt="Mercari" class="merukari-icon">
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="contents_wrapper_purchases">
+  <section class="l-single-container">
+    <h3>購入内容の確認</h3>
+    <div class="item_info">
+      <div>
+        <%= image_tag '/images/no_image.png', size: '80x80' %>
+      </div>
+      <div class="name_price">
+        <p><%=@item.title%></p>
+        <p class="bold">¥<%=@item.price%> (税込み)</p>
+      </div>
+    </div>
+    <div class="price_info">
+      <p class="bold">支払い金額<span class="big">¥<%=@item.price%></span></p>
+      <p class="gray"><input type="checkbox"> ポイントを使用 (所持ポイント: P0)</p>
+    </div>
+    <div class="pay_method">
+      <p class="bold">支払い方法</p>
+      <%if @default_card_information.blank? %>
+        <br> /
+      <%else%>
+      <div class="card_wrapper">
+        <p><img src="/images/credit_cards/visa.svg" alt="" width="49" height="20"></p>
+        <p><%= "**** **** **** " + @default_card_information.last4 %></p>
+          <% exp_month = @default_card_information.exp_month.to_s %>
+          <% exp_year = @default_card_information.exp_year.to_s.slice(2,3) %>
+        <p><%= exp_month + " / " + exp_year %></p>
+      </div>
+      <% end %>
+    </div>
+    <div class="adress">
+      <p class="bold">配送先
+        <a href="#"><span class="skyblue">変更する</span></a>
+      </p>
+      <div class="address_wrapper">
+        <p>〒533-0014</p>
+        <p>大阪府 大阪市東淀川区 ******* ********** *****</p>
+        <p>熊田 次郎</p>
+      </div>
+    </div>
+    <%= form_tag(action: :pay, method: :post) do %>
+      <button class="button">
+        購入する
+      </button>
+    <% end %>
+  </section>
+</div>
+<%= render partial: "users/new/ufooter" %>
+

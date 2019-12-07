@@ -1,7 +1,5 @@
 <% image_url = (@item.images.length > 0) ? @item.images[0].image : '/images/images.jpeg' %>
 <body class="item_show_wrap">
-
-<%=link_to "to_purchases", purchases_path %>
   <div class="l-single-container">
   <div class="l-content">
     <section class="item-box-container">
@@ -134,14 +132,13 @@
           <% end %>
         </div>
         <% if user_signed_in? && current_user.id != @item.user_id %>
-          <a class="item-buy-btn" href="">
+          <%=link_to purchases_path, class: "item-buy-btn" do%>
             購入画面に進む
-          </a>
+          <%end%>
         <%end%>         
         <div class="item-description">
-          <p class="item-description-inner">
-            <%= @item.description %>
-          </p>
+          <p class="item-description-inner"><%= @item.description %></p>
+          <br>
           <%= link_to "##{@item.brand.name}", brand_path(@item.brand.id) %>
           <%= link_to "##{@item.category.name}" %>
         </div>

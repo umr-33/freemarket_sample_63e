@@ -1,3 +1,101 @@
-// Place all the styles related to the purchase controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.contents_wrapper_purchases {
+  background-color: whitesmoke;
+  width: 100%;
+  padding: 0 0 30px;
+
+  section.l-single-container {
+    width: 700px;
+    margin: 0 auto 30px;
+    padding: 0 0 20px;
+    background-color: #ffffff;
+
+    h3 {
+      font-weight: 550;
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+    }
+    .item_info {
+      width: 343px;
+      margin: 20px auto;
+      display: flex;
+      border-bottom: 1px solid #ececec;
+      p {
+        font-size: 12px;
+        margin: 5px 10px;
+      }
+      p.bold {
+        font-weight: bold;
+      }
+    }
+    .price_info {
+      width: 343px;
+      margin: 30px auto;
+      border-bottom: 1px solid #ececec;
+      p.bold {
+        font-weight: 500;
+        span.big {
+          float: right;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+      p.gray {
+        margin: 30px 0;
+        color: lightgray;
+      }
+    }
+    .pay_method {
+      width: 343px;
+      margin: 30px auto;
+      border-bottom: 1px solid #ececec;
+      .card_wrapper {
+        margin: 0 0 30px 5px;
+      }
+      p.bold {
+        font-weight: 500;
+      }
+      p {
+        margin: 15px 0 0 0;
+      }
+    }
+    .adress {
+      width: 343px;
+      margin: 30px auto;
+      border-bottom: 1px solid #ececec;
+      .address_wrapper {
+        font-size: 14px;
+        margin: 0 0 30px;
+      }
+      p.bold {
+        font-weight: 500;
+        a {
+          color: lightskyblue;
+          font-weight: 400;
+          float: right;
+        }
+      }
+      p {
+        margin: 15px 0 0 0;
+      }
+
+    }
+    form {
+      width: 343px;
+      margin: 20px auto 20px;
+    }
+    .form {
+      display: block;
+      width: 343px;
+      margin: 30px auto 10px;
+    }
+    .button {
+      width: 343px;
+      background-color: red;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+  }
+}
