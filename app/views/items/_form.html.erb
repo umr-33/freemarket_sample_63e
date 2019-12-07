@@ -82,7 +82,7 @@
                   <%= f.text_field :brand, class: "input-form", placeholder: "例）シャネル", name: "brand", value: "#{@item.brand.name}" %>
                   <ul id="add-brands">
                   </ul>
-                  <input name='item[brand_id]' type='hidden' value="<%=@item.brand.id%>">
+                  <% f.input :brand_id, type: 'hidden', value: @item.brand.id %>
                 <%else%>
                   <%= f.text_field :brand, class: "input-form", placeholder: "例）シャネル", name: "brand" %>
                   <ul id="add-brands">
