@@ -8,7 +8,7 @@ crumb :items do
 end
 
 crumb :users do
-  link "マイページ", users_path
+  link "マイページ", user_path(current_user.id)
   parent :root
 end
 
@@ -39,6 +39,11 @@ end
 
 crumb :edit do
   link "出品した商品", edit_item_path
+  parent :users
+end
+
+crumb :boughtitems do
+  link "購入した商品", boughtitems_users_path
   parent :users
 end
 
