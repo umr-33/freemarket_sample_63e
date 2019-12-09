@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :items
   has_one :card
+  has_many :bought_items, class_name: "Item", foreign_key: "buyer_id"
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

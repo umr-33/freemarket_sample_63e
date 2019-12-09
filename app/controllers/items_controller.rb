@@ -2,9 +2,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   def index
     @redy_items = Item.where("category_id >= 16 AND category_id < 213")
+      .where(trade_status_id: 1)
       .order("id DESC").limit(10)
     @mens_items = Item.limit(10)
       .where("category_id >= 213 AND category_id < 358")
+      .where(trade_status_id: 1)
       .order("id DESC").limit(10)
     
     @q = Item.ransack(params[:q])

@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     collection do
       get "search"
     end
+    resources :purchases, only: [:index] do
+      collection do
+        post 'pay', to: 'purchases#pay'
+        get 'done', to: 'purchases#done'
+      end
+    end
   end
   resources :images, only: [:destroy]
   resources :users, only: [:index, :show, :new, :update, :edit] do
@@ -27,6 +33,7 @@ Rails.application.routes.draw do
       get "identification"
       get "nickname"
       patch "nickname", to: "users#update_nickname"
+      get "boughtitems"
     end
     member do
       get "listing"
@@ -37,13 +44,6 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :create, :show, :destroy] do
     collection do
       post 'show'
-    end
-  end 
-
-  resources :purchases, only: [:index] do
-    collection do
-      post 'pay', to: 'purchases#pay'
-      get 'done', to: 'purchases#done'
     end
   end
 

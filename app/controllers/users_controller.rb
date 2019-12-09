@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user,
     only: [:logout, :payment, :identification,
-     :update, :new1, :show, :profile, :nickname, :update_nickname]
+     :update, :new1, :show, :profile, :nickname, :update_nickname,
+     :boughtitems ]
 
   def payment
     card = current_user.card

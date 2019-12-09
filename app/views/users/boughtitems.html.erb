@@ -1,0 +1,44 @@
+<%= render "layouts/header" %>
+<div class="wrap">
+</div>
+<% breadcrumb :logout %>
+ <%= breadcrumbs sseparator: "  &nbsp;&nbsp;&#12297;&nbsp;  "%>
+<div class="contents-wrapper">
+   <div class="contents clearfix">
+    <div class="right-content">
+      <div class="user-board">
+        <section class="user-board__tag">
+        <section class="brand_show_wrapper">
+          <h3 class="head_title">購入した商品</h3>
+          <ul class="card-list">
+            <%= render current_user.bought_items, partial: 'items/items_index'%>
+          
+          </ul>
+        </section>
+        </section>
+      </div>
+      
+    </div>
+    <%= render partial: "users/left_nav", locals: { user: @user }%>
+<%= render "layouts/footer" %>
+
+<script>
+$(function () {
+  $('#bought_items').addClass('active_nav')
+})
+</script>
+
+<style>
+h3.head_title {
+    font-weight: 550;
+    font-size: 24px;
+    padding: 8px 24px;
+    text-align: center;
+    border-bottom: 1px solid #ececec;
+    line-height: 1.4;
+    background-color: white;
+}
+h3.A {
+  display: none;
+}
+</style>
