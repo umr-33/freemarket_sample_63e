@@ -132,10 +132,10 @@
           <% end %>
         </div>
         <% if user_signed_in? && current_user.id != @item.user_id %>
-          <%=link_to purchases_path, class: "item-buy-btn" do%>
+          <%=link_to item_purchases_path(@item.id), class: "item-buy-btn" do%>
             購入画面に進む
           <%end%>
-        <%end%>         
+        <%end%>
         <div class="item-description">
           <p class="item-description-inner"><%= @item.description %></p>
           <br>

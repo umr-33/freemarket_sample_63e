@@ -13,7 +13,8 @@
     <h3>購入内容の確認</h3>
     <div class="item_info">
       <div>
-        <%= image_tag '/images/no_image.png', size: '80x80' %>
+        <%image_url = (@item.images.present?) ? @item.images[0].image : '/images/no_image.png'%>
+        <%= image_tag image_url, size: '80x80' %>
       </div>
       <div class="name_price">
         <p><%=@item.title%></p>

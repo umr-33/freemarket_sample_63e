@@ -17,7 +17,9 @@
         <li><span>出品した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>出品した商品 - 売却済み</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>購入した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <li><span>購入した商品 - 過去の取引</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to boughtitems_users_path do%>
+          <li id="bought_items"><span>購入した商品 - 過去の取引</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%end%>
         <li><span>ニュース一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>評価一覧</span><span><i class="fas fa-chevron-right"></i></span></li>
         <li><span>ガイド</span><span><i class="fas fa-chevron-right"></i></span></li>
