@@ -13,7 +13,7 @@ crumb :users do
 end
 
 crumb :listing do		
-  link "出品した商品-出品中", listing_user_path
+  link "出品した商品-出品中", listing_user_path(current_user.id)
   parent :users
 end
 
@@ -44,6 +44,11 @@ end
 
 crumb :boughtitems do
   link "購入した商品", boughtitems_users_path
+  parent :users
+end
+
+crumb :completed do
+  link "出品した商品 - 売却済み", completed_users_path
   parent :users
 end
 

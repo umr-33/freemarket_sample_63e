@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
+
   def index
     @redy_items = Item.where("category_id >= 16 AND category_id < 213")
       .where(trade_status_id: 1)
@@ -44,6 +46,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item.user_id != current_user.id
+      redirect_to root_path
+    end
+  end
+
+  def show
+    if ((@item.trade_status_id == 3 ) && (@item.buyer_id == current_user.id)) || (@item.trade_status_id == 1 ) 
+      item_path
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -66,6 +79,9 @@ class ItemsController < ApplicationController
       redirect_to listing_user_path(current_user.id)
     else
       render :edit
+    end
+    if @item.user_id != current_user.id
+      redirect_to root_path
     end
   end
 

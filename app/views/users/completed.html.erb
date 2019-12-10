@@ -1,6 +1,6 @@
 <%= render "layouts/header" %>
 
-<% breadcrumb :listing %>
+<% breadcrumb :completed %>
   <%= breadcrumbs separator: " &rsaquo; "%>
 
 <div class="contents-wrapper">
@@ -11,11 +11,11 @@
           出品した商品 
         </ul> 
         <ul class="listing-tabs">
-          <li class="active"><a href=""><h3>出品中</h3></a></li>
-          <li class=""><a href=""><h3>取引中</h3></a></li>
-          <li class=""><%=link_to "/users/completed" do%> <h3>売却済み</h3> <% end %></li>  
+          <li class=""><%=link_to "/users/#{current_user.id}/listing" do%><h3>出品中</h3><% end %></li> 
+          <li class=""><a href=""><h3>取引中</h3></a></li>  
+          <li class="active"><a href=""><h3>売却済み</h3></a></li>
         </ul>  
-        <%current_user.items.where(trade_status_id: 1).each do |i|%>
+        <%current_user.items.where(trade_status_id: 3).each do |i|%>
           <ul class="listing-lists"> 
             <%=link_to item_path(i.id) do%>
               <li class="clearfix"> 
@@ -34,7 +34,7 @@
     
     <div class="left-nav">
       <ul>
-        <%= link_to user_path do%>
+        <%= link_to user_path(current_user.id) do%>
           <li><span>マイページ</span><span><i class="fas fa-chevron-right"></i></span></li>
         <% end %>  
         <li><span>やることリスト</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -42,13 +42,13 @@
         <%=link_to new_item_path do%>
           <li><span>出品する</span><span><i class="fas fa-chevron-right"></i></span></li>
         <% end %>
-        <%=link_to listing_user_path do%>
-          <li id="user_listing"><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <%=link_to listing_user_path(current_user.id) do%>
+          <li><span>出品した商品 - 出品中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%end%>
         <li><span>出品した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%=link_to completed_users_path do%>
-          <li><span>出品した商品 - 売却済み</span><span><i class="fas fa-chevron-right"></i></span></li>
-        <% end %>  
+          <li id="user_completed"><span>出品した商品 - 売却済み</span><span><i class="fas fa-chevron-right"></i></span></li>
+        <% end %>
         <li><span>購入した商品 - 取引中</span><span><i class="fas fa-chevron-right"></i></span></li>
         <%=link_to boughtitems_users_path do%>
           <li><span>購入した商品 - 過去の取引</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -65,7 +65,7 @@
       </ul>
       <h3>設定</h3>
       <ul>
-        <%=link_to profile_user_path do%>
+        <%=link_to profile_user_path(current_user.id) do%>
           <li id="user_profile"><span>プロフィール</span><span><i class="fas fa-chevron-right"></i></span></li>
         <% end %>
         <li><span>発送元・お届け先住所変更</span><span><i class="fas fa-chevron-right"></i></span></li>
@@ -89,6 +89,6 @@
 
 <script>
 $(function () {
-  $('#user_listing').addClass('active_nav')
+  $('#user_completed').addClass('active_nav')
 })
 </script>

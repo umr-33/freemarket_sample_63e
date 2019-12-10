@@ -15,7 +15,7 @@
             <h2 class="bold"><%=@user.email%></h2>
             <div class="mypage-number">
               <div>評価 <span class="bold">0</span></div>
-              <div>出品数 <span class="bold">0</span></div>
+              <div>出品数 <span class="bold"><%= Item.where(user_id: "#{current_user.id}", trade_status_id: 1 ).count %></span></div>
             </div>
           </a>
         </section>
