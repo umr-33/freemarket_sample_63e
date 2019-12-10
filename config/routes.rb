@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       get "nickname"
       patch "nickname", to: "users#update_nickname"
       get "boughtitems"
+      get "completed"
     end
     member do
       get "listing"

@@ -131,7 +131,7 @@
             <span class="item-shipping-fee">着払い</span>
           <% end %>
         </div>
-        <% if user_signed_in? && current_user.id != @item.user_id %>
+        <% if (user_signed_in? && current_user.id != @item.user_id) && (@item.trade_status_id == 1)%>
           <%=link_to item_purchases_path(@item.id), class: "item-buy-btn" do%>
             購入画面に進む
           <%end%>
